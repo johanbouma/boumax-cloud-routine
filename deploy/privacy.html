@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacyverklaring — Boumax</title>
+<meta name="description" content="Privacyverklaring van Boumax: welke persoonsgegevens er worden verwerkt, waarom, en welke rechten je hebt.">
+<link rel="canonical" href="https://boumax.nl/privacy.html">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="branding/boumax-favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="branding/boumax-favicon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="branding/boumax-favicon-512.png">
+<style>
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url("branding/fonts/outfit-500.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("branding/fonts/outfit-600.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:700;font-display:swap;src:url("branding/fonts/outfit-700.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:800;font-display:swap;src:url("branding/fonts/outfit-800.woff2") format("woff2")}
+</style>
+<style>
+  :root{
+    --ink:#15171A;
+    --muted:#5B6169;
+    --muted-soft:#84898F;
+    --bg:#FAFAF8;
+    --surface:#FFFFFF;
+    --surface-alt:#F1F1F3;
+    --border:#E4E4E6;
+    --accent:#1E3A5F;
+    --accent-dark:#122540;
+    --accent-soft:#E9EEF4;
+    --accent-line:#C3D2E2;
+
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --font-display:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --radius-pill:999px;
+    --shadow-sm:0 1px 2px rgba(21,23,26,.06);
+    --container:1160px;
+    --container-narrow:760px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2{margin:0;font-family:var(--font-display);letter-spacing:-0.02em;font-weight:700;color:var(--ink);text-wrap:balance}
+  p{margin:0;color:var(--muted);line-height:1.7}
+  a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--accent-line);text-underline-offset:2px}
+  a:hover{color:var(--accent-dark)}
+  ul{margin:0;padding:0;list-style:none}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .skip-link{position:fixed;top:-100px;left:16px;z-index:300;background:var(--ink);color:#fff;padding:12px 18px;border-radius:8px;transition:top .2s ease}
+  .skip-link:focus{top:16px}
+  :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .icon{width:1.15em;height:1.15em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
+  @media (max-width:640px){ .container{padding:0 20px} }
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;white-space:nowrap;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--accent-dark);color:#fff}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(250,249,248,.92);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:104px;gap:18px;flex-wrap:nowrap}
+  .brand{display:flex;align-items:center;white-space:nowrap;flex-shrink:0;text-decoration:none}
+  .wordmark{font-family:var(--font-display);font-weight:800;font-size:29px;letter-spacing:0.01em;color:var(--accent)}
+  .wordmark .accent{color:#3973FF}
+  .wordmark.on-dark{color:#fff}
+
+  .page-head{padding:72px 0 40px}
+  .page-head .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+  .page-head h1{font-size:clamp(30px,4vw,42px);margin-top:12px}
+  .page-head p{margin-top:14px;font-size:15.5px}
+
+  .doc{max-width:var(--container-narrow);margin:0 auto;padding:0 28px 96px}
+  @media (max-width:640px){ .doc{padding:0 20px 64px} }
+  .doc h2{font-size:19px;margin-top:44px;margin-bottom:14px}
+  .doc h2:first-child{margin-top:0}
+  .doc p{font-size:15px;margin-top:10px}
+  .doc p:first-of-type{margin-top:0}
+  .doc ul{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+  .doc li{font-size:15px;color:var(--muted);line-height:1.65;padding-left:20px;position:relative}
+  .doc li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent-line)}
+  .doc .updated{margin-top:0;font-size:13.5px;color:var(--muted-soft)}
+  .doc .contact-box{margin-top:14px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px}
+  .doc .contact-box p{margin-top:6px;font-size:14.5px}
+  .doc .contact-box p:first-child{margin-top:0}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0 26px}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  .footer-row a{font-size:13.5px;color:rgba(255,255,255,.6);text-decoration:none}
+  .footer-row a:hover{color:#fff}
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.42)}
+  .footer-bottom a{color:inherit;text-decoration:none}
+  .footer-bottom a:hover{color:#fff}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Naar inhoud</a>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="wordmark">BOUM<span class="accent">A</span>X</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Privacy</span>
+      <h1>Privacyverklaring</h1>
+      <p>Hier lees je welke persoonsgegevens Boumax verwerkt, waarom, en welke rechten je hebt. Kort samengevat: Boumax verzamelt zo min mogelijk gegevens, en alleen wat nodig is om contact met je te onderhouden.</p>
+    </div>
+  </section>
+
+  <div class="doc">
+    <p class="updated">Laatst bijgewerkt: 12 augustus 2026 (aangevuld)</p>
+
+    <h2>Wie is verantwoordelijk</h2>
+    <p>Boumax is een eenmanszaak van Johan Bouma, gevestigd aan Kolonelsdiep 5, 9821 TR Oldekerk. Ingeschreven bij de KvK onder nummer 65540344, BTW-nummer NL001448254B65. Voor alle vragen over deze privacyverklaring of over hoe je gegevens worden verwerkt, is Johan rechtstreeks te bereiken via <a href="mailto:info@boumax.nl">info@boumax.nl</a>.</p>
+
+    <h2>Welke gegevens worden verwerkt</h2>
+    <p>Deze website heeft geen contactformulier en plaatst geen tracking- of analyticscookies. Er worden dus geen gegevens automatisch verzameld via een formulier op de site. Persoonsgegevens komen alleen binnen wanneer je zelf contact opneemt, bijvoorbeeld:</p>
+    <ul>
+      <li>Naam, e-mailadres en de inhoud van je bericht, wanneer je een e-mail stuurt naar info@boumax.nl.</li>
+      <li>Telefoonnummer en gespreksgegevens, wanneer je zelf belt of gebeld wordt naar aanleiding van een aanvraag.</li>
+      <li>Bedrijfsgegevens die je verstrekt in het kader van een offerte, opdracht of samenwerking.</li>
+    </ul>
+    <p>Daarnaast wordt er automatisch beperkte technische informatie verwerkt bij een bezoek aan de website, zoals hieronder bij "Doorgifte buiten de EER" beschreven staat.</p>
+
+    <h2>Waarom deze gegevens</h2>
+    <p>Deze gegevens worden uitsluitend gebruikt om:</p>
+    <ul>
+      <li>Contact met je op te nemen en je vraag of aanvraag te beantwoorden.</li>
+      <li>Een offerte op te stellen of een opdracht uit te voeren.</li>
+      <li>Te voldoen aan de wettelijke administratie- en bewaarplicht (bijvoorbeeld facturen, voor de Belastingdienst).</li>
+    </ul>
+    <p>Gegevens worden nooit gebruikt voor ongevraagde marketing en niet verkocht of gedeeld met derden voor commerciële doeleinden.</p>
+
+    <h2>Bewaartermijn</h2>
+    <p>E-mail- en contactgegevens worden bewaard zolang dat nodig is voor het contact of de samenwerking, en daarna maximaal 2 jaar. Gegevens die op een factuur staan, worden 7 jaar bewaard vanwege de wettelijke fiscale bewaarplicht.</p>
+
+    <h2>Delen met derden</h2>
+    <p>Persoonsgegevens worden alleen gedeeld met partijen die noodzakelijk zijn om de dienstverlening mogelijk te maken:</p>
+    <ul>
+      <li><strong>Netlify</strong> (hosting) — host deze website en verwerkt daarbij automatisch technische verzoekgegevens, zoals je IP-adres, van elke bezoeker.</li>
+      <li><strong>Hostinger</strong> (e-mail) — verzorgt de mailhosting van info@boumax.nl en verwerkt daarmee de inhoud van e-mails die naar dit adres worden gestuurd.</li>
+    </ul>
+    <p>Voor deze diensten gelden de eigen voorwaarden en het privacybeleid van Netlify en Hostinger. Er worden geen gegevens gedeeld met derden voor advertentiedoeleinden, en gegevens worden nooit verkocht.</p>
+
+    <h2>Doorgifte buiten de EER</h2>
+    <p>Netlify is een Amerikaanse partij. Bij het bezoeken van deze website kan daardoor technische informatie (zoals je IP-adres) buiten de Europese Economische Ruimte (EER) terechtkomen. De lettertypen, afbeeldingen en overige onderdelen van deze website worden zelf gehost en niet vanaf servers van derden zoals Google geladen.</p>
+
+    <h2>Cookies</h2>
+    <p>Deze website plaatst geen tracking-, marketing- of analytics-cookies. Mocht dat in de toekomst veranderen, dan wordt dat hier vermeld en wordt waar wettelijk vereist eerst toestemming gevraagd.</p>
+
+    <h2>Beveiliging</h2>
+    <p>Er worden passende technische en organisatorische maatregelen genomen om persoonsgegevens te beschermen tegen verlies of onrechtmatig gebruik, waaronder een beveiligde (HTTPS) verbinding op deze website.</p>
+
+    <h2>Jouw rechten</h2>
+    <p>Je hebt het recht om je gegevens in te zien, te laten corrigeren of te laten verwijderen. Ook kun je bezwaar maken tegen de verwerking van je gegevens en heb je recht op gegevensoverdraagbaarheid. Neem hiervoor contact op via info@boumax.nl. Ben je het niet eens met de manier waarop je gegevens worden verwerkt, dan heb je het recht om een klacht in te dienen bij de Autoriteit Persoonsgegevens.</p>
+
+    <h2>Wijzigingen in deze verklaring</h2>
+    <p>Deze privacyverklaring kan worden aangepast wanneer de website of de manier waarop gegevens worden verwerkt verandert. De datum bovenaan deze pagina geeft aan wanneer de verklaring voor het laatst is bijgewerkt.</p>
+
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p><strong>Boumax</strong> — Johan Bouma</p>
+      <p>Kolonelsdiep 5, 9821 TR Oldekerk</p>
+      <p>KvK 65540344 · BTW NL001448254B65</p>
+      <p><a href="mailto:info@boumax.nl">info@boumax.nl</a> · <a href="tel:+31627435394">06 27 43 53 94</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <a href="index.html" class="brand"><span class="wordmark on-dark">BOUM<span class="accent">A</span>X</span></a>
+      <div class="footer-links">
+        <a href="index.html#wat-ik-doe">Wat ik doe</a>
+        <a href="index.html#voorbeeldwerk">Voorbeeldwerk</a>
+        <a href="index.html#over-mij">Over mij</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Boumax, Kolonelsdiep 5, 9821 TR Oldekerk · KvK 65540344 · BTW NL001448254B65 · <a href="privacy.html">Privacyverklaring</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boumax - Websites en automatisering voor lokale bedrijven</title>
+<meta name="description" content="Boumax bouwt conversiegerichte websites en automatisering voor lokale bedrijven in Groningen, Drenthe en Friesland. Persoonlijk contact, geen sjabloonbureau.">
+<link rel="canonical" href="https://boumax.nl/">
+<link rel="icon" type="image/png" sizes="32x32" href="branding/boumax-favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="branding/boumax-favicon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="branding/boumax-favicon-512.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
+<meta property="og:description" content="Meer aanvragen, minder rompslomp.">
+<meta property="og:locale" content="nl_NL">
+<style>
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url("branding/fonts/outfit-500.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("branding/fonts/outfit-600.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:700;font-display:swap;src:url("branding/fonts/outfit-700.woff2") format("woff2")}
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:800;font-display:swap;src:url("branding/fonts/outfit-800.woff2") format("woff2")}
+</style>
+<!--
+  BOUMAX.NL — hoofdsite van Johan Bouma / Boumax.
+  VOOR LIVEGANG NOG INVULLEN:
+   1. Telefoonnummer (huidig: placeholder)
+   2. KvK-nummer (huidig: placeholder)
+   3. Eigen foto i.p.v. het geometrische avatar-paneel bij "Over mij" (Johan heeft er inmiddels een op LinkedIn staan)
+   4. Link naar voorbeeldwerk moet naar een echte gehoste URL wijzen zodra de demo online staat
+      (nu een relatief pad naar demo/, werkt alleen lokaal)
+   5. Privacyverklaring / algemene voorwaarden zijn placeholder-links
+-->
+<style>
+  :root{
+    --ink:#15171A;
+    --muted:#5B6169;
+    --muted-soft:#84898F;
+    --bg:#FAFAF8;
+    --surface:#FFFFFF;
+    --surface-alt:#F1F1F3;
+    --border:#E4E4E6;
+    --accent:#1E3A5F;
+    --accent-dark:#122540;
+    --accent-soft:#E9EEF4;
+    --accent-line:#C3D2E2;
+
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --font-display:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --radius-card:16px;
+    --radius-pill:999px;
+    --radius-input:8px;
+    --shadow-sm:0 1px 2px rgba(21,23,26,.06);
+    --shadow-md:0 10px 24px rgba(21,23,26,.08);
+    --shadow-lg:0 24px 56px rgba(21,23,26,.14);
+    --container:1160px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{margin:0;font-family:var(--font-display);letter-spacing:-0.02em;font-weight:700;color:var(--ink);text-wrap:balance}
+  p{margin:0;color:var(--muted);line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  ul{margin:0;padding:0;list-style:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .skip-link{position:fixed;top:-100px;left:16px;z-index:300;background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--radius-input);transition:top .2s ease}
+  .skip-link:focus{top:16px}
+  :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .icon{width:1.15em;height:1.15em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
+  @media (max-width:640px){ .container{padding:0 20px} }
+  .section{padding:96px 0}
+  @media (max-width:768px){ .section{padding:56px 0} }
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;white-space:nowrap;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+  .btn:active{transform:translateY(1px) scale(.98)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--accent-dark);box-shadow:var(--shadow-md)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(250,249,248,.92);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:104px;gap:18px;flex-wrap:nowrap}
+  .brand{display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+  .wordmark{font-family:var(--font-display);font-weight:800;font-size:29px;letter-spacing:0.01em;color:var(--accent)}
+  .wordmark .accent{color:#3973FF}
+  .wordmark.on-dark{color:#fff}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);flex-wrap:nowrap}
+  .nav-links a{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-toggle{display:none;padding:8px;color:var(--ink);flex-shrink:0}
+  @media (max-width:820px){ .nav-links{display:none} .nav-toggle{display:flex} }
+  .mobile-menu{display:none;flex-direction:column;gap:2px;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 20px 20px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:13px 4px;font-weight:600;font-size:15.5px;color:var(--ink);border-bottom:1px solid var(--border)}
+  .mobile-menu a:last-child{border-bottom:none}
+
+  /* ---------- Geometric brand panel (reused: hero visual + about avatar) ---------- */
+  .geo-panel{position:relative;border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-md)}
+  .geo-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,1fr);gap:9px;padding:22px}
+  .geo-grid span{border-radius:7px;background:transparent}
+  .geo-grid span.f1{background:var(--accent)}
+  .geo-grid span.f2{background:var(--accent-line)}
+  .geo-grid span.f3{background:var(--accent-soft)}
+  .geo-grid span.float{animation:geoFloat 5s ease-in-out infinite}
+  @keyframes geoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  @media (prefers-reduced-motion:reduce){ .geo-grid span.float{animation:none} }
+
+  /* ---------- Hero (dark, spatial automation network) ---------- */
+  .hero{position:relative;padding:128px 0 100px;background:#06080C;overflow:hidden;isolation:isolate;min-height:900px;display:flex;align-items:center}
+  @media (max-width:960px){ .hero{min-height:0;padding:100px 0 64px} }
+  .hero::before{content:"";position:absolute;top:-20%;right:-8%;width:60%;aspect-ratio:1;background:radial-gradient(circle,rgba(57,115,255,.18),transparent 65%);pointer-events:none;z-index:0}
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(ellipse at 35% 20%,black 0%,transparent 70%);
+    mask-image:radial-gradient(ellipse at 35% 20%,black 0%,transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+  .hero-fade-bottom{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}
+  .hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  .hero-fade{opacity:0;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) forwards}
+
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#5488FF;text-transform:uppercase;animation-delay:.4s}
+  .hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#3973FF;box-shadow:0 0 0 4px rgba(57,115,255,.2)}
+  .hero h1{color:#F7F8FA;font-weight:650;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.02em;margin-top:18px}
+  .hero h1 span{display:block;animation-delay:.55s}
+  .hero h1 span:last-child{color:#99A6C4;animation-delay:.8s}
+  .hero p{color:#999FA9;margin-top:22px;font-size:17.5px;max-width:46ch;animation-delay:1s}
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;animation-delay:1.15s}
+  .hero-trust{margin-top:20px;font-size:12.5px;color:#646A75;animation-delay:1.25s}
+  .btn-cobalt{background:#3973FF;color:#fff;box-shadow:0 8px 22px rgba(57,115,255,.32);border-radius:12px}
+  .btn-cobalt:hover{background:#5488FF;box-shadow:0 10px 30px rgba(57,115,255,.48);transform:translateY(-2px)}
+  .btn-cobalt .icon{transition:transform .2s ease}
+  .btn-cobalt:hover .icon{transform:translateX(4px)}
+  .btn-ghost-dark{background:transparent;color:#F7F8FA;border:1.5px solid rgba(255,255,255,.16);border-radius:12px}
+  .btn-ghost-dark:hover{border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.05)}
+
+  .hero-status{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#999FA9;margin-bottom:18px;animation-delay:1.8s}
+  .hero-status .pulse-dot{position:relative;width:7px;height:7px;border-radius:50%;background:#2AC769}
+  .hero-status .pulse-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(42,199,105,.4);animation:dotRing 2.4s ease-out infinite}
+  @keyframes dotRing{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.8);opacity:0}}
+
+  .automation{position:relative;height:520px;animation-delay:1.4s}
+  @media (max-width:960px){ .automation{height:auto;display:flex;flex-direction:column;gap:14px} }
+  .automation svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  @media (max-width:960px){ .automation svg{display:none} }
+  .automation path{fill:none;stroke:#3973FF;stroke-width:1.1;stroke-dasharray:1.5 5;stroke-linecap:round;
+    animation-name:pathFlow,pathActive;animation-duration:2.2s,7.8s;animation-timing-function:linear,ease;animation-iteration-count:infinite,infinite;animation-fill-mode:none,backwards}
+  @keyframes pathFlow{to{stroke-dashoffset:-40}}
+  @keyframes pathActive{0%,10%{stroke-opacity:.15}18%{stroke-opacity:.75}82%{stroke-opacity:.75}90%,100%{stroke-opacity:.15}}
+
+  .node{position:absolute;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;width:168px;
+    animation-name:nodeActivate;animation-duration:7.8s;animation-iteration-count:infinite;animation-timing-function:ease;animation-fill-mode:backwards;
+    transition:transform .2s ease,border-color .2s ease}
+  .node:hover{transform:translateY(-3px);border-color:rgba(57,115,255,.45)}
+  .node-title{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#F7F8FA}
+  .node-title .dot{width:6px;height:6px;border-radius:50%;background:#3973FF;flex-shrink:0}
+  .node.success .node-title .dot{background:#2AC769}
+  .node-sub{margin-top:4px;font-size:11.5px;color:#8890A0}
+  .node-detail{display:grid;grid-template-rows:0fr;opacity:0;overflow:hidden;transition:grid-template-rows .25s ease,opacity .25s ease;font-size:11px;color:#5488FF;margin-top:4px;min-height:0}
+  .node:hover .node-detail{grid-template-rows:1fr;opacity:1}
+  @media (max-width:960px){ .node{position:static;width:100%} }
+
+  .node-crm{left:56%;top:4%}
+  .node-offerte{left:56%;top:28%}
+  .node-email{left:56%;top:52%}
+  .node-opvolging{left:56%;top:76%}
+  @media (max-width:960px){ .node-crm,.node-offerte,.node-email,.node-opvolging{left:auto;top:auto} }
+
+  .lead-card{position:absolute;left:0;top:4%;width:186px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 16px;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 2.1s backwards}
+  @media (max-width:960px){ .lead-card{position:static;width:100%} }
+  .lead-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;color:#5488FF;background:rgba(57,115,255,.14);padding:3px 8px;border-radius:6px;margin-bottom:8px}
+  .lead-card .node-title{font-size:13.5px}
+  .lead-card .node-sub{margin-top:6px;line-height:1.5}
+
+  .core{position:absolute;left:10%;top:50%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;
+    background:#10141C;border:1px solid rgba(57,115,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 1.6s backwards;z-index:2}
+  .core::before{content:"";position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(57,115,255,.22),transparent 70%);animation:coreBreathe 4s ease-in-out infinite;z-index:-1}
+  @keyframes coreBreathe{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:.9;transform:scale(1.04)}}
+  .core-mark{font-family:var(--font-display);font-weight:800;font-size:12px;color:#F7F8FA;letter-spacing:.02em}
+  .core-sub{font-size:8px;color:#5488FF;font-weight:600;letter-spacing:.03em}
+  @media (max-width:960px){ .core{position:static;transform:none;margin:0 auto} }
+
+  .stat-card{position:absolute;left:2%;bottom:2%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 16px;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 2.4s backwards}
+  @media (max-width:960px){ .stat-card{position:static} }
+  .stat-num{font-family:var(--font-display);font-size:20px;font-weight:700;color:#F7F8FA}
+  .stat-label{font-size:11px;color:#8890A0;margin-top:2px}
+
+  @keyframes nodeActivate{
+    0%,9%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
+    16%{opacity:1;transform:translateY(0);border-color:rgba(57,115,255,.42)}
+    86%{opacity:1;border-color:rgba(57,115,255,.42)}
+    94%,100%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
+  }
+  @keyframes nodeActivateSuccess{
+    0%,9%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
+    16%{opacity:1;transform:translateY(0);border-color:rgba(42,199,105,.5)}
+    86%{opacity:1;border-color:rgba(42,199,105,.5)}
+    94%,100%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
+  }
+  .node.success{animation-name:nodeActivateSuccess}
+
+  @media (prefers-reduced-motion:reduce){
+    .hero-fade,.lead-card,.core,.stat-card{animation:none !important;opacity:1 !important;transform:none !important}
+    .hero h1 span:last-child{color:#99A6C4}
+    .node{animation:none !important;opacity:1 !important;transform:none !important;border-color:rgba(57,115,255,.42) !important}
+    .node.success{border-color:rgba(42,199,105,.5) !important}
+    .automation path{animation:none !important;stroke-opacity:.55}
+    .core::before{animation:none}
+    .hero-status .pulse-dot::after{animation:none}
+  }
+
+  .head{max-width:620px;margin-bottom:48px}
+  .head h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15}
+  .head p{margin-top:12px;font-size:15.5px}
+
+  /* ---------- Pillars (was: 3-equal-card row) ---------- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:var(--radius-card);overflow:hidden}
+  @media (max-width:820px){ .pillars{grid-template-columns:1fr} }
+  .pillar{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px}
+  .pillar-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
+  .pillar h3{font-size:21px}
+  .pillar p{font-size:15px}
+  .pillar-points{margin-top:4px;display:flex;flex-direction:column;gap:9px}
+  .pillar-points li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+  .pillar-points .icon{width:15px;height:15px;color:var(--accent);flex-shrink:0}
+
+  /* ---------- Voorbeeldwerk ---------- */
+  .work-card{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm)}
+  @media (max-width:768px){ .work-card{grid-template-columns:1fr} }
+  .work-visual{background:var(--accent-soft);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+  .work-visual .tag{align-self:flex-start;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:var(--radius-pill)}
+  .live-preview{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow-sm);background:#fff}
+  .live-preview iframe{position:absolute;top:0;left:0;width:1400px;height:1050px;border:0;transform-origin:0 0;pointer-events:none}
+  .work-body{padding:40px}
+  .work-body h3{font-size:21px}
+  .work-body p{margin-top:12px;font-size:15px}
+  .work-body .btn{margin-top:22px}
+
+  /* ---------- Over mij ---------- */
+  .about-grid{display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:center}
+  @media (max-width:640px){ .about-grid{grid-template-columns:1fr;gap:24px} }
+  .about-visual{width:200px;height:200px;flex-shrink:0}
+  @media (max-width:640px){ .about-visual{width:140px;height:140px} }
+  .about-grid p{margin-top:14px;font-size:15.5px;max-width:60ch}
+  .about-grid p:first-of-type{margin-top:0}
+
+  /* ---------- Contact ---------- */
+  .contact-card{background:var(--accent-dark);border-radius:24px;padding:52px 48px;color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+  @media (max-width:768px){ .contact-card{padding:36px 26px;grid-template-columns:1fr} }
+  .contact-card h2{color:#fff;font-size:clamp(24px,3vw,30px)}
+  .contact-card p{color:rgba(255,255,255,.72);margin-top:10px;max-width:52ch}
+  .contact-lines{display:flex;flex-direction:column;gap:12px}
+  .contact-line{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff}
+  .contact-line .icon{color:#9FC0E0;flex-shrink:0}
+  .contact-card .btn-primary{margin-top:22px;background:#fff;color:var(--accent-dark);align-self:start}
+  .copy-inline-btn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin-left:2px;border-radius:6px;color:#9FC0E0;flex-shrink:0}
+  .copy-inline-btn .icon{width:14px;height:14px}
+  .copy-inline-btn:hover{color:#fff;background:rgba(255,255,255,.08)}
+  .copy-inline-btn.copied{color:#2AC769}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0 26px}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  .footer-row a{font-size:13.5px;color:rgba(255,255,255,.6)}
+  .footer-row a:hover{color:#fff}
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.42)}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Naar inhoud</a>
+
+<svg class="visually-hidden" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 9.5V19.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L11 21l8-10.5h-6z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9.5a2 2 0 0 0 2 2h2.5"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#main" class="brand"><span class="wordmark">BOUM<span class="accent">A</span>X</span></a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#wat-ik-doe">Wat ik doe</a>
+      <a href="#voorbeeldwerk">Voorbeeldwerk</a>
+      <a href="#over-mij">Over mij</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="#contact" class="btn btn-primary">Neem contact op</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" style="width:24px;height:24px" id="navToggleIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#wat-ik-doe">Wat ik doe</a>
+    <a href="#voorbeeldwerk">Voorbeeldwerk</a>
+    <a href="#over-mij">Over mij</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-fade-bottom"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow hero-fade" style="animation-delay:.4s">Bouw minder handmatig. Laat meer automatisch gaan.</span>
+        <h1><span class="hero-fade" style="animation-delay:.55s">Je bedrijf kan slimmer werken.</span><span class="hero-fade" style="animation-delay:.8s">Wij bouwen het systeem erachter.</span></h1>
+        <p class="hero-fade" style="animation-delay:1s">Boumax bouwt websites en automatiseert processen, zodat minder handmatig hoeft en meer vanzelf gebeurt.</p>
+        <div class="hero-ctas hero-fade" style="animation-delay:1.15s">
+          <a href="#wat-ik-doe" class="btn btn-cobalt">Ontdek wat er mogelijk is<svg class="icon" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+          <a href="#voorbeeldwerk" class="btn btn-ghost-dark">Bekijk het in actie</a>
+        </div>
+        <p class="hero-trust hero-fade" style="animation-delay:1.25s">Websites · Automatisering · Maatwerk</p>
+      </div>
+
+      <div class="automation hero-fade" id="automation" aria-hidden="true">
+        <span class="hero-status hero-fade" style="animation-delay:1.8s"><span class="pulse-dot"></span>Systemen actief</span>
+
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M15,30 L12,38" style="animation-delay:0s,0s"/>
+          <path d="M21,50 L50,12" style="animation-delay:0s,1.3s"/>
+          <path d="M21,50 L50,36" style="animation-delay:0s,2.6s"/>
+          <path d="M21,50 L50,60" style="animation-delay:0s,3.9s"/>
+          <path d="M21,50 L50,84" style="animation-delay:0s,5.2s"/>
+        </svg>
+
+        <div class="lead-card">
+          <span class="lead-badge">NIEUWE AANVRAAG</span>
+          <div class="node-title">Thomas de Jong</div>
+          <div class="node-sub">Nieuwe website · 14:32<br>Status: Ontvangen</div>
+        </div>
+
+        <div class="core">
+          <span class="core-mark">BOUMAX</span>
+          <span class="core-sub">Automatisering actief</span>
+        </div>
+
+        <div class="node node-crm" style="animation-delay:1.3s">
+          <div class="node-title"><span class="dot"></span>CRM</div>
+          <div class="node-sub">Klant toegevoegd</div>
+          <div class="node-detail">Automatisch bijgewerkt · 14:32</div>
+        </div>
+        <div class="node node-offerte" style="animation-delay:2.6s">
+          <div class="node-title"><span class="dot"></span>Offerte</div>
+          <div class="node-sub">Concept aangemaakt</div>
+          <div class="node-detail">Op basis van eerder werk</div>
+        </div>
+        <div class="node node-email" style="animation-delay:3.9s">
+          <div class="node-title"><span class="dot"></span>E-mail</div>
+          <div class="node-sub">Verstuurd</div>
+          <div class="node-detail">Bevestiging naar de klant</div>
+        </div>
+        <div class="node node-opvolging success" style="animation-delay:5.2s">
+          <div class="node-title"><span class="dot"></span>Opvolging</div>
+          <div class="node-sub">Ingepland voor vrijdag</div>
+          <div class="node-detail">5 acties automatisch uitgevoerd</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-num">12,4 uur</div>
+          <div class="stat-label">deze week bespaard</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="wat-ik-doe">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Wat ik doe</h2>
+        <p>Twee dingen die vaak samen horen: een website die aanvragen oplevert, en minder rompslomp in het werk erachter.</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar">
+          <div class="pillar-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-layout"/></svg></div>
+          <h3>Website</h3>
+          <p>Geen sjabloon. Een site die past bij uw bedrijf en uw klanten overtuigt, gebouwd om te laten bellen of een offerte aan te vragen.</p>
+          <ul class="pillar-points">
+            <li><svg class="icon"><use href="#i-check"/></svg>Op maat ontworpen, geen bouwpakket</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Werkt goed op elk scherm</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Eén duidelijke actie per pagina</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-bolt"/></svg></div>
+          <h3>Automatisering</h3>
+          <p>Zodra de website als basis staat, help ik met het terugkerende werk erachter, zodat er minder blijft liggen voor 's avonds.</p>
+          <ul class="pillar-points">
+            <li><svg class="icon"><use href="#i-check"/></svg>Offertes sneller de deur uit</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Planning die zichzelf bijhoudt</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Opvolging die niet vergeten wordt</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface-alt)" id="voorbeeldwerk">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Voorbeeldwerk</h2>
+        <p>Een uitgewerkte demo, gemaakt om te laten zien hoe dit er in de praktijk uitziet.</p>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-visual">
+          <span class="tag">DEMO-PROJECT</span>
+          <div class="live-preview" id="livePreview">
+            <iframe src="demo/" title="Live voorbeeld: Schildersbedrijf Bosma" loading="lazy" id="previewFrame"></iframe>
+          </div>
+        </div>
+        <div class="work-body">
+          <h3>Website-redesign voor een lokaal bedrijf</h3>
+          <p>Een volledig uitgewerkte demo (in dit geval voor een schildersbedrijf) die laat zien hoe een moderne, conversiegerichte website voor een lokaal bedrijf eruit kan zien: heldere diensten, een duidelijke offerteaanvraag en een opzet die vertrouwen wekt.</p>
+          <a href="demo/" class="btn btn-primary">Bekijk de demo<svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="over-mij">
+    <div class="container about-grid reveal">
+      <div class="geo-panel about-visual">
+        <img src="branding/johan-bouma.jpg" alt="Johan Bouma" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div>
+        <h2 style="margin-bottom:6px">Over mij</h2>
+        <p>Ik ben Johan Bouma, gevestigd in Groningen. Ik run zelf een webshop en werk dagelijks met conversie, klantgedrag en automatisering.</p>
+        <p>Boumax is ontstaan vanuit een simpele observatie: veel lokale bedrijven lopen achter op wat er digitaal mogelijk is. Ik help daarbij op twee manieren: met een website die daadwerkelijk aanvragen oplevert, en met het automatiseren van het terugkerende werk erachter, zoals offertes, planning en opvolging.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <div>
+          <h2>Benieuwd wat een nieuwe website voor uw bedrijf kan doen?</h2>
+          <p>Stuur een bericht of bel even. Vrijblijvend, geen verplichtingen.</p>
+          <a href="mailto:info@boumax.nl" class="btn btn-primary">Stuur een e-mail</a>
+        </div>
+        <div class="contact-lines">
+          <div class="contact-line"><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+31627435394">06 27 43 53 94</a></div>
+          <div class="contact-line">
+            <svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@boumax.nl">info@boumax.nl</a>
+            <button type="button" class="copy-inline-btn" id="copyEmailBtn" data-email="info@boumax.nl" aria-label="E-mailadres kopiëren" title="E-mailadres kopiëren">
+              <svg class="icon" id="copyEmailIcon"><use href="#i-copy"/></svg>
+            </button>
+          </div>
+          <div class="contact-line"><svg class="icon"><use href="#i-pin"/></svg>Groningen, Drenthe en Friesland</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <a href="#main" class="brand"><span class="wordmark on-dark">BOUM<span class="accent">A</span>X</span></a>
+      <div class="footer-links">
+        <a href="#wat-ik-doe">Wat ik doe</a>
+        <a href="#voorbeeldwerk">Voorbeeldwerk</a>
+        <a href="#over-mij">Over mij</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Boumax, Kolonelsdiep 5, 9821 TR Oldekerk · KvK 65540344 · BTW NL001448254B65 · <a href="privacy.html" style="color:inherit">Privacyverklaring</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  function scalePreview(){
+    var wrap = document.getElementById("livePreview");
+    var frame = document.getElementById("previewFrame");
+    if(!wrap || !frame) return;
+    var scale = wrap.clientWidth / 1400;
+    frame.style.transform = "scale(" + scale + ")";
+  }
+  scalePreview();
+  window.addEventListener("resize", scalePreview);
+  window.addEventListener("load", scalePreview);
+
+  // Subtle cursor tilt on the hero automation network (desktop, fine pointer only)
+  var automation = document.getElementById("automation");
+  var reduceMotionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var fineHoverMQ = window.matchMedia("(hover: hover) and (pointer: fine)");
+  if(automation && fineHoverMQ.matches && !reduceMotionMQ.matches){
+    var tiltTicking = false;
+    var tiltX = 0, tiltY = 0;
+    automation.addEventListener("mousemove", function(e){
+      var rect = automation.getBoundingClientRect();
+      var nx = (e.clientX - rect.left) / rect.width - 0.5;
+      var ny = (e.clientY - rect.top) / rect.height - 0.5;
+      tiltX = ny * -1.4;
+      tiltY = nx * 1.4;
+      if(!tiltTicking){
+        tiltTicking = true;
+        requestAnimationFrame(function(){
+          automation.style.transform = "perspective(1000px) rotateX(" + tiltX.toFixed(2) + "deg) rotateY(" + tiltY.toFixed(2) + "deg)";
+          tiltTicking = false;
+        });
+      }
+    });
+    automation.addEventListener("mouseleave", function(){
+      automation.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    });
+  }
+
+  // Count-up animation for the "uren bespaard" stat
+  var statNum = document.querySelector(".stat-num");
+  if(statNum){
+    var statTarget = parseFloat(statNum.textContent.replace(",", "."));
+    if(reduceMotionMQ.matches){
+      statNum.textContent = statTarget.toFixed(1).replace(".", ",") + " uur";
+    } else {
+      statNum.textContent = "0 uur";
+      setTimeout(function(){
+        var duration = 1100;
+        var t0 = null;
+        function tick(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          statNum.textContent = (statTarget * eased).toFixed(1).replace(".", ",") + " uur";
+          if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }, 2400);
+    }
+  }
+
+  var copyEmailBtn = document.getElementById("copyEmailBtn");
+  if(copyEmailBtn){
+    var copyEmailIcon = document.getElementById("copyEmailIcon");
+    var copyResetTimer = null;
+    copyEmailBtn.addEventListener("click", function(){
+      var email = copyEmailBtn.getAttribute("data-email");
+      function showCopied(){
+        copyEmailBtn.classList.add("copied");
+        copyEmailIcon.innerHTML = '<use href="#i-check"/>';
+        copyEmailBtn.setAttribute("title", "Gekopieerd!");
+        clearTimeout(copyResetTimer);
+        copyResetTimer = setTimeout(function(){
+          copyEmailBtn.classList.remove("copied");
+          copyEmailIcon.innerHTML = '<use href="#i-copy"/>';
+          copyEmailBtn.setAttribute("title", "E-mailadres kopiëren");
+        }, 2200);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).then(showCopied, function(){
+          window.prompt("Kopieer het e-mailadres:", email);
+        });
+      } else {
+        window.prompt("Kopieer het e-mailadres:", email);
+      }
+    });
+  }
+
+  var navToggle = document.getElementById("navToggle");
+  var mobileMenu = document.getElementById("mobileMenu");
+  var navToggleIcon = document.getElementById("navToggleIcon");
+  navToggle.addEventListener("click", function(){
+    var isOpen = mobileMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggleIcon.innerHTML = isOpen ? '<use href="#i-close"/>' : '<use href="#i-menu"/>';
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      mobileMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggleIcon.innerHTML = '<use href="#i-menu"/>';
+    });
+  });
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if("IntersectionObserver" in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add("in"); io.unobserve(entry.target); }
+      });
+    }, {threshold:0.15});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
