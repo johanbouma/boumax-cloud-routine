@@ -1,0 +1,39 @@
+name: Sync missing demos van boumax.nl
+
+on:
+  schedule:
+    # 08:20 Europe/Amsterdam in de zomer (UTC+2) = 06:20 UTC.
+    # Let op: verschuift een uur bij de overgang naar wintertijd eind
+    # oktober, dan wordt dit weer 07:20 UTC voor dezelfde lokale tijd.
+    - cron: "20 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync ontbrekende demo-mappen vanaf Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: python3 scripts/sync_missing_demos.py
+
+      - name: Commit en push als er iets veranderd is
+        run: |
+          git config user.name "boumax-sync-bot"
+          git config user.email "actions@github.com"
+          git add deploy/
+          if git diff --cached --quiet; then
+            echo "Niets te committen."
+          else
+            git commit -m "Sync: ontbrekende demo's toegevoegd vanaf boumax.nl"
+            git push
+          fi
