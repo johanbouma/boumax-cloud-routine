@@ -272,6 +272,19 @@
   .footer-links{display:flex;gap:22px;flex-wrap:wrap}
   .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.42)}
 
+  /* ---------- Veelgestelde vragen ---------- */
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-left:3px solid transparent;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .faq-item[open]{border-left-color:var(--accent)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:21px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:600;font-size:15.5px;color:var(--ink)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-toggle{width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;font-weight:700;line-height:1}
+  .faq-item[open] summary{border-bottom:1px solid var(--border)}
+  .faq-item[open] .faq-toggle::before{content:"\2212"}
+  .faq-toggle::before{content:"+"}
+  .faq-answer{padding:2px 24px 22px;font-size:15px;line-height:1.65}
+  .faq-answer a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
@@ -300,6 +313,7 @@
       <a href="#wat-ik-doe">Wat ik doe</a>
       <a href="#voorbeeldwerk">Voorbeeldwerk</a>
       <a href="#over-mij">Over mij</a>
+      <a href="#veelgestelde-vragen">Vragen</a>
       <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:14px">
@@ -313,6 +327,7 @@
     <a href="#wat-ik-doe">Wat ik doe</a>
     <a href="#voorbeeldwerk">Voorbeeldwerk</a>
     <a href="#over-mij">Over mij</a>
+    <a href="#veelgestelde-vragen">Vragen</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
@@ -450,7 +465,38 @@
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section" style="background:var(--surface-alt);padding-bottom:48px" id="veelgestelde-vragen">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Veelgestelde vragen</h2>
+        <p>Dit wilt u waarschijnlijk weten voordat we beginnen.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item" open>
+          <summary>Wat kost een website bij Boumax?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Dat hangt af van wat u nodig heeft. Een eenvoudige website zit rond de €500 tot €1000. Met extra&#39;s zoals een fotogalerij of aanvraagformulier zit u op €1000 tot €2000. Wilt u iets volledig op maat, met bijvoorbeeld een koppeling naar automatisering, dan begint dat vanaf €2500. Neem gerust contact op voor een concrete prijs voor uw situatie.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe lang duurt het voordat mijn website live staat?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Voor een standaard website reken ik op een paar dagen tot een week, afhankelijk van uw wensen. U blijft steeds op de hoogte van de voortgang.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Moet ik overstappen van mijn huidige hosting of domeinnaam?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Nee, dat hoeft niet. Uw bestaande domeinnaam kan gewoon blijven wijzen naar de nieuwe website: de techniek daarachter regel ik.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Kan ik niet gewoon zelf iets in elkaar zetten?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Dat kan zeker, en voor sommige bedrijven is dat prima. Het verschil zit erin dat ik niet alleen een website bouw, maar ook meedenk over wat daarna gebeurt: hoe een aanvraag bij u binnenkomt en hoe u die opvolgt.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wat gebeurt er met mijn gegevens?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Alleen wat nodig is om de website (en eventueel de e-mailfunctie) te laten werken. Meer daarover leest u in de <a href="privacy.html">privacyverklaring</a>.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:48px" id="contact">
     <div class="container">
       <div class="contact-card reveal">
         <div>
@@ -482,6 +528,7 @@
         <a href="#wat-ik-doe">Wat ik doe</a>
         <a href="#voorbeeldwerk">Voorbeeldwerk</a>
         <a href="#over-mij">Over mij</a>
+        <a href="#veelgestelde-vragen">Vragen</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
