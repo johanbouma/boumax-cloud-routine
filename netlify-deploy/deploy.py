@@ -14,6 +14,7 @@ from __future__ import annotations
 import io
 import json
 import sys
+import time
 import urllib.error
 import urllib.request
 import zipfile
@@ -25,6 +26,9 @@ DEPLOY_DIR = PROJECT_DIR.parent / "deploy"
 
 SITE_ID = "d37dcd8a-30ab-498e-a29d-f021c5999ac5"  # boumax.nl
 API_URL = f"https://api.netlify.com/api/v1/sites/{SITE_ID}/deploys"
+UPLOAD_TIMEOUT_S = 90
+STATUS_POLL_TIMEOUT_S = 60
+STATUS_POLL_INTERVAL_S = 3
 
 
 def load_env(path: Path) -> dict:
@@ -47,6 +51,27 @@ def build_zip(source_dir: Path) -> bytes:
             if path.is_file():
                 zf.write(path, path.relative_to(source_dir))
     return buffer.getvalue()
+
+
+def poll_deploy_status(deploy_id: str, token: str) -> dict:
+    """Vraagt kort (begrensd, max STATUS_POLL_TIMEOUT_S) de deploy-status op
+    totdat Netlify 'ready' of 'error' meldt, i.p.v. te vertrouwen dat een
+    geslaagde upload ook een geslaagde publicatie betekent."""
+    status_url = f"https://api.netlify.com/api/v1/deploys/{deploy_id}"
+    deadline = time.monotonic() + STATUS_POLL_TIMEOUT_S
+    last_body: dict = {}
+    while time.monotonic() < deadline:
+        req = urllib.request.Request(status_url, headers={"Authorization": f"Bearer {token}"})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                last_body = json.loads(resp.read().decode("utf-8"))
+        except (urllib.error.URLError, TimeoutError):
+            time.sleep(STATUS_POLL_INTERVAL_S)
+            continue
+        if last_body.get("state") in ("ready", "error"):
+            return last_body
+        time.sleep(STATUS_POLL_INTERVAL_S)
+    return last_body
 
 
 def main() -> int:
@@ -79,18 +104,53 @@ def main() -> int:
         },
     )
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=UPLOAD_TIMEOUT_S) as resp:
             body = json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         print(f"Deploy mislukt (HTTP {exc.code}). Controleer het token.", file=sys.stderr)
         return 1
+    except (urllib.error.URLError, TimeoutError) as exc:
+        print(f"Deploy mislukt: kon Netlify niet bereiken ({exc}).", file=sys.stderr)
+        return 1
 
-    state = body.get("state", "onbekend")
+    deploy_id = body.get("id")
     deploy_url = body.get("deploy_ssl_url") or body.get("deploy_url")
-    print(f"Status: {state}")
+    print(f"Geupload, status: {body.get('state', 'onbekend')}")
     if deploy_url:
         print(f"Preview: {deploy_url}")
-    print("Live op: https://boumax.nl (kan een paar seconden duren om te verwerken)")
+
+    if not deploy_id:
+        print("Waarschuwing: geen deploy-ID ontvangen, kon einduitkomst niet verifieren.", file=sys.stderr)
+        return 0
+
+    print("Wachten op definitieve status van Netlify ...")
+    final = poll_deploy_status(deploy_id, token)
+    final_state = final.get("state", "onbekend")
+    summary = final.get("summary") or {}
+
+    if final_state == "ready":
+        print("Bevestigd: deploy is 'ready' en live op https://boumax.nl")
+        if summary.get("messages"):
+            for m in summary["messages"]:
+                title = m.get("title") or m.get("description")
+                if title:
+                    print(f"  - {title}")
+    elif final_state == "error":
+        print(
+            f"Deploy is mislukt volgens Netlify (state=error): "
+            f"{final.get('error_message', 'geen foutdetail beschikbaar')}",
+            file=sys.stderr,
+        )
+        return 1
+    else:
+        print(
+            f"Waarschuwing: status na {STATUS_POLL_TIMEOUT_S}s nog steeds "
+            f"'{final_state}', niet bevestigd als 'ready'. Controleer handmatig op "
+            "https://app.netlify.com.",
+            file=sys.stderr,
+        )
+        return 1
+
     return 0
 
 

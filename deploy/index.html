@@ -13,6 +13,34 @@
 <meta property="og:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
 <meta property="og:description" content="Meer aanvragen, minder rompslomp.">
 <meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://boumax.nl/">
+<meta property="og:image" content="https://boumax.nl/branding/boumax-og-image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
+<meta name="twitter:description" content="Meer aanvragen, minder rompslomp.">
+<meta name="twitter:image" content="https://boumax.nl/branding/boumax-og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Boumax",
+  "url": "https://boumax.nl/",
+  "telephone": "+31627435394",
+  "email": "info@boumax.nl",
+  "image": "https://boumax.nl/branding/boumax-og-image.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kolonelsdiep 5",
+    "postalCode": "9821 TR",
+    "addressLocality": "Oldekerk",
+    "addressCountry": "NL"
+  },
+  "areaServed": ["Groningen", "Drenthe", "Friesland"],
+  "description": "Boumax bouwt conversiegerichte websites en automatisering voor lokale bedrijven in Groningen, Drenthe en Friesland.",
+  "founder": { "@type": "Person", "name": "Johan Bouma" },
+  "sameAs": ["https://www.linkedin.com/company/boumax-nl"]
+}
+</script>
 <style>
   @font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url("branding/fonts/outfit-500.woff2") format("woff2")}
   @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("branding/fonts/outfit-600.woff2") format("woff2")}
@@ -20,14 +48,11 @@
   @font-face{font-family:"Outfit";font-style:normal;font-weight:800;font-display:swap;src:url("branding/fonts/outfit-800.woff2") format("woff2")}
 </style>
 <!--
-  BOUMAX.NL — hoofdsite van Johan Bouma / Boumax.
-  VOOR LIVEGANG NOG INVULLEN:
-   1. Telefoonnummer (huidig: placeholder)
-   2. KvK-nummer (huidig: placeholder)
-   3. Eigen foto i.p.v. het geometrische avatar-paneel bij "Over mij" (Johan heeft er inmiddels een op LinkedIn staan)
-   4. Link naar voorbeeldwerk moet naar een echte gehoste URL wijzen zodra de demo online staat
-      (nu een relatief pad naar demo/, werkt alleen lokaal)
-   5. Privacyverklaring / algemene voorwaarden zijn placeholder-links
+  BOUMAX.NL — hoofdsite van Johan Bouma / Boumax. Deze map is de brondirectory;
+  deploy/ bevat een kopie met aangepaste (niet-relatieve) paden voor Netlify.
+  Bij wijzigingen aan deze site: beide index.html's bijwerken.
+  NOG OPEN:
+   1. Algemene voorwaarden zijn nog niet toegevoegd (privacyverklaring staat live in privacy.html)
 -->
 <style>
   :root{
@@ -109,15 +134,6 @@
   /* ---------- Hero (dark, spatial automation network) ---------- */
   .hero{position:relative;padding:128px 0 100px;background:#06080C;overflow:hidden;isolation:isolate;min-height:900px;display:flex;align-items:center}
   @media (max-width:960px){ .hero{min-height:0;padding:100px 0 64px} }
-  .hero::before{content:"";position:absolute;top:-20%;right:-8%;width:60%;aspect-ratio:1;background:radial-gradient(circle,rgba(57,115,255,.18),transparent 65%);pointer-events:none;z-index:0}
-  .hero::after{
-    content:"";position:absolute;inset:0;
-    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-    background-size:56px 56px;
-    -webkit-mask-image:radial-gradient(ellipse at 35% 20%,black 0%,transparent 70%);
-    mask-image:radial-gradient(ellipse at 35% 20%,black 0%,transparent 70%);
-    pointer-events:none;z-index:0;
-  }
   .hero-fade-bottom{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}
   .hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
   @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
@@ -132,9 +148,9 @@
   .hero h1 span:last-child{color:#99A6C4;animation-delay:.8s}
   .hero p{color:#999FA9;margin-top:22px;font-size:17.5px;max-width:46ch;animation-delay:1s}
   .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;animation-delay:1.15s}
-  .hero-trust{margin-top:20px;font-size:12.5px;color:#646A75;animation-delay:1.25s}
-  .btn-cobalt{background:#3973FF;color:#fff;box-shadow:0 8px 22px rgba(57,115,255,.32);border-radius:12px}
-  .btn-cobalt:hover{background:#5488FF;box-shadow:0 10px 30px rgba(57,115,255,.48);transform:translateY(-2px)}
+  .hero-trust{margin-top:20px;font-size:12.5px;color:#999FA9;animation-delay:1.25s}
+  .btn-cobalt{background:#3973FF;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);border-radius:12px}
+  .btn-cobalt:hover{background:#5488FF;box-shadow:0 6px 20px rgba(0,0,0,.4);transform:translateY(-2px)}
   .btn-cobalt .icon{transition:transform .2s ease}
   .btn-cobalt:hover .icon{transform:translateX(4px)}
   .btn-ghost-dark{background:transparent;color:#F7F8FA;border:1.5px solid rgba(255,255,255,.16);border-radius:12px}
@@ -260,7 +276,7 @@
   .contact-line{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff}
   .contact-line .icon{color:#9FC0E0;flex-shrink:0}
   .contact-card .btn-primary{margin-top:22px;background:#fff;color:var(--accent-dark);align-self:start}
-  .copy-inline-btn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin-left:2px;border-radius:6px;color:#9FC0E0;flex-shrink:0}
+  .copy-inline-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:2px;border-radius:10px;color:#9FC0E0;flex-shrink:0}
   .copy-inline-btn .icon{width:14px;height:14px}
   .copy-inline-btn:hover{color:#fff;background:rgba(255,255,255,.08)}
   .copy-inline-btn.copied{color:#2AC769}
@@ -270,7 +286,7 @@
   .footer-row a{font-size:13.5px;color:rgba(255,255,255,.6)}
   .footer-row a:hover{color:#fff}
   .footer-links{display:flex;gap:22px;flex-wrap:wrap}
-  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.42)}
+  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.6)}
 
   /* ---------- Veelgestelde vragen ---------- */
   .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px}
@@ -339,7 +355,7 @@
     <div class="container hero-grid">
       <div>
         <span class="hero-eyebrow hero-fade" style="animation-delay:.4s">Bouw minder handmatig. Laat meer automatisch gaan.</span>
-        <h1><span class="hero-fade" style="animation-delay:.55s">Je bedrijf kan slimmer werken.</span><span class="hero-fade" style="animation-delay:.8s">Wij bouwen het systeem erachter.</span></h1>
+        <h1><span class="hero-fade" style="animation-delay:.55s">Je bedrijf kan slimmer werken.</span><span class="hero-fade" style="animation-delay:.8s">Ik bouw het systeem erachter.</span></h1>
         <p class="hero-fade" style="animation-delay:1s">Boumax bouwt websites en automatiseert processen, zodat minder handmatig hoeft en meer vanzelf gebeurt.</p>
         <div class="hero-ctas hero-fade" style="animation-delay:1.15s">
           <a href="#wat-ik-doe" class="btn btn-cobalt">Ontdek wat er mogelijk is<svg class="icon" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
@@ -349,7 +365,7 @@
       </div>
 
       <div class="automation hero-fade" id="automation" aria-hidden="true">
-        <span class="hero-status hero-fade" style="animation-delay:1.8s"><span class="pulse-dot"></span>Systemen actief</span>
+        <span class="hero-status hero-fade" style="animation-delay:1.8s"><span class="pulse-dot"></span>Voorbeeld van een automatische opvolging</span>
 
         <svg viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M15,30 L12,38" style="animation-delay:0s,0s"/>
@@ -393,7 +409,7 @@
 
         <div class="stat-card">
           <div class="stat-num">12,4 uur</div>
-          <div class="stat-label">deze week bespaard</div>
+          <div class="stat-label">bespaard in dit voorbeeld</div>
         </div>
       </div>
     </div>
@@ -472,9 +488,13 @@
         <p>Dit wilt u waarschijnlijk weten voordat we beginnen.</p>
       </div>
       <div class="faq-list reveal">
-        <details class="faq-item" open>
+        <details class="faq-item">
           <summary>Wat kost een website bij Boumax?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Dat hangt af van wat u nodig heeft. Een eenvoudige website zit rond de €500 tot €1000. Met extra&#39;s zoals een fotogalerij of aanvraagformulier zit u op €1000 tot €2000. Wilt u iets volledig op maat, met bijvoorbeeld een koppeling naar automatisering, dan begint dat vanaf €2500. Neem gerust contact op voor een concrete prijs voor uw situatie.</div>
+          <div class="faq-answer">Dat hangt af van wat u nodig heeft. Een eenvoudige website zit rond de €500 tot €1000. Met extra&#39;s zoals een fotogalerij of aanvraagformulier zit u op €1000 tot €2000. Wilt u iets volledig op maat, met bijvoorbeeld een koppeling naar automatisering, dan begint dat vanaf €2500. Daarna betaalt u alleen nog €49 per maand voor onderhoud, verder geen verborgen kosten. Neem gerust contact op voor een concrete prijs voor uw situatie.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Betaal ik na oplevering nog iets door?<span class="faq-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-answer">Ja, €49 per maand voor onderhoud. Daarvoor blijft de website technisch in de lucht en up-to-date, en verwerk ik tot twee kleine wijzigingen per maand voor u, bijvoorbeeld nieuwe openingstijden, prijzen of foto&#39;s. Grotere aanpassingen, zoals een nieuwe pagina, bespreken we apart.</div>
         </details>
         <details class="faq-item">
           <summary>Hoe lang duurt het voordat mijn website live staat?<span class="faq-toggle" aria-hidden="true"></span></summary>
@@ -515,6 +535,7 @@
             <button type="button" class="copy-inline-btn" id="copyEmailBtn" data-email="info@boumax.nl" aria-label="E-mailadres kopiëren" title="E-mailadres kopiëren">
               <svg class="icon" id="copyEmailIcon"><use href="#i-copy"/></svg>
             </button>
+            <span class="visually-hidden" role="status" aria-live="polite" id="copyEmailStatus"></span>
           </div>
           <div class="contact-line"><svg class="icon"><use href="#i-pin"/></svg>Groningen, Drenthe en Friesland</div>
         </div>
@@ -608,6 +629,7 @@
   var copyEmailBtn = document.getElementById("copyEmailBtn");
   if(copyEmailBtn){
     var copyEmailIcon = document.getElementById("copyEmailIcon");
+    var copyEmailStatus = document.getElementById("copyEmailStatus");
     var copyResetTimer = null;
     copyEmailBtn.addEventListener("click", function(){
       var email = copyEmailBtn.getAttribute("data-email");
@@ -615,11 +637,13 @@
         copyEmailBtn.classList.add("copied");
         copyEmailIcon.innerHTML = '<use href="#i-check"/>';
         copyEmailBtn.setAttribute("title", "Gekopieerd!");
+        if(copyEmailStatus){ copyEmailStatus.textContent = "E-mailadres gekopieerd naar klembord."; }
         clearTimeout(copyResetTimer);
         copyResetTimer = setTimeout(function(){
           copyEmailBtn.classList.remove("copied");
           copyEmailIcon.innerHTML = '<use href="#i-copy"/>';
           copyEmailBtn.setAttribute("title", "E-mailadres kopiëren");
+          if(copyEmailStatus){ copyEmailStatus.textContent = ""; }
         }, 2200);
       }
       if(navigator.clipboard && navigator.clipboard.writeText){
@@ -639,6 +663,18 @@
     var isOpen = mobileMenu.classList.toggle("open");
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     navToggleIcon.innerHTML = isOpen ? '<use href="#i-close"/>' : '<use href="#i-menu"/>';
+    if(isOpen){
+      var firstLink = mobileMenu.querySelector("a");
+      if(firstLink) firstLink.focus();
+    }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && mobileMenu.classList.contains("open")){
+      mobileMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggleIcon.innerHTML = '<use href="#i-menu"/>';
+      navToggle.focus();
+    }
   });
   mobileMenu.querySelectorAll("a").forEach(function(a){
     a.addEventListener("click", function(){

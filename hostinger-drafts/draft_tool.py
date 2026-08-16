@@ -18,11 +18,15 @@ import html
 import imaplib
 import os
 import re
+import socket
+import ssl
 import sys
 import time
 from email.message import EmailMessage
 from email.utils import formatdate, make_msgid
 from pathlib import Path
+
+CONNECT_TIMEOUT_S = 15
 
 PROJECT_DIR = Path(__file__).resolve().parent
 ENV_PATH = PROJECT_DIR / ".env"
@@ -279,16 +283,49 @@ def main() -> int:
 
     print(f"\nVerbinden met {host}:{port} als {username} ...")
     try:
-        conn = imaplib.IMAP4_SSL(host, port)
-        conn.login(username, password)
-    except Exception:
-        # Bewust geen exception-tekst printen: die kan servergegevens
-        # bevatten. Het wachtwoord komt hier nooit in terecht.
+        conn = imaplib.IMAP4_SSL(host, port, timeout=CONNECT_TIMEOUT_S)
+    except (socket.timeout, TimeoutError):
         print(
-            "Kon niet inloggen op de mailbox. Controleer host, poort, "
-            "gebruikersnaam en wachtwoord in .env.",
+            f"Verbinden met {host}:{port} duurde langer dan {CONNECT_TIMEOUT_S}s "
+            "(timeout). Controleer host/poort of de netwerkverbinding.",
             file=sys.stderr,
         )
+        return 1
+    except ssl.SSLError:
+        print(
+            f"TLS/SSL-fout bij het verbinden met {host}:{port}. Controleer of "
+            "host en poort kloppen.",
+            file=sys.stderr,
+        )
+        return 1
+    except OSError as exc:
+        print(
+            f"Kon geen verbinding maken met {host}:{port} ({exc.__class__.__name__}). "
+            "Controleer host, poort en netwerktoegang.",
+            file=sys.stderr,
+        )
+        return 1
+
+    try:
+        conn.login(username, password)
+    except imaplib.IMAP4.error as exc:
+        # Bewust geen ruwe exception-tekst printen: die kan servergegevens
+        # bevatten. Het wachtwoord komt hier nooit in terecht, maar we
+        # classificeren de foutsoort wel zodat je niet elke fout als
+        # "inloggen mislukt" hoeft te lezen.
+        melding = str(exc).upper()
+        if "AUTHENTICATIONFAILED" in melding or "LOGIN" in melding:
+            print(
+                "Inloggen mislukt: gebruikersnaam of wachtwoord onjuist "
+                "(AUTHENTICATIONFAILED). Controleer MAIL_USERNAME/MAIL_PASSWORD in .env.",
+                file=sys.stderr,
+            )
+        else:
+            print(
+                "Inloggen mislukt: de mailserver wees de login af om een "
+                "andere reden dan gebruikersnaam/wachtwoord.",
+                file=sys.stderr,
+            )
         return 1
 
     try:
