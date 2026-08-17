@@ -2,23 +2,33 @@
 Netlify Deploy Tool - deployt boumax.nl via Netlify's API (Zip-based deploy),
 zonder Netlify CLI.
 
-Gebruik:
+Gebruik (lokaal, met de volledige A+ sync):
     python deploy.py
+
+Gebruik (cloud-routine): python deploy.py --cloud
+    Deployt gewoon de lokale deploy/-map zoals die al is (het oorspronkelijke,
+    simpele gedrag van voor A+). Doet GEEN sync_with_github-stap, importeert
+    dat bestand zelfs niet - de cloud-sandbox kloont dit script mee vanuit de
+    publieke GitHub-repo, waar sync_with_github.py bewust NIET in staat (dat
+    script kan daar toch niet pushen: geen credentials, en het zou proberen
+    dezelfde repo opnieuw te klonen). Zonder --cloud zou de import van
+    sync_with_github hier crashen met ModuleNotFoundError.
 
 Leest het token uit een lokaal .env-bestand (nooit in de chat of in dit
 bestand). Toont of logt het token nooit.
 
-Sinds de A+ sync (17-08-2026): dit script deployt NOOIT meer rechtstreeks de
-lokale deploy/-map. Het roept eerst sync_with_github.sync() aan, die lokale
-wijzigingen en GitHub (waar de dagelijkse cloud-routine ook uit put)
-tweerichtings samenvoegt en pusht. Alleen bij een succesvolle push wordt de
-zojuist gepushte GitHub-snapshot gedeployd - nooit de ruwe lokale map. Lukt
-de sync niet, dan gebeurt er geen deploy. Zie sync_with_github.py voor de
-volledige uitleg en het padbeleid.
+Sinds de A+ sync (17-08-2026): het lokale (niet-cloud) pad deployt NOOIT meer
+rechtstreeks de lokale deploy/-map. Het roept eerst sync_with_github.sync()
+aan, die lokale wijzigingen en GitHub (waar de dagelijkse cloud-routine ook
+uit put) tweerichtings samenvoegt en pusht. Alleen bij een succesvolle push
+wordt de zojuist gepushte GitHub-snapshot gedeployd - nooit de ruwe lokale
+map. Lukt de sync niet, dan gebeurt er geen deploy. Zie sync_with_github.py
+voor de volledige uitleg en het padbeleid.
 """
 
 from __future__ import annotations
 
+import argparse
 import io
 import json
 import subprocess
@@ -32,9 +42,7 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = PROJECT_DIR.parent
 ENV_PATH = PROJECT_DIR / ".env"
-
-sys.path.insert(0, str(ROOT_DIR))
-import sync_with_github  # noqa: E402
+DEPLOY_DIR = ROOT_DIR / "deploy"  # alleen gebruikt in --cloud modus
 
 REPO_URL = "https://github.com/johanbouma/boumax-cloud-routine.git"
 SITE_ID = "d37dcd8a-30ab-498e-a29d-f021c5999ac5"  # boumax.nl
@@ -103,16 +111,33 @@ def poll_deploy_status(deploy_id: str, token: str) -> dict:
 
 
 def main() -> int:
-    print("Stap 1/3: synchroniseren met GitHub voordat er gedeployd wordt ...")
-    try:
-        deploy_dir, sha = sync_with_github.sync()
-    except sync_with_github.SyncError as exc:
-        print(f"\nSync mislukt, GEEN deploy uitgevoerd:\n{exc}", file=sys.stderr)
-        return 1
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--cloud", action="store_true",
+        help="Sla de A+ sync over, deploy gewoon de lokale deploy/-map (voor de cloud-routine)."
+    )
+    args = parser.parse_args()
 
-    if not deploy_dir.exists():
-        print(f"Deploy-map niet gevonden: {deploy_dir}", file=sys.stderr)
-        return 1
+    sha = None
+    if args.cloud:
+        print("Cloud-modus: A+ sync overgeslagen, lokale deploy/-map wordt gedeployd zoals hij is.")
+        deploy_dir = DEPLOY_DIR
+        if not deploy_dir.exists():
+            print(f"Deploy-map niet gevonden: {deploy_dir}", file=sys.stderr)
+            return 1
+    else:
+        print("Stap 1/3: synchroniseren met GitHub voordat er gedeployd wordt ...")
+        sys.path.insert(0, str(ROOT_DIR))
+        import sync_with_github  # lokaal geimporteerd: bestaat niet in de cloud-kloon, zie --cloud hierboven
+        try:
+            deploy_dir, sha = sync_with_github.sync()
+        except sync_with_github.SyncError as exc:
+            print(f"\nSync mislukt, GEEN deploy uitgevoerd:\n{exc}", file=sys.stderr)
+            return 1
+
+        if not deploy_dir.exists():
+            print(f"Deploy-map niet gevonden: {deploy_dir}", file=sys.stderr)
+            return 1
 
     print("\nStap 2/3: publiceren naar Netlify ...")
     env = load_env(ENV_PATH)
@@ -125,7 +150,7 @@ def main() -> int:
         )
         return 1
 
-    if not verify_still_latest(sha):
+    if sha is not None and not verify_still_latest(sha):
         print(
             "Afgebroken: origin/main is sinds de sync alweer veranderd (waarschijnlijk "
             "heeft iets anders net gepusht). Draai het script opnieuw.",
@@ -133,7 +158,7 @@ def main() -> int:
         )
         return 1
 
-    print(f"Zip bouwen van {deploy_dir} (gepushte GitHub-snapshot {sha[:8]}) ...")
+    print(f"Zip bouwen van {deploy_dir} " + (f"(gepushte GitHub-snapshot {sha[:8]}) ..." if sha else "..."))
     zip_bytes = build_zip(deploy_dir)
     print(f"Zip-grootte: {len(zip_bytes) / 1024:.1f} KB")
 
