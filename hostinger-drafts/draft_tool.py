@@ -97,12 +97,21 @@ def linkify_html(body: str) -> str:
 
     linked = _URL_RE.sub(_wrap, escaped)
     paragraphs = [p for p in linked.split("\n\n") if p.strip()]
-    html_body = "".join(f"<p>{p.replace(chr(10), '<br>')}</p>" for p in paragraphs)
-    return (
-        "<!doctype html><html><body style=\"font-family:sans-serif;"
-        "font-size:14px;line-height:1.5;color:#111111;\">"
-        f"{html_body}</body></html>"
-    )
+    # Bewust GEEN inline kleur/achtergrond-styling meer. Eerdere pogingen
+    # (tekstkleur, tekstkleur+achtergrond, color-scheme meta-tags) faalden
+    # allemaal in Apple Mail's BEWERKweergave van een concept: die neemt een
+    # expliciete tekstkleur letterlijk over in zijn native editor, maar niet
+    # de achtergrondkleur (die blijft de eigen donkere-modus-achtergrond van
+    # de app) - dus donkere tekst op zwart, bijna onleesbaar. Zonder enige
+    # kleur-styling gebruikt elke client (Hostinger-webmail, Apple Mail, in
+    # zowel lees- als bewerkweergave) zijn eigen correcte licht/donker-kleur.
+    #
+    # Ook bewust GEEN <p>-tags: die hebben een ingebouwde browser/editor-
+    # marge, en Apple Mail's bewerkweergave telde die marge blijkbaar BOVENOP
+    # de bedoelde witregel tussen alinea's op - vandaar de dubbele "enters".
+    # Losse <br>-regeleindes hebben geen ingebouwde marge, dus twee <br>'s
+    # geven precies een normale witregel, niet meer.
+    return "<br><br>".join(p.replace(chr(10), "<br>") for p in paragraphs)
 
 
 def build_message(from_addr: str, to_addr: str, subject: str, body: str) -> EmailMessage:
