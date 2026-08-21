@@ -114,7 +114,9 @@ def linkify_html(body: str) -> str:
     return "<br><br>".join(p.replace(chr(10), "<br>") for p in paragraphs)
 
 
-def build_message(from_addr: str, to_addr: str, subject: str, body: str) -> EmailMessage:
+def build_message(
+    from_addr: str, to_addr: str, subject: str, body: str, in_reply_to: str | None = None
+) -> EmailMessage:
     msg = EmailMessage()
     msg["From"] = from_addr
     msg["To"] = to_addr
@@ -122,6 +124,12 @@ def build_message(from_addr: str, to_addr: str, subject: str, body: str) -> Emai
     msg["Date"] = formatdate(localtime=True)
     domain = from_addr.split("@")[-1] if "@" in from_addr else "boumax.nl"
     msg["Message-ID"] = make_msgid(domain=domain)
+    if in_reply_to:
+        # Antwoord in dezelfde e-mailthread: In-Reply-To/References naar het
+        # Message-ID van de oorspronkelijke mail, zodat mailclients dit als
+        # reactie in dezelfde draad tonen i.p.v. een nieuwe, losse mail.
+        msg["In-Reply-To"] = in_reply_to
+        msg["References"] = in_reply_to
     msg.set_content(body)
     msg.add_alternative(linkify_html(body), subtype="html")
     return msg
@@ -246,6 +254,10 @@ def main() -> int:
         "--body-file",
         help="Pad naar een .txt-bestand met de antwoordtekst (anders interactief invoeren)",
     )
+    parser.add_argument(
+        "--in-reply-to",
+        help="Message-ID (met <>) van de oorspronkelijke mail, voor een antwoord in dezelfde thread",
+    )
     args = parser.parse_args()
 
     config = get_config()
@@ -257,7 +269,7 @@ def main() -> int:
         return 1
 
     from_addr = config.get("MAIL_USERNAME") or "voorbeeld@boumax.nl"
-    msg = build_message(from_addr, to_addr, subject, body)
+    msg = build_message(from_addr, to_addr, subject, body, in_reply_to=args.in_reply_to)
 
     if dry_run:
         print("\n=== DRY RUN - er wordt NIETS opgeslagen in de mailbox ===")

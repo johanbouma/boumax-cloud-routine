@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oetze Schilderwerken - Schilderwerk in Leek en omgeving</title>
+<meta name="description" content="Oetze Schilderwerken verzorgt binnen- en buitenschilderwerk, houtrotreparatie en gevelonderhoud in Leek en omgeving. Vrijblijvende offerte aanvragen.">
+<link rel="canonical" href="https://boumax.nl/demo-oetze-schilderwerken/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oetze Schilderwerken - Schilderwerk in Leek en omgeving">
+<meta property="og:description" content="Vakwerk dat jaren meegaat. Schilderwerk, houtrotreparatie en gevelonderhoud voor woningen in Leek en omgeving.">
+<meta property="og:locale" content="nl_NL">
+<meta name="robots" content="noindex, nofollow">
+<!--
+  DEMO-SJABLOON — Boumax Automatiseringen
+  Dit is een generiek, herbruikbaar sjabloon met een FICTIEF bedrijf (Schildersbedrijf Bosma).
+  Alle NAW-gegevens, het telefoonnummer, de reviews en de projectfoto's zijn placeholders.
+  VOOR VERZENDING NAAR EEN ECHTE PROSPECT:
+   1. Bedrijfsnaam, plaatsnamen, telefoon en e-mail vervangen door de echte gegevens van de prospect.
+   2. Sectie "Reviews" NOOIT ongewijzigd laten staan bij een echt bedrijf — echte reviews plaatsen of sectie verwijderen.
+   3. Sectie "Projecten" vervangen door echt werk van de prospect (met toestemming) of duidelijk als voorbeeld laten staan.
+   4. Illustratiepanelen (.illus) vervangen door echte, gelicenseerde projectfoto's van de prospect.
+   5. noindex/nofollow meta-tag verwijderen zodra dit een live site wordt voor een betalende klant.
+-->
+<style>
+  :root{
+    --ink:#15171A;
+    --muted:#5B6169;
+    --muted-soft:#84898F;
+    --bg:#FAFAF8;
+    --surface:#FFFFFF;
+    --surface-alt:#F1F0EA;
+    --border:#E6E3DB;
+    --accent:#1C4F3F;
+    --accent-dark:#0F3428;
+    --accent-soft:#E7EFEA;
+    --accent-line:#BFD6C9;
+    --old-bg:#E8E4D8;
+    --old-ink:#3A3226;
+
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+
+    --radius-card:14px;
+    --radius-pill:999px;
+    --radius-input:8px;
+
+    --shadow-sm:0 1px 2px rgba(21,23,26,.06);
+    --shadow-md:0 10px 24px rgba(21,23,26,.08);
+    --shadow-lg:0 24px 56px rgba(21,23,26,.14);
+
+    --container:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    margin:0;
+    letter-spacing:-0.02em;
+    font-weight:700;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+  p{margin:0;color:var(--muted);line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  ul{margin:0;padding:0;list-style:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  img{max-width:100%;display:block}
+
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .skip-link{position:fixed;top:-100px;left:16px;z-index:300;background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--radius-input);transition:top .2s ease}
+  .skip-link:focus{top:16px}
+  :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+  .icon{width:1.15em;height:1.15em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
+  @media (max-width:640px){ .container{padding:0 20px} }
+
+  .section{padding:88px 0}
+  @media (max-width:768px){ .section{padding:56px 0} }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 26px;border-radius:var(--radius-pill);
+    font-weight:600;font-size:15px;white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:active{transform:translateY(1px) scale(.98)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--accent-dark);box-shadow:var(--shadow-md)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-outline-invert{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+  .btn-outline-invert:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,249,248,.92);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    backdrop-filter:blur(10px) saturate(140%);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:18px;flex-wrap:nowrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-0.01em;color:var(--ink);white-space:nowrap;flex-shrink:0}
+  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,1.6vw,26px);flex-wrap:nowrap}
+  .nav-links a{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:flex;align-items:center;gap:14px;flex-shrink:0;white-space:nowrap}
+  .nav-phone{display:flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+  .nav-toggle{display:none;padding:8px;color:var(--ink);flex-shrink:0}
+  @media (max-width:1180px){
+    .nav-phone span{display:none}
+  }
+  @media (max-width:1080px){
+    .nav-links{display:none}
+    .nav-toggle{display:flex}
+  }
+  @media (max-width:760px){
+    .nav-cta .nav-phone,
+    .nav-cta > .btn-primary{display:none}
+    .brand{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;background:var(--surface);
+    border-bottom:1px solid var(--border);padding:8px 20px 20px;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:13px 4px;font-weight:600;font-size:15.5px;color:var(--ink);border-bottom:1px solid var(--border)}
+  .mobile-menu a:last-child{border-bottom:none}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 0}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:36px} }
+  .hero h1{font-size:clamp(34px,4.6vw,52px);line-height:1.06}
+  .hero-sub{margin-top:18px;font-size:17.5px;max-width:46ch;color:var(--muted)}
+  .hero-ctas{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+
+  /* Before/after compare */
+  .compare{
+    position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);
+    aspect-ratio:4/4.05;border:1px solid var(--border);background:var(--old-bg);
+    touch-action:none;user-select:none;
+  }
+  .compare-panel{position:absolute;inset:0;display:flex;flex-direction:column}
+  .compare-old{background:var(--old-bg)}
+  .compare-new{background:var(--surface);clip-path:inset(0 0 0 50%)}
+  .mock-body{flex:1;padding:18px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+  .compare-old .mock-body{color:var(--old-ink)}
+  .mock-old-photo{width:100%;height:76px;border-radius:2px;flex-shrink:0;
+    background:repeating-linear-gradient(45deg,#DAD3BC,#DAD3BC 10px,#CFC7AC 10px,#CFC7AC 20px)}
+  .mock-old-title{font-family:"Times New Roman",Georgia,serif;font-size:21px;font-weight:700;line-height:1.15;text-decoration:underline;color:#2E2A20}
+  .mock-old-line{height:9px;width:100%;background:#CFC8AF;border-radius:2px}
+  .mock-old-line.w60{width:60%}
+  .mock-old-link{font-family:"Times New Roman",Georgia,serif;font-size:13px;color:#0000EE;text-decoration:underline}
+  .mock-old-btn{margin-top:2px;width:100%;text-align:center;background:#B7AE8E;color:#3A3226;font-size:11.5px;font-weight:700;padding:8px 14px;border-radius:3px;border:1px solid #9C9376}
+  .mock-old-tag{margin-top:auto;font-size:10.5px;color:#8B846C;font-style:italic}
+  .mock-old-counter{font-family:"Times New Roman",Georgia,serif;font-size:10px;color:#8B846C;background:#DDD8C6;align-self:flex-start;padding:2px 6px;border:1px solid #B7AE8E}
+  .mock-old-brand{font-family:"Comic Sans MS","Brush Script MT",cursive;font-size:16px;font-weight:700;color:#8B3A3A;text-align:center;letter-spacing:.02em}
+
+  /* NA: rechts uitgelijnd, zodat de tekst zichtbaar blijft binnen het onthulde deel van de slider */
+  .compare-new .mock-body{align-items:flex-end;text-align:right}
+  .mock-new-badge{align-self:flex-end;display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:var(--radius-pill);letter-spacing:.02em}
+  .mock-new-badge .icon{width:11px;height:11px}
+  .mock-new-photo{width:100%;height:88px;border-radius:12px;flex-shrink:0;
+    background:linear-gradient(135deg,var(--accent) 0%,#2E7D5E 55%,var(--accent-soft) 100%)}
+  .mock-new-eyebrow{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.03em}
+  .mock-new-title{font-size:22px;font-weight:800;line-height:1.12;color:var(--ink)}
+  .mock-new-line{height:8px;width:85%;background:var(--surface-alt);border-radius:4px}
+  .mock-new-line.w70{width:60%}
+  .mock-new-btn{margin-top:4px;text-align:center;background:var(--accent);color:#fff;font-size:12.5px;font-weight:700;padding:10px 18px;border-radius:var(--radius-pill);box-shadow:0 8px 18px rgba(28,79,63,.28)}
+  .mock-new-trust{margin-top:2px;display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--muted-soft)}
+  .mock-new-trust .icon{width:11px;height:11px;color:var(--accent)}
+  .site-chrome-nav{display:none;justify-content:flex-end;gap:12px;padding:14px 14px 8px;font-size:9.5px;font-weight:600;color:var(--muted-soft);border-bottom:1px solid rgba(0,0,0,.06)}
+  .compare-new .site-chrome-nav{display:flex}
+  .compare-handle{
+    position:absolute;top:0;bottom:0;left:50%;width:0;
+    display:flex;align-items:center;justify-content:center;
+    transform:translateX(-50%);z-index:5;
+  }
+  .compare-handle::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .compare-grip{
+    width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:var(--shadow-md);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);position:relative;z-index:2;
+  }
+  .compare-slider{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+  .compare-label{position:absolute;top:14px;font-size:11px;font-weight:800;letter-spacing:.05em;padding:5px 10px;border-radius:var(--radius-pill);z-index:3}
+  .compare-label.old{left:14px;background:rgba(58,50,38,.82);color:#fff}
+  .compare-label.new{right:14px;background:var(--accent);color:#fff}
+  .compare-caption{text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted-soft)}
+
+  /* Brush stroke divider */
+  .stroke-divider{position:relative;height:34px;margin-top:-1px}
+  .stroke-divider svg{width:100%;height:100%;display:block}
+
+  /* ---------- Trust bar ---------- */
+  .trust{background:var(--accent-dark);padding:26px 0}
+  .trust-row{display:flex;flex-wrap:wrap;gap:24px 34px;justify-content:center}
+  .trust-item{display:flex;align-items:center;gap:9px;color:#fff;font-size:14px;font-weight:600}
+  .trust-item .icon{color:#8FCBAE}
+
+  /* ---------- Section heading ---------- */
+  .head{max-width:640px;margin-bottom:44px}
+  .head h2{font-size:clamp(26px,3.2vw,36px);line-height:1.15}
+  .head p{margin-top:14px;font-size:16px}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  @media (max-width:960px){ .services-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .services-grid{grid-template-columns:1fr} }
+  .service-card{
+    display:block;border-radius:var(--radius-card);overflow:hidden;background:var(--surface);
+    border:1px solid var(--border);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent-line)}
+  .service-img{aspect-ratio:4/3;background-size:cover;background-position:center}
+  .service-body{padding:20px}
+
+  /* ---------- Brand illustration panels (replace stock photography) ---------- */
+  .illus{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    background:linear-gradient(135deg,var(--accent) 0%,#2E7D5E 60%,var(--accent-dark) 100%)}
+  .illus::before{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at 22% 20%,rgba(255,255,255,.16),transparent 55%);
+  }
+  .illus .icon{position:relative;z-index:1;width:30%;height:30%;color:rgba(255,255,255,.92);stroke-width:1.3}
+  .project-card.illus .icon{width:22%;height:22%}
+  .about-photo.illus{display:flex;flex-direction:column;gap:10px}
+  .about-photo.illus .icon{width:26%;height:26%}
+  .about-photo.illus .about-initials{position:relative;z-index:1;font-size:13px;font-weight:800;letter-spacing:.08em;color:rgba(255,255,255,.85)}
+  .service-body h3{font-size:16.5px}
+  .service-body p{margin-top:8px;font-size:14px}
+  .service-link{margin-top:14px;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--accent)}
+
+  /* ---------- Why choose ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border-radius:var(--radius-card);overflow:hidden}
+  @media (max-width:768px){ .why-grid{grid-template-columns:1fr} }
+  .why-item{background:var(--surface);padding:30px;display:flex;gap:16px}
+  .why-icon{width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .why-item h3{font-size:16px}
+  .why-item p{margin-top:6px;font-size:14.5px}
+
+  /* ---------- Werkwijze ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  @media (max-width:900px){ .steps{grid-template-columns:1fr 1fr;gap:28px 20px} }
+  @media (max-width:560px){ .steps{grid-template-columns:1fr;gap:28px} }
+  .step{position:relative;padding-right:24px}
+  .step-num{width:38px;height:38px;border-radius:50%;border:2px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+  .step-line{position:absolute;top:19px;left:38px;right:0;height:2px;background:var(--accent-line)}
+  @media (max-width:900px){ .step-line{display:none} }
+  .step h3{margin-top:16px;font-size:16px}
+  .step p{margin-top:6px;font-size:14px}
+
+  /* ---------- Projects ---------- */
+  .projects-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+  @media (max-width:900px){ .projects-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .projects-grid{grid-template-columns:1fr} }
+  .project-card{position:relative;border-radius:var(--radius-card);overflow:hidden;aspect-ratio:4/3;background-size:cover;background-position:center}
+  .project-card:first-child{grid-row:span 2;aspect-ratio:auto}
+  @media (max-width:900px){ .project-card:first-child{grid-row:auto;grid-column:span 2;aspect-ratio:16/9} }
+  @media (max-width:600px){ .project-card:first-child{grid-column:auto;aspect-ratio:4/3} }
+  .project-tag{position:absolute;left:14px;bottom:14px;background:rgba(21,23,26,.72);color:#fff;font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:var(--radius-input);max-width:calc(100% - 28px)}
+
+  /* ---------- Reviews ---------- */
+  /* PLACEHOLDER REVIEWS — vervang door echte reviews voordat dit naar een prospect gaat, of verwijder deze sectie. */
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:860px){ .reviews-grid{grid-template-columns:1fr};gap:16px }
+  .review-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:26px}
+  .review-stars{color:var(--accent);display:flex;gap:3px}
+  .review-quote{margin-top:14px;font-size:15px;color:var(--ink);line-height:1.55}
+  .review-who{margin-top:16px;font-size:13.5px;color:var(--muted-soft);font-weight:600}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:0.85fr 1fr;gap:56px;align-items:center}
+  @media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:32px} }
+  .about-photo{border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-md)}
+  .about-grid p{margin-top:16px;font-size:16px;color:var(--muted);max-width:56ch}
+  .about-grid p:first-of-type{margin-top:18px}
+
+  /* ---------- Service area ---------- */
+  .area-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  @media (max-width:860px){ .area-wrap{grid-template-columns:1fr;gap:28px} }
+  .area-list{display:flex;flex-wrap:wrap;gap:10px}
+  .area-pill{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:var(--radius-pill);background:var(--surface);border:1px solid var(--border);font-size:14px;font-weight:600}
+  .area-pill .icon{width:14px;height:14px;color:var(--accent)}
+  .area-visual{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:20px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+  .area-visual .icon{width:64px;height:64px;stroke-width:1.3}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;margin:0 auto;border-top:1px solid var(--border)}
+  .faq-item{border-bottom:1px solid var(--border)}
+  .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 4px;text-align:left;font-size:16px;font-weight:700;color:var(--ink)}
+  .faq-q .icon{color:var(--accent);transition:transform .25s ease;flex-shrink:0}
+  .faq-item.open .faq-q .icon{transform:rotate(180deg)}
+  .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .faq-a p{padding:0 4px 22px;font-size:15px;max-width:64ch;overflow:hidden;min-height:0}
+  .faq-item.open .faq-a{grid-template-rows:1fr}
+  @media (prefers-reduced-motion:reduce){ .faq-a{transition:none} }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{background:var(--accent-dark);border-radius:24px;padding:56px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .final-cta h2{color:#fff;font-size:clamp(24px,3vw,32px);max-width:26ch}
+  .final-cta p{color:rgba(255,255,255,.75);margin-top:10px;max-width:46ch}
+  .final-cta-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  @media (max-width:768px){ .final-cta{padding:40px 26px;flex-direction:column;align-items:flex-start} }
+
+  /* ---------- Contact / form ---------- */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media (max-width:900px){ .contact-wrap{grid-template-columns:1fr;gap:36px} }
+  .contact-info h3{font-size:20px}
+  .contact-line{display:flex;align-items:center;gap:12px;margin-top:18px;font-size:15.5px;font-weight:600}
+  .contact-line .icon{color:var(--accent)}
+  .form-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-card);padding:30px;box-shadow:var(--shadow-sm)}
+  .field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+  .field label{font-size:13.5px;font-weight:700;color:var(--ink)}
+  .field input,.field select,.field textarea{
+    border:1.5px solid var(--border);border-radius:var(--radius-input);padding:12px 14px;
+    font-family:inherit;font-size:15px;color:var(--ink);background:var(--surface);
+  }
+  .field input::placeholder,.field textarea::placeholder{color:var(--muted-soft)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .field-error{font-size:12.5px;color:#B4402A;display:none}
+  .field.invalid input,.field.invalid textarea{border-color:#B4402A}
+  .field.invalid .field-error{display:block}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:520px){ .form-row{grid-template-columns:1fr} }
+  .form-submit{width:100%;margin-top:6px}
+  .form-note{margin-top:14px;font-size:12.5px;color:var(--muted-soft)}
+  .form-success{display:none;text-align:center;padding:30px 10px}
+  .form-success.show{display:block}
+  .form-success .icon{width:48px;height:48px;color:var(--accent);margin:0 auto 14px}
+  .form-fields{display:block}
+  .form-fields.hide{display:none}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 28px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+  @media (max-width:860px){ .footer-grid{grid-template-columns:1fr 1fr;gap:32px} }
+  @media (max-width:520px){ .footer-grid{grid-template-columns:1fr} }
+  .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:16px}
+  .footer-grid p{margin-top:14px;font-size:14px;color:rgba(255,255,255,.55);max-width:32ch}
+  .footer-col h4{color:#fff;font-size:13.5px;letter-spacing:.03em;margin-bottom:14px}
+  .footer-col li{margin-bottom:11px}
+  .footer-col a{font-size:14px;color:rgba(255,255,255,.62)}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{margin-top:52px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:rgba(255,255,255,.45)}
+
+  /* ---------- Mobile sticky CTA ---------- */
+  .mobile-sticky{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:200;
+    background:var(--surface);border-top:1px solid var(--border);
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;box-shadow:0 -6px 20px rgba(21,23,26,.08);
+  }
+  @media (max-width:760px){ .mobile-sticky{display:flex} body{padding-bottom:64px} }
+  .mobile-sticky a{flex:1;padding:13px;border-radius:var(--radius-pill);text-align:center;font-weight:700;font-size:14.5px;display:flex;align-items:center;justify-content:center;gap:7px}
+  .mobile-sticky .call{background:var(--surface-alt);color:var(--ink)}
+  .mobile-sticky .quote{background:var(--accent);color:#fff}
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Naar inhoud</a>
+
+<!-- SVG symbol defs -->
+<svg class="visually-hidden" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.6 3 7.7 7 9 4-1.3 7-4.4 7-9V6l-7-3z"/></symbol>
+  <symbol id="i-roller" viewBox="0 0 24 24"><rect x="4" y="4" width="12" height="6" rx="1.5"/><path d="M8 10v4M8 20v-4M6 20h4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10h12V10"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 3.5l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.4l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="M6 18.5c-1.4 1.4-1.4 2.8-3 3 1-1.6 0-3 1.5-4.5L14.8 6.7a2 2 0 0 1 2.8 0l.7.7a2 2 0 0 1 0 2.8L8 19.5z"/><path d="m13.3 8.2 2.5 2.5"/></symbol>
+  <symbol id="i-wood" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M9 8v8M15 8v8"/><path d="M11 11.2 12.3 13l-1.1 1.6H14"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M12 4v16M4 12h16"/></symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#main" class="brand">
+      <span class="brand-mark">OS</span>
+      Oetze Schilderwerken
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#diensten">Diensten</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#projecten">Projecten</a>
+      <a href="#over-ons">Over ons</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:0594745711" class="nav-phone"><svg class="icon"><use href="#i-phone"/></svg><span>0594 745 711</span></a>
+      <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" style="width:24px;height:24px" id="navToggleIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#diensten">Diensten</a>
+    <a href="#werkwijze">Werkwijze</a>
+    <a href="#projecten">Projecten</a>
+    <a href="#over-ons">Over ons</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Vakwerk dat jaren meegaat, zonder gedoe.</h1>
+        <p class="hero-sub">Schilderwerk, houtrotreparatie en gevelonderhoud voor woningen in Leek en omgeving. Rechtstreeks contact, een planning die klopt.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+          <a href="tel:0594745711" class="btn btn-ghost"><svg class="icon"><use href="#i-phone"/></svg>Bel 0594 745 711</a>
+        </div>
+      </div>
+      <div>
+        <div class="compare" id="compare">
+          <div class="compare-panel compare-old">
+            <div class="mock-body">
+              <div class="mock-old-counter">✦ Bezoeker nr. 4.192</div>
+              <div class="mock-old-brand">~ Oetze Schilderwerken ~</div>
+              <div class="mock-old-photo"></div>
+              <div class="mock-old-title">Welkom bij ons bedrijf</div>
+              <div class="mock-old-line"></div>
+              <div class="mock-old-line w60"></div>
+              <div class="mock-old-link">Klik hier voor meer informatie »</div>
+              <div class="mock-old-btn">KLIK HIER</div>
+              <div class="mock-old-tag">Laatste update: 2016</div>
+            </div>
+          </div>
+          <div class="compare-panel compare-new" id="compareNew">
+            <div class="site-chrome-nav"><span>Diensten</span><span>Projecten</span><span>Over ons</span><span>Contact</span></div>
+            <div class="mock-body">
+              <div class="mock-new-badge"><svg class="icon"><use href="#i-check"/></svg>Snel en persoonlijk contact</div>
+              <div class="mock-new-photo"></div>
+              <div class="mock-new-eyebrow">SCHILDERSBEDRIJF LOER</div>
+              <div class="mock-new-title">Uw huis in goede handen</div>
+              <div class="mock-new-line"></div>
+              <div class="mock-new-line w70"></div>
+              <div class="mock-new-btn">Offerte aanvragen</div>
+              <div class="mock-new-trust"><svg class="icon"><use href="#i-pin"/></svg>Actief in Leek en omgeving</div>
+            </div>
+          </div>
+          <span class="compare-label old">VOOR</span>
+          <span class="compare-label new">NA</span>
+          <div class="compare-handle" id="compareHandle">
+            <div class="compare-grip"><svg class="icon" style="width:18px;height:18px"><use href="#i-arrow"/></svg></div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="compare-slider" id="compareSlider" aria-label="Vergelijk oude en nieuwe website, sleep om te vergelijken">
+        </div>
+        <p class="compare-caption">Sleep om te zien wat een nieuwe website met een eerste indruk doet</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stroke-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path d="M0 18 Q150 2 320 16 T650 14 T980 18 T1200 10 V34 H0 Z" fill="#0F3428"/></svg>
+  </div>
+
+  <!-- TRUST BAR -->
+  <section class="trust">
+    <div class="container trust-row">
+      <div class="trust-item"><svg class="icon"><use href="#i-check"/></svg>Vrijblijvende offerte aanvragen</div>
+      <div class="trust-item"><svg class="icon"><use href="#i-check"/></svg>Rechtstreeks contact</div>
+      <div class="trust-item"><svg class="icon"><use href="#i-check"/></svg>Planning vooraf afgesproken</div>
+      <div class="trust-item"><svg class="icon"><use href="#i-check"/></svg>Werkzaam in Leek en omgeving</div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="section" id="diensten">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Waar we u mee helpen</h2>
+        <p>Van een enkele gevel tot een complete buitenrenovatie.</p>
+      </div>
+      <div class="services-grid">
+        <a href="#contact" class="service-card reveal">
+          <div class="service-img" style="background-image:url('images/buitenschilderwerk.jpg')"></div>
+          <div class="service-body">
+            <h3>Buitenschilderwerk</h3>
+            <p>Kozijnen, gevels en houtwerk beschermd tegen weer en tijd.</p>
+            <span class="service-link">Offerte aanvragen<svg class="icon" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+        <a href="#contact" class="service-card reveal">
+          <div class="service-img" style="background-image:url('images/binnenschilderwerk.jpg')"></div>
+          <div class="service-body">
+            <h3>Binnenschilderwerk</h3>
+            <p>Strakke wanden en plafonds, van voorbereiding tot laatste laag.</p>
+            <span class="service-link">Offerte aanvragen<svg class="icon" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+        <a href="#contact" class="service-card reveal">
+          <div class="service-img" style="background-image:url('images/houtrotreparatie.jpg')"></div>
+          <div class="service-body">
+            <h3>Houtrotreparatie</h3>
+            <p>Rot hout vervangen voordat het verder om zich heen grijpt.</p>
+            <span class="service-link">Offerte aanvragen<svg class="icon" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+        <a href="#contact" class="service-card reveal">
+          <div class="service-img" style="background-image:url('images/gevelonderhoud.jpg')"></div>
+          <div class="service-body">
+            <h3>Gevelonderhoud</h3>
+            <p>Periodiek onderhoud dat grote klussen later voorkomt.</p>
+            <span class="service-link">Offerte aanvragen<svg class="icon" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM -->
+  <section class="section" style="background:var(--surface-alt)">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Waarom klanten voor ons kiezen</h2>
+        <p>Persoonlijke aanpak en heldere afspraken.</p>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <div class="why-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+          <div><h3>Rechtstreeks contact</h3><p>Persoonlijk contact met wie het werk daadwerkelijk uitvoert.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg class="icon"><use href="#i-calendar"/></svg></div>
+          <div><h3>Planning die klopt</h3><p>Een planning die vooraf duidelijk wordt afgesproken.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg class="icon"><use href="#i-check"/></svg></div>
+          <div><h3>Prijs vooraf duidelijk</h3><p>Een duidelijke offerte vooraf, zwart op wit.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg class="icon"><use href="#i-roller"/></svg></div>
+          <div><h3>Opgeruimd achtergelaten</h3><p>Netjes en zorgvuldig gewerkt, ook halverwege een klus.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE -->
+  <section class="section" id="werkwijze">
+    <div class="container">
+      <div class="head center reveal">
+        <h2>Zo werkt het</h2>
+        <p>Vier stappen, van eerste bericht tot opgeleverde klus.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+          <h3>Aanvraag</h3>
+          <p>Stuur foto's en een korte omschrijving, u krijgt snel een reactie.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+          <h3>Opname op locatie</h3>
+          <p>We bekijken de situatie en bespreken samen de mogelijkheden.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+          <h3>Duidelijk voorstel</h3>
+          <p>Een duidelijk voorstel, zwart op wit.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Uitvoering</h3>
+          <p>Uitvoering volgens afspraak, netjes achtergelaten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTEN -->
+  <section class="section" style="background:var(--surface-alt)" id="projecten">
+    <div class="container">
+      <div class="head reveal">
+        <h2>Voorbeelden van ons werk</h2>
+        <p>Een greep uit recent schilder- en onderhoudswerk in de regio.</p>
+      </div>
+      <div class="projects-grid reveal">
+        <div class="project-card" style="background-image:url('images/project-haren.jpg')">
+          <span class="project-tag">Buitenschilderwerk, jaren '30 woning - Haren</span>
+        </div>
+        <div class="project-card" style="background-image:url('images/project-winsum.jpg')">
+          <span class="project-tag">Kozijnen en gevel - Winsum</span>
+        </div>
+        <div class="project-card" style="background-image:url('images/project-assen.jpg')">
+          <span class="project-tag">Houtrotreparatie - Assen</span>
+        </div>
+        <div class="project-card" style="background-image:url('images/project-groningen.jpg')">
+          <span class="project-tag">Binnenschilderwerk - Groningen</span>
+        </div>
+        <div class="project-card" style="background-image:url('images/project-leek.jpg')">
+          <span class="project-tag">Gevelonderhoud - Leek</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section class="section" style="background:var(--surface-alt)" id="over-ons">
+    <div class="container about-grid">
+      <div class="about-photo illus reveal">
+        <svg class="icon"><use href="#i-roller"/></svg>
+        <span class="about-initials">HET TEAM · SCHILDERSBEDRIJF LOER</span>
+      </div>
+      <div class="reveal">
+        <h2>Over Oetze Schilderwerken</h2>
+        <p>Het team van Oetze Schilderwerken verzorgt schilder-, glas- en behangwerk voor woningen in Leek en omgeving, van klein onderhoud tot complete buitenrenovaties.</p>
+        <p>Vast aanspreekpunt van offerte tot oplevering, zodat u precies weet met wie u zaken doet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICEGEBIED -->
+  <section class="section">
+    <div class="container area-wrap">
+      <div class="reveal">
+        <div class="head" style="margin-bottom:24px">
+          <h2>Actief in Leek en omgeving</h2>
+          <p>Onder andere in deze plaatsen, en de dorpen daaromheen.</p>
+        </div>
+        <div class="area-list">
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Leek</span>
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Zuidhorn</span>
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Marum</span>
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Grootegast</span>
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Roden</span>
+          <span class="area-pill"><svg class="icon"><use href="#i-pin"/></svg>Groningen</span>
+        </div>
+      </div>
+      <div class="area-visual reveal"><svg class="icon"><use href="#i-home"/></svg></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:var(--surface-alt)" id="faq">
+    <div class="container">
+      <div class="head center reveal">
+        <h2>Veelgestelde vragen</h2>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq-item open">
+          <button type="button" class="faq-q" aria-expanded="true">Is de offerte echt vrijblijvend?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>Ja. U ontvangt een duidelijk voorstel zonder verplichtingen. Pas na uw akkoord plannen we de klus in.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Wat kost schilderwerk gemiddeld?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>Dat hangt af van oppervlakte, staat van het huidige schilderwerk en het type verf. Na de opname op locatie krijgt u een duidelijke prijsopgave.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Hoe snel kunnen jullie beginnen?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>Dat bespreken we bij de opname op locatie, in overleg met u.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">In welke regio werken jullie?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>Leek, Zuidhorn en de omliggende dorpen. Twijfelt u of uw adres binnen bereik valt, vraag het gewoon.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Hoe lang duurt een gemiddelde klus?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>De duur hangt af van de omvang van het werk; de exacte planning bespreken we vooraf.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Wat als het weer tegenzit?<svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><p>Buitenschilderwerk vraagt droog weer. Bij aanhoudende regen schuiven we een paar dagen, u hoort dat altijd vooraf van ons.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="final-cta reveal">
+        <div>
+          <h2>Benieuwd wat we voor uw woning kunnen betekenen?</h2>
+          <p>Stuur een paar foto's en een korte omschrijving. U hoort snel van ons.</p>
+        </div>
+        <div class="final-cta-ctas">
+          <a href="#contact" class="btn btn-primary" style="background:#fff;color:var(--accent-dark)">Offerte aanvragen</a>
+          <a href="tel:0594745711" class="btn btn-outline-invert"><svg class="icon"><use href="#i-phone"/></svg>0594 745 711</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FORM -->
+  <section class="section" id="contact">
+    <div class="container contact-wrap">
+      <div class="reveal">
+        <div class="head" style="margin-bottom:26px">
+          <h2>Vraag uw offerte aan</h2>
+          <p>Vul het formulier in of neem direct contact op. Vrijblijvend, geen verplichtingen.</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-line"><svg class="icon"><use href="#i-phone"/></svg>0594 745 711</div>
+          <div class="contact-line"><svg class="icon"><use href="#i-mail"/></svg>info@oetzeschilderwerken.nl</div>
+          <div class="contact-line"><svg class="icon"><use href="#i-pin"/></svg>Leek en omgeving</div>
+          <div class="contact-line"><svg class="icon"><use href="#i-clock"/></svg>Ma t/m vr, 08:00 - 17:00</div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="form-fields" id="formFields">
+          <form id="quoteForm" novalidate>
+            <div class="form-row">
+              <div class="field" id="fieldNaam">
+                <label for="naam">Naam</label>
+                <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
+                <span class="field-error">Vul uw naam in.</span>
+              </div>
+              <div class="field" id="fieldTelefoon">
+                <label for="telefoon">Telefoon</label>
+                <input type="tel" id="telefoon" name="telefoon" placeholder="06 12345678" required>
+                <span class="field-error">Vul een telefoonnummer in.</span>
+              </div>
+            </div>
+            <div class="field" id="fieldEmail">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" required>
+              <span class="field-error">Vul een geldig e-mailadres in.</span>
+            </div>
+            <div class="field">
+              <label for="type">Type klus</label>
+              <select id="type" name="type">
+                <option>Buitenschilderwerk</option>
+                <option>Binnenschilderwerk</option>
+                <option>Houtrotreparatie</option>
+                <option>Gevelonderhoud</option>
+                <option>Anders / weet ik nog niet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="omschrijving">Korte omschrijving</label>
+              <textarea id="omschrijving" name="omschrijving" rows="4" placeholder="Bijvoorbeeld: kozijnen buitenzijde, jaren '30 woning"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Vraag mijn vrijblijvende offerte aan</button>
+            <p class="form-note">Zo zou dit formulier voor uw bezoekers werken. In deze demo wordt niets verstuurd.</p>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <svg class="icon"><use href="#i-check"/></svg>
+          <h3>Voorbeeld voltooid</h3>
+          <p style="margin-top:8px">Zo zou een bevestiging aan uw bezoeker eruitzien. In deze demo wordt niets verstuurd of opgeslagen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="brand-mark">OS</span>Oetze Schilderwerken</div>
+        <p>Schilderwerk, houtrotreparatie en gevelonderhoud voor woningen in Leek en omgeving.</p>
+      </div>
+      <div class="footer-col">
+        <h4>NAVIGATIE</h4>
+        <ul>
+          <li><a href="#diensten">Diensten</a></li>
+          <li><a href="#projecten">Projecten</a></li>
+          <li><a href="#over-ons">Over ons</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="tel:0594745711">0594 745 711</a></li>
+          <li><a href="mailto:info@oetzeschilderwerken.nl">info@oetzeschilderwerken.nl</a></li>
+          <li>Leek en omgeving</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>JURIDISCH</h4>
+        <ul>
+          <li><a href="#">Privacyverklaring</a></li>
+          <li><a href="#">Cookiebeleid</a></li>
+          <li><a href="#">Algemene voorwaarden</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Oetze Schilderwerken</span>
+      <span>Demo-sjabloon - Boumax Automatiseringen</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-sticky">
+  <a href="tel:0594745711" class="call"><svg class="icon" style="width:17px;height:17px"><use href="#i-phone"/></svg>Bellen</a>
+  <a href="#contact" class="quote">Offerte</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Oetze Schilderwerken",
+  "description": "Schilderwerk, houtrotreparatie en gevelonderhoud in Leek en omgeving.",
+  "telephone": "+31594745711",
+  "email": "info@oetzeschilderwerken.nl",
+  "areaServed": ["Leek", "Zuidhorn", "Marum", "Grootegast", "Groningen", "Roden"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Leek",
+    "addressRegion": "Groningen",
+    "addressCountry": "NL"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is de offerte echt vrijblijvend?","acceptedAnswer":{"@type":"Answer","text":"Ja. U ontvangt een duidelijk voorstel zonder verplichtingen. Pas na uw akkoord plannen we de klus in."}},
+    {"@type":"Question","name":"Wat kost schilderwerk gemiddeld?","acceptedAnswer":{"@type":"Answer","text":"Dat hangt af van oppervlakte, staat van het huidige schilderwerk en het type verf. Na de opname op locatie krijgt u een duidelijke prijsopgave."}},
+    {"@type":"Question","name":"Hoe snel kunnen jullie beginnen?","acceptedAnswer":{"@type":"Answer","text":"Dat bespreken we bij de opname op locatie, in overleg met u."}},
+    {"@type":"Question","name":"In welke regio werken jullie?","acceptedAnswer":{"@type":"Answer","text":"Leek, Zuidhorn en de omliggende dorpen."}},
+    {"@type":"Question","name":"Hoe lang duurt een gemiddelde klus?","acceptedAnswer":{"@type":"Answer","text":"De duur hangt af van de omvang van het werk."}},
+    {"@type":"Question","name":"Wat als het weer tegenzit?","acceptedAnswer":{"@type":"Answer","text":"Buitenschilderwerk vraagt droog weer. Bij aanhoudende regen schuiven we een paar dagen."}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  // Mobile nav toggle
+  var navToggle = document.getElementById("navToggle");
+  var mobileMenu = document.getElementById("mobileMenu");
+  var navToggleIcon = document.getElementById("navToggleIcon");
+  navToggle.addEventListener("click", function(){
+    var isOpen = mobileMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    navToggleIcon.innerHTML = isOpen ? '<use href="#i-close"/>' : '<use href="#i-menu"/>';
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){
+      mobileMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggleIcon.innerHTML = '<use href="#i-menu"/>';
+    });
+  });
+
+  // Before/after compare slider
+  var compare = document.getElementById("compare");
+  var compareNew = document.getElementById("compareNew");
+  var compareHandle = document.getElementById("compareHandle");
+  var compareSlider = document.getElementById("compareSlider");
+
+  function setCompare(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    compareNew.style.clipPath = "inset(0 0 0 " + pct + "%)";
+    compareHandle.style.left = pct + "%";
+    compareSlider.value = pct;
+  }
+  compareSlider.addEventListener("input", function(){ setCompare(parseFloat(compareSlider.value)); });
+
+  var dragging = false;
+  function pctFromClientX(clientX){
+    var rect = compare.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+  compare.addEventListener("pointerdown", function(e){
+    dragging = true;
+    setCompare(pctFromClientX(e.clientX));
+  });
+  window.addEventListener("pointermove", function(e){
+    if(!dragging) return;
+    setCompare(pctFromClientX(e.clientX));
+  });
+  window.addEventListener("pointerup", function(){ dragging = false; });
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-q").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var item = btn.closest(".faq-item");
+      var willOpen = !item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach(function(i){
+        i.classList.remove("open");
+        i.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+      });
+      if(willOpen){
+        item.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  // Scroll reveal
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if("IntersectionObserver" in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  // Form (client-side demo only, no backend wired up)
+  var form = document.getElementById("quoteForm");
+  var formFields = document.getElementById("formFields");
+  var formSuccess = document.getElementById("formSuccess");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var valid = true;
+    [
+      {id:"naam", field:"fieldNaam", check:function(v){ return v.trim().length > 1; }},
+      {id:"telefoon", field:"fieldTelefoon", check:function(v){ return v.trim().length > 6; }},
+      {id:"email", field:"fieldEmail", check:function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }}
+    ].forEach(function(f){
+      var input = document.getElementById(f.id);
+      var wrap = document.getElementById(f.field);
+      var ok = f.check(input.value);
+      wrap.classList.toggle("invalid", !ok);
+      if(!ok) valid = false;
+    });
+    if(!valid) return;
+    formFields.classList.add("hide");
+    formSuccess.classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
