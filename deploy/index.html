@@ -63,8 +63,8 @@
     --surface:#FFFFFF;
     --surface-alt:#F1F1F3;
     --border:#E4E4E6;
-    --accent:#3973FF;
-    --accent-dark:#15316B;
+    --accent:#1E3A5F;
+    --accent-dark:#122540;
     --accent-soft:#E9EEF4;
     --accent-line:#C3D2E2;
 
@@ -132,24 +132,11 @@
   @media (prefers-reduced-motion:reduce){ .geo-grid span.float{animation:none} }
 
   /* ---------- Hero (dark, spatial automation network) ---------- */
-  .hero{position:relative;padding:128px 0 176px;background:#06080C;overflow:hidden;isolation:isolate;min-height:900px;display:flex;align-items:center}
-  @media (max-width:960px){ .hero{min-height:0;padding:100px 0 120px} }
-  .hero-fade-bottom{position:absolute;left:0;right:0;bottom:0;height:240px;background:linear-gradient(to bottom,rgba(6,8,12,0) 0%,rgba(6,8,12,.14) 22%,rgba(6,8,12,.4) 46%,rgba(6,8,12,.72) 68%,var(--bg) 100%);pointer-events:none;z-index:1}
-  @media (max-width:960px){ .hero-fade-bottom{height:180px} }
+  .hero{position:relative;padding:128px 0 100px;background:#06080C;overflow:hidden;isolation:isolate;min-height:900px;display:flex;align-items:center}
+  @media (max-width:960px){ .hero{min-height:0;padding:100px 0 64px} }
+  .hero-fade-bottom{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}
   .hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
   @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
-
-  /* ---------- Ambient glow (drifting cobalt energy behind the automation network) ---------- */
-  .hero-glow{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .hero-glow span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;will-change:transform,opacity}
-  .hero-glow .g1{width:560px;height:560px;left:6%;top:8%;background:radial-gradient(circle,rgba(57,115,255,.55),transparent 70%);animation:glowDrift1 22s ease-in-out infinite}
-  .hero-glow .g2{width:480px;height:480px;right:8%;top:36%;background:radial-gradient(circle,rgba(84,136,255,.4),transparent 70%);animation:glowDrift2 26s ease-in-out infinite}
-  .hero-glow .g3{width:420px;height:420px;left:32%;bottom:-6%;background:radial-gradient(circle,rgba(57,115,255,.32),transparent 70%);animation:glowDrift3 30s ease-in-out infinite}
-  @keyframes glowDrift1{0%,100%{transform:translate(0,0) scale(1);opacity:.45}50%{transform:translate(6%,4%) scale(1.12);opacity:.65}}
-  @keyframes glowDrift2{0%,100%{transform:translate(0,0) scale(1.05);opacity:.35}50%{transform:translate(-7%,3%) scale(.94);opacity:.55}}
-  @keyframes glowDrift3{0%,100%{transform:translate(0,0) scale(1);opacity:.3}50%{transform:translate(4%,-5%) scale(1.08);opacity:.5}}
-  @media (prefers-reduced-motion:reduce){ .hero-glow span{animation:none} }
-  @media (max-width:640px){ .hero-glow span{filter:blur(50px)} }
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
   .hero-fade{opacity:0;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) forwards}
@@ -173,11 +160,6 @@
   .hero-status .pulse-dot{position:relative;width:7px;height:7px;border-radius:50%;background:#2AC769}
   .hero-status .pulse-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(42,199,105,.4);animation:dotRing 2.4s ease-out infinite}
   @keyframes dotRing{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.8);opacity:0}}
-  .replay-btn{display:inline-flex;align-items:center;gap:6px;margin-left:auto;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#99A6C4;font-size:11.5px;font-weight:600;transition:color .18s ease,border-color .18s ease,background .18s ease}
-  .replay-btn:hover{color:#F7F8FA;border-color:rgba(57,115,255,.5);background:rgba(57,115,255,.12)}
-  .replay-btn .icon{transition:transform .4s cubic-bezier(.16,1,.3,1)}
-  .replay-btn.spinning .icon{transform:rotate(-360deg)}
-  @media (max-width:960px){ .replay-btn span{display:none} }
 
   .automation{position:relative;height:520px;animation-delay:1.4s}
   @media (max-width:960px){ .automation{height:auto;display:flex;flex-direction:column;gap:14px} }
@@ -255,14 +237,9 @@
   .head p{margin-top:12px;font-size:15.5px}
 
   /* ---------- Pillars (was: 3-equal-card row) ---------- */
-  .pillars-wrap{position:relative}
-  .pillars-progress{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--border);border-radius:3px;display:none}
-  .pillars-progress i{display:block;width:100%;background:var(--accent);border-radius:3px;height:0%;transition:height .1s linear}
-  @media (min-width:821px){ .pillars-progress{display:block} .pillars-wrap{padding-left:20px} }
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:var(--radius-card);overflow:hidden;position:relative;z-index:1}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:var(--radius-card);overflow:hidden}
   @media (max-width:820px){ .pillars{grid-template-columns:1fr} }
-  .pillar{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1);position:relative}
-  .pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);z-index:2}
+  .pillar{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px}
   .pillar-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
   .pillar h3{font-size:21px}
   .pillar p{font-size:15px}
@@ -271,22 +248,12 @@
   .pillar-points .icon{width:15px;height:15px;color:var(--accent);flex-shrink:0}
 
   /* ---------- Voorbeeldwerk ---------- */
-  .work-card{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm);transition:box-shadow .22s cubic-bezier(.16,1,.3,1),transform .22s cubic-bezier(.16,1,.3,1)}
-  .work-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+  .work-card{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm)}
   @media (max-width:768px){ .work-card{grid-template-columns:1fr} }
   .work-visual{background:var(--accent-soft);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:14px}
   .work-visual .tag{align-self:flex-start;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:var(--radius-pill)}
-  .browser-frame{border-radius:12px;overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow-sm);background:#fff;position:relative;display:block}
-  .browser-frame:hover, .browser-frame:focus-visible{box-shadow:var(--shadow-md)}
-  .browser-chrome{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#EEF1F5;border-bottom:1px solid var(--accent-line)}
-  .browser-chrome .dot{width:8px;height:8px;border-radius:50%;background:#D7DCE3}
-  .browser-chrome .url{flex:1;margin-left:6px;background:#fff;border:1px solid var(--accent-line);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--muted-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .live-preview{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#fff}
+  .live-preview{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow-sm);background:#fff}
   .live-preview iframe{position:absolute;top:0;left:0;width:1400px;height:1050px;border:0;transform-origin:0 0;pointer-events:none}
-  .browser-frame-cta{position:absolute;inset:34px 0 0 0;display:flex;align-items:center;justify-content:center;background:rgba(21,23,26,0);transition:background .2s ease}
-  .browser-frame-cta span{opacity:0;transform:translateY(6px);transition:opacity .2s ease,transform .2s ease;background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:8px}
-  .browser-frame:hover .browser-frame-cta,.browser-frame:focus-visible .browser-frame-cta{background:rgba(21,23,26,.28)}
-  .browser-frame:hover .browser-frame-cta span,.browser-frame:focus-visible .browser-frame-cta span{opacity:1;transform:none}
   .work-body{padding:40px}
   .work-body h3{font-size:21px}
   .work-body p{margin-top:12px;font-size:15px}
@@ -337,16 +304,10 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
-
-  /* ---------- Custom cursor ring (desktop, fine pointer, no reduced motion) ---------- */
-  #cursorRing{position:fixed;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:1.5px solid rgba(57,115,255,.55);pointer-events:none;z-index:400;opacity:0;transform:translate(-100px,-100px) scale(1);transition:opacity .2s ease,transform .18s cubic-bezier(.16,1,.3,1),width .18s ease,height .18s ease,margin .18s ease,border-color .18s ease}
-  #cursorRing.visible{opacity:1}
-  #cursorRing.hover{width:44px;height:44px;margin:-22px 0 0 -22px;border-color:rgba(57,115,255,.85);background:rgba(57,115,255,.08)}
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Naar inhoud</a>
-<div id="cursorRing" aria-hidden="true"></div>
 
 <svg class="visually-hidden" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></symbol>
@@ -359,7 +320,6 @@
   <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L11 21l8-10.5h-6z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9.5a2 2 0 0 0 2 2h2.5"/></symbol>
-  <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 2.6 5.9"/><path d="M4 20v-5h5"/></symbol>
 </svg>
 
 <header>
@@ -391,7 +351,6 @@
 <main id="main">
 
   <section class="hero">
-    <div class="hero-glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
     <div class="hero-fade-bottom"></div>
     <div class="container hero-grid">
       <div>
@@ -406,12 +365,7 @@
       </div>
 
       <div class="automation hero-fade" id="automation" aria-hidden="true">
-        <div class="hero-status hero-fade" style="animation-delay:1.8s">
-          <span class="pulse-dot"></span>Voorbeeld van een automatische opvolging
-          <button type="button" class="replay-btn" id="replayAutomation" aria-label="Voorbeeld opnieuw afspelen">
-            <svg class="icon" style="width:13px;height:13px"><use href="#i-replay"/></svg><span>Opnieuw afspelen</span>
-          </button>
-        </div>
+        <span class="hero-status hero-fade" style="animation-delay:1.8s"><span class="pulse-dot"></span>Voorbeeld van een automatische opvolging</span>
 
         <svg viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M15,30 L12,38" style="animation-delay:0s,0s"/>
@@ -467,9 +421,7 @@
         <h2>Wat ik doe</h2>
         <p>Twee dingen die vaak samen horen: een website die aanvragen oplevert, en minder rompslomp in het werk erachter.</p>
       </div>
-      <div class="pillars-wrap reveal" id="pillarsWrap">
-        <div class="pillars-progress" aria-hidden="true"><i id="pillarsProgressFill"></i></div>
-        <div class="pillars">
+      <div class="pillars reveal">
         <div class="pillar">
           <div class="pillar-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-layout"/></svg></div>
           <h3>Website</h3>
@@ -490,7 +442,6 @@
             <li><svg class="icon"><use href="#i-check"/></svg>Opvolging die niet vergeten wordt</li>
           </ul>
         </div>
-        </div>
       </div>
     </div>
   </section>
@@ -504,13 +455,9 @@
       <div class="work-card reveal">
         <div class="work-visual">
           <span class="tag">DEMO-PROJECT</span>
-          <a class="browser-frame" href="demo/" aria-label="Open de live demo van Schildersbedrijf Bosma in een nieuw venster">
-            <div class="browser-chrome" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">boumax.nl/demo-schildersbedrijf-bosma</span></div>
-            <div class="live-preview" id="livePreview">
-              <iframe src="demo/" title="Live voorbeeld: Schildersbedrijf Bosma" loading="lazy" id="previewFrame" tabindex="-1"></iframe>
-            </div>
-            <div class="browser-frame-cta" aria-hidden="true"><span>Bekijk live demo<svg class="icon" style="width:14px;height:14px"><use href="#i-arrow"/></svg></span></div>
-          </a>
+          <div class="live-preview" id="livePreview">
+            <iframe src="demo/" title="Live voorbeeld: Schildersbedrijf Bosma" loading="lazy" id="previewFrame"></iframe>
+          </div>
         </div>
         <div class="work-body">
           <h3>Website-redesign voor een lokaal bedrijf</h3>
@@ -656,111 +603,26 @@
     });
   }
 
-  // Replay the hero automation sequence on demand
-  var replayBtn = document.getElementById("replayAutomation");
-  if(replayBtn){
-    replayBtn.addEventListener("click", function(){
-      replayBtn.classList.add("spinning");
-      setTimeout(function(){ replayBtn.classList.remove("spinning"); }, 420);
-      var animated = document.querySelectorAll("#automation .lead-card, #automation .core, #automation .node, #automation .stat-card, #automation path");
-      animated.forEach(function(el){
-        el.style.animation = "none";
-      });
-      // Force reflow so the browser registers the animation as stopped before restarting it
-      void document.getElementById("automation").offsetWidth;
-      animated.forEach(function(el){
-        el.style.animation = "";
-      });
-      if(statNum){
-        statNum.textContent = reduceMotionMQ.matches ? statTarget.toFixed(1).replace(".", ",") + " uur" : "0 uur";
-        if(!reduceMotionMQ.matches){
-          setTimeout(runStatCountUp, 2400);
-        }
-      }
-    });
-  }
-
-  // Magnetic pull on primary buttons (desktop, fine pointer, no reduced motion)
-  if(fineHoverMQ.matches && !reduceMotionMQ.matches){
-    document.querySelectorAll(".btn").forEach(function(btn){
-      var magTicking = false, mx = 0, my = 0;
-      btn.addEventListener("mousemove", function(e){
-        var rect = btn.getBoundingClientRect();
-        mx = (e.clientX - rect.left - rect.width / 2) * 0.28;
-        my = (e.clientY - rect.top - rect.height / 2) * 0.35;
-        if(!magTicking){
-          magTicking = true;
-          requestAnimationFrame(function(){
-            btn.style.transform = "translate(" + mx.toFixed(1) + "px," + my.toFixed(1) + "px)";
-            magTicking = false;
-          });
-        }
-      });
-      btn.addEventListener("mouseleave", function(){
-        btn.style.transform = "";
-      });
-    });
-  }
-
-  // Trailing cursor ring, purely decorative — never replaces the native cursor
-  var cursorRing = document.getElementById("cursorRing");
-  if(cursorRing && fineHoverMQ.matches && !reduceMotionMQ.matches){
-    var ringX = -100, ringY = -100, ringShown = false;
-    document.addEventListener("mousemove", function(e){
-      ringX = e.clientX; ringY = e.clientY;
-      if(!ringShown){ cursorRing.classList.add("visible"); ringShown = true; }
-      cursorRing.style.transform = "translate(" + ringX + "px," + ringY + "px)";
-    });
-    document.addEventListener("mouseleave", function(){ cursorRing.classList.remove("visible"); });
-    document.querySelectorAll("a, button").forEach(function(el){
-      el.addEventListener("mouseenter", function(){ cursorRing.classList.add("hover"); });
-      el.addEventListener("mouseleave", function(){ cursorRing.classList.remove("hover"); });
-    });
-  }
-
-  // Fill progress line beside "Wat ik doe" as the section scrolls through view
-  var pillarsWrap = document.getElementById("pillarsWrap");
-  var pillarsFill = document.getElementById("pillarsProgressFill");
-  if(pillarsWrap && pillarsFill && !reduceMotion){
-    var pillarsTicking = false;
-    function updatePillarsProgress(){
-      pillarsTicking = false;
-      var rect = pillarsWrap.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var total = rect.height + vh * 0.6;
-      var passed = vh * 0.85 - rect.top;
-      var pct = Math.max(0, Math.min(1, passed / total));
-      pillarsFill.style.height = (pct * 100).toFixed(1) + "%";
-    }
-    window.addEventListener("scroll", function(){
-      if(!pillarsTicking){ pillarsTicking = true; requestAnimationFrame(updatePillarsProgress); }
-    }, {passive:true});
-    window.addEventListener("resize", updatePillarsProgress);
-    updatePillarsProgress();
-  }
-
   // Count-up animation for the "uren bespaard" stat
   var statNum = document.querySelector(".stat-num");
-  var statTarget = statNum ? parseFloat(statNum.textContent.replace(",", ".")) : 0;
-  function runStatCountUp(){
-    if(!statNum) return;
-    var duration = 1100;
-    var t0 = null;
-    function tick(ts){
-      if(!t0) t0 = ts;
-      var p = Math.min((ts - t0) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      statNum.textContent = (statTarget * eased).toFixed(1).replace(".", ",") + " uur";
-      if(p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
   if(statNum){
+    var statTarget = parseFloat(statNum.textContent.replace(",", "."));
     if(reduceMotionMQ.matches){
       statNum.textContent = statTarget.toFixed(1).replace(".", ",") + " uur";
     } else {
       statNum.textContent = "0 uur";
-      setTimeout(runStatCountUp, 2400);
+      setTimeout(function(){
+        var duration = 1100;
+        var t0 = null;
+        function tick(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          statNum.textContent = (statTarget * eased).toFixed(1).replace(".", ",") + " uur";
+          if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }, 2400);
     }
   }
 
