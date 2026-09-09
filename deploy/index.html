@@ -1,701 +1,535 @@
 <!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boumax - Websites en automatisering voor lokale bedrijven</title>
-<meta name="description" content="Boumax bouwt conversiegerichte websites en automatisering voor lokale bedrijven in Groningen, Drenthe en Friesland. Persoonlijk contact, geen sjabloonbureau.">
-<link rel="canonical" href="https://boumax.nl/">
-<link rel="icon" type="image/png" sizes="32x32" href="branding/boumax-favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="branding/boumax-favicon-180.png">
-<link rel="icon" type="image/png" sizes="512x512" href="branding/boumax-favicon-512.png">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
-<meta property="og:description" content="Meer aanvragen, minder rompslomp.">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:url" content="https://boumax.nl/">
-<meta property="og:image" content="https://boumax.nl/branding/boumax-og-image.png">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
-<meta name="twitter:description" content="Meer aanvragen, minder rompslomp.">
-<meta name="twitter:image" content="https://boumax.nl/branding/boumax-og-image.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Boumax",
-  "url": "https://boumax.nl/",
-  "telephone": "+31627435394",
-  "email": "info@boumax.nl",
-  "image": "https://boumax.nl/branding/boumax-og-image.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Kolonelsdiep 5",
-    "postalCode": "9821 TR",
-    "addressLocality": "Oldekerk",
-    "addressCountry": "NL"
-  },
-  "areaServed": ["Groningen", "Drenthe", "Friesland"],
-  "description": "Boumax bouwt conversiegerichte websites en automatisering voor lokale bedrijven in Groningen, Drenthe en Friesland.",
-  "founder": { "@type": "Person", "name": "Johan Bouma" },
-  "sameAs": ["https://www.linkedin.com/company/boumax-nl"]
-}
-</script>
-<style>
-  @font-face{font-family:"Outfit";font-style:normal;font-weight:500;font-display:swap;src:url("branding/fonts/outfit-500.woff2") format("woff2")}
-  @font-face{font-family:"Outfit";font-style:normal;font-weight:600;font-display:swap;src:url("branding/fonts/outfit-600.woff2") format("woff2")}
-  @font-face{font-family:"Outfit";font-style:normal;font-weight:700;font-display:swap;src:url("branding/fonts/outfit-700.woff2") format("woff2")}
-  @font-face{font-family:"Outfit";font-style:normal;font-weight:800;font-display:swap;src:url("branding/fonts/outfit-800.woff2") format("woff2")}
-</style>
-<!--
-  BOUMAX.NL — hoofdsite van Johan Bouma / Boumax. Deze map is de brondirectory;
-  deploy/ bevat een kopie met aangepaste (niet-relatieve) paden voor Netlify.
-  Bij wijzigingen aan deze site: beide index.html's bijwerken.
-  NOG OPEN:
-   1. Algemene voorwaarden zijn nog niet toegevoegd (privacyverklaring staat live in privacy.html)
--->
-<style>
-  :root{
-    --ink:#15171A;
-    --muted:#5B6169;
-    --muted-soft:#84898F;
-    --bg:#FAFAF8;
-    --surface:#FFFFFF;
-    --surface-alt:#F1F1F3;
-    --border:#E4E4E6;
-    --accent:#1E3A5F;
-    --accent-dark:#122540;
-    --accent-soft:#E9EEF4;
-    --accent-line:#C3D2E2;
-
-    --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
-    --font-display:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    --radius-card:16px;
-    --radius-pill:999px;
-    --radius-input:8px;
-    --shadow-sm:0 1px 2px rgba(21,23,26,.06);
-    --shadow-md:0 10px 24px rgba(21,23,26,.08);
-    --shadow-lg:0 24px 56px rgba(21,23,26,.14);
-    --container:1160px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f5f8">
+  <title>Boumax - Websites en automatisering voor lokale bedrijven</title>
+  <meta name="description" content="Boumax ontwerpt premium websites en slimme automatisering voor lokale bedrijven. Persoonlijk gebouwd door Johan Bouma.">
+  <link rel="canonical" href="https://boumax.nl/">
+  <link rel="icon" type="image/png" sizes="32x32" href="branding/boumax-favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="branding/boumax-favicon-180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="branding/boumax-favicon-512.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
+  <meta property="og:description" content="Van eerste lijn tot werkend systeem. Premium websites met slimme automatisering erachter.">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:url" content="https://boumax.nl/">
+  <meta property="og:image" content="https://boumax.nl/branding/boumax-og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Boumax - Websites en automatisering voor lokale bedrijven">
+  <meta name="twitter:description" content="Van eerste lijn tot werkend systeem. Premium websites met slimme automatisering erachter.">
+  <meta name="twitter:image" content="https://boumax.nl/branding/boumax-og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Boumax",
+    "url": "https://boumax.nl/",
+    "telephone": "+31627435394",
+    "email": "info@boumax.nl",
+    "image": "https://boumax.nl/branding/boumax-og-image.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kolonelsdiep 5",
+      "postalCode": "9821 TR",
+      "addressLocality": "Oldekerk",
+      "addressCountry": "NL"
+    },
+    "areaServed": ["Groningen", "Drenthe", "Friesland"],
+    "description": "Boumax ontwerpt premium websites en slimme automatisering voor lokale bedrijven.",
+    "founder": { "@type": "Person", "name": "Johan Bouma" },
+    "sameAs": ["https://www.linkedin.com/company/boumax-nl"]
   }
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  h1,h2,h3{margin:0;font-family:var(--font-display);letter-spacing:-0.02em;font-weight:700;color:var(--ink);text-wrap:balance}
-  p{margin:0;color:var(--muted);line-height:1.65}
-  a{color:inherit;text-decoration:none}
-  ul{margin:0;padding:0;list-style:none}
-  button{font-family:inherit;cursor:pointer;border:none;background:none}
-  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  .skip-link{position:fixed;top:-100px;left:16px;z-index:300;background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--radius-input);transition:top .2s ease}
-  .skip-link:focus{top:16px}
-  :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
-  .icon{width:1.15em;height:1.15em;display:inline-block;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
-  @media (max-width:640px){ .container{padding:0 20px} }
-  .section{padding:96px 0}
-  @media (max-width:768px){ .section{padding:56px 0} }
+  </script>
+  <style>
+    @font-face{font-family:Outfit;src:url('branding/fonts/outfit-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:Outfit;src:url('branding/fonts/outfit-600.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:Outfit;src:url('branding/fonts/outfit-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    @font-face{font-family:Outfit;src:url('branding/fonts/outfit-800.woff2') format('woff2');font-weight:800;font-display:swap}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:var(--radius-pill);font-weight:600;font-size:15px;white-space:nowrap;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
-  .btn:active{transform:translateY(1px) scale(.98)}
-  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
-  .btn-primary:hover{background:var(--accent-dark);box-shadow:var(--shadow-md)}
-  .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--border)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+    :root{
+      --ink:#07152f;
+      --ink-soft:#34415a;
+      --muted:#6f7a8e;
+      --paper:#f3f5f8;
+      --paper-deep:#e9edf3;
+      --white:#ffffff;
+      --blue:#2864ff;
+      --blue-deep:#123fbd;
+      --blue-soft:#dce6ff;
+      --lime:#d2ff61;
+      --line:rgba(7,21,47,.09);
+      --radius-lg:34px;
+      --radius-md:24px;
+      --ease:cubic-bezier(.22,1,.36,1);
+      --ease-out:cubic-bezier(.23,1,.32,1);
+      --ease-in-out:cubic-bezier(.77,0,.175,1);
+      --shadow:0 28px 80px rgba(20,42,84,.13),0 4px 16px rgba(20,42,84,.06);
+    }
 
-  header{position:sticky;top:0;z-index:100;background:rgba(250,249,248,.92);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--border)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:104px;gap:18px;flex-wrap:nowrap}
-  .brand{display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
-  .wordmark{font-family:var(--font-display);font-weight:800;font-size:29px;letter-spacing:0.01em;color:var(--accent)}
-  .wordmark .accent{color:#3973FF}
-  .wordmark.on-dark{color:#fff}
-  .nav-links{display:flex;align-items:center;gap:clamp(14px,1.8vw,28px);flex-wrap:nowrap}
-  .nav-links a{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
-  .nav-links a:hover{color:var(--ink)}
-  .nav-toggle{display:none;padding:8px;color:var(--ink);flex-shrink:0}
-  @media (max-width:820px){ .nav-links{display:none} .nav-toggle{display:flex} }
-  .mobile-menu{display:none;flex-direction:column;gap:2px;background:var(--surface);border-bottom:1px solid var(--border);padding:8px 20px 20px}
-  .mobile-menu.open{display:flex}
-  .mobile-menu a{padding:13px 4px;font-weight:600;font-size:15.5px;color:var(--ink);border-bottom:1px solid var(--border)}
-  .mobile-menu a:last-child{border-bottom:none}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper);overflow-x:clip}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:Outfit,sans-serif;font-weight:500;-webkit-font-smoothing:antialiased;overflow-x:clip}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;max-width:100%}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+    ::selection{color:var(--white);background:var(--blue)}
 
-  /* ---------- Geometric brand panel (reused: hero visual + about avatar) ---------- */
-  .geo-panel{position:relative;border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-md)}
-  .geo-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,1fr);gap:9px;padding:22px}
-  .geo-grid span{border-radius:7px;background:transparent}
-  .geo-grid span.f1{background:var(--accent)}
-  .geo-grid span.f2{background:var(--accent-line)}
-  .geo-grid span.f3{background:var(--accent-soft)}
-  .geo-grid span.float{animation:geoFloat 5s ease-in-out infinite}
-  @keyframes geoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-  @media (prefers-reduced-motion:reduce){ .geo-grid span.float{animation:none} }
+    .skip-link{position:fixed;left:18px;top:12px;z-index:80;padding:12px 18px;border-radius:999px;color:var(--white);background:var(--ink);transform:translateY(-140%);transition:transform .35s var(--ease)}
+    .skip-link:focus{transform:translateY(0)}
+    .container{width:min(1320px,calc(100% - 48px));margin-inline:auto}
+    .section{position:relative;padding:128px 0}
+    .section[id]{scroll-margin-top:110px}
+    .section-intro{max-width:930px;margin-bottom:52px}
+    .section-label{display:block;margin-bottom:18px;color:var(--blue-deep);font-size:.77rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+    .section-title{max-width:900px;margin:0;font-size:clamp(3rem,5.7vw,6.6rem);line-height:.92;letter-spacing:-.065em;font-weight:700}
+    .section-copy{max-width:680px;margin:26px 0 0;color:var(--ink-soft);font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.6}
 
-  /* ---------- Hero (dark, spatial automation network) ---------- */
-  .hero{position:relative;padding:128px 0 100px;background:#06080C;overflow:hidden;isolation:isolate;min-height:900px;display:flex;align-items:center}
-  @media (max-width:960px){ .hero{min-height:0;padding:100px 0 64px} }
-  .hero-fade-bottom{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}
-  .hero-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
-  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
+    .site-header{position:fixed;inset:18px 0 auto;z-index:50;pointer-events:none}
+    .nav-shell{width:min(1320px,calc(100% - 36px));margin:auto;padding:6px;border:1px solid rgba(255,255,255,.76);border-radius:30px;background:rgba(255,255,255,.76);box-shadow:0 12px 48px rgba(7,21,47,.09);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);pointer-events:auto;transition:width .55s var(--ease),background .55s var(--ease),box-shadow .55s var(--ease)}
+    .site-header.compact .nav-shell{width:min(1120px,calc(100% - 36px));background:rgba(255,255,255,.9);box-shadow:0 16px 54px rgba(7,21,47,.13)}
+    .nav-core{height:64px;padding:0 8px 0 18px;border-radius:23px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(247,249,252,.92);box-shadow:inset 0 1px 0 rgba(255,255,255,.96)}
+    .brand{display:inline-flex;align-items:center;letter-spacing:-.045em;font-weight:800;font-size:1.38rem}
+    .brand-a{color:var(--blue)}
+    .nav-links{display:flex;align-items:center;gap:34px;margin-left:auto}
+    .nav-links a{position:relative;color:#354056;font-size:.94rem;font-weight:600}
+    .nav-links a:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:2px;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+    .nav-links a:hover:after,.nav-links a:focus-visible:after{transform:scaleX(1);transform-origin:left}
+    .nav-cta,.button{display:inline-flex;min-height:52px;align-items:center;justify-content:center;gap:14px;padding:6px 7px 6px 22px;border:0;border-radius:999px;font-weight:700;white-space:nowrap;cursor:pointer;transition:transform .45s var(--ease),box-shadow .45s var(--ease),background .45s var(--ease)}
+    .nav-cta{min-height:50px;color:var(--white);background:var(--ink)}
+    .button-primary{color:var(--white);background:var(--blue);box-shadow:0 14px 36px rgba(40,100,255,.25)}
+    .button-secondary{color:var(--ink);background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(7,21,47,.12)}
+    .nav-cta:hover,.button:hover{transform:translateY(-2px)}
+    .button-primary:hover{box-shadow:0 18px 44px rgba(40,100,255,.34)}
+    .button-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.17);font-size:1.05rem;transition:transform .45s var(--ease)}
+    .button-secondary .button-icon{background:var(--paper-deep)}
+    .nav-cta:hover .button-icon,.button:hover .button-icon{transform:translate(2px,-1px)}
+    .menu-button{display:none;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:var(--ink);cursor:pointer;place-items:center}
+    .menu-lines{position:relative;width:19px;height:14px}
+    .menu-lines:before,.menu-lines:after{content:"";position:absolute;left:0;width:19px;height:2px;border-radius:2px;background:white;transition:transform .5s var(--ease),top .5s var(--ease)}
+    .menu-lines:before{top:2px}.menu-lines:after{top:10px}
+    .menu-button[aria-expanded="true"] .menu-lines:before{top:6px;transform:rotate(45deg)}
+    .menu-button[aria-expanded="true"] .menu-lines:after{top:6px;transform:rotate(-45deg)}
+    .mobile-nav{position:fixed;inset:0;z-index:45;display:none;padding:118px 24px 30px;background:rgba(243,245,248,.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s var(--ease)}
+    .mobile-nav.open{opacity:1;visibility:visible}
+    .mobile-nav nav{height:100%;display:flex;flex-direction:column;justify-content:center;gap:8px}
+    .mobile-nav a{font-size:clamp(2.6rem,13vw,4.5rem);font-weight:700;letter-spacing:-.06em;line-height:1.05;transform:translateY(32px);opacity:0;transition:transform .7s var(--ease),opacity .7s var(--ease)}
+    .mobile-nav.open a{transform:none;opacity:1}
+    .mobile-nav.open a:nth-child(2){transition-delay:.05s}.mobile-nav.open a:nth-child(3){transition-delay:.1s}.mobile-nav.open a:nth-child(4){transition-delay:.15s}.mobile-nav.open a:nth-child(5){transition-delay:.2s}
 
-  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-  .hero-fade{opacity:0;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) forwards}
+    .nav-sentinel{position:absolute;top:90px;width:1px;height:1px}
+    .hero-kicker{display:block;margin-bottom:22px;color:var(--blue-deep);font-size:.79rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#5488FF;text-transform:uppercase;animation-delay:.4s}
-  .hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#3973FF;box-shadow:0 0 0 4px rgba(57,115,255,.2)}
-  .hero h1{color:#F7F8FA;font-weight:650;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.02em;margin-top:18px}
-  .hero h1 span{display:block;animation-delay:.55s}
-  .hero h1 span:last-child{color:#99A6C4;animation-delay:.8s}
-  .hero p{color:#999FA9;margin-top:22px;font-size:17.5px;max-width:46ch;animation-delay:1s}
-  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;animation-delay:1.15s}
-  .hero-trust{margin-top:20px;font-size:12.5px;color:#999FA9;animation-delay:1.25s}
-  .btn-cobalt{background:#3973FF;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);border-radius:12px}
-  .btn-cobalt:hover{background:#5488FF;box-shadow:0 6px 20px rgba(0,0,0,.4);transform:translateY(-2px)}
-  .btn-cobalt .icon{transition:transform .2s ease}
-  .btn-cobalt:hover .icon{transform:translateX(4px)}
-  .btn-ghost-dark{background:transparent;color:#F7F8FA;border:1.5px solid rgba(255,255,255,.16);border-radius:12px}
-  .btn-ghost-dark:hover{border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.05)}
+    .showcase-wrap{position:relative;min-height:560px;display:flex;align-items:center;perspective:1600px}
+    .showcase-halo{position:absolute;inset:8% -8% 3% 8%;border-radius:48%;background:rgba(40,100,255,.1);filter:blur(50px);pointer-events:none}
+    .device-shell{position:relative;width:104%;margin-left:0;padding:9px;border-radius:30px;background:rgba(7,21,47,.08);box-shadow:var(--shadow);transform:rotateY(-4deg) rotateX(1.5deg);transform-origin:center;transition:transform .8s var(--ease);will-change:transform}
+    .device-core{overflow:hidden;border-radius:22px;background:#081d18;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+    .browser-bar{height:38px;padding:0 14px;display:flex;align-items:center;gap:7px;background:#fbfcfe;border-bottom:1px solid rgba(7,21,47,.08)}
+    .browser-dot{width:7px;height:7px;border-radius:50%;background:#cfd6e2}
+    .browser-url{height:18px;flex:1;max-width:260px;margin-left:10px;border-radius:999px;background:#edf0f5}
+    .device-core img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top}
+    .mobile-shell{position:absolute;right:-18px;bottom:20px;width:184px;padding:7px;border-radius:29px;background:#101c32;box-shadow:0 30px 80px rgba(7,21,47,.27);transform:rotate(3deg);transition:transform .7s var(--ease)}
+    .mobile-shell:before{content:"";position:absolute;left:50%;top:12px;width:54px;height:13px;border-radius:999px;background:#101c32;transform:translateX(-50%);z-index:2}
+    .mobile-shell img{width:100%;height:auto;aspect-ratio:390/730;object-fit:cover;object-position:top;border-radius:22px}
 
-  .hero-status{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#999FA9;margin-bottom:18px;animation-delay:1.8s}
-  .hero-status .pulse-dot{position:relative;width:7px;height:7px;border-radius:50%;background:#2AC769}
-  .hero-status .pulse-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(42,199,105,.4);animation:dotRing 2.4s ease-out infinite}
-  @keyframes dotRing{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.8);opacity:0}}
+    .work{padding-top:120px}
+    .project-proof{display:grid;grid-template-columns:minmax(250px,.34fr) minmax(0,1fr);gap:58px;align-items:center}
+    .project-case h3{margin:0;font-size:clamp(2.5rem,3.1vw,3.9rem);line-height:.94;letter-spacing:-.055em}
+    .project-case p{max-width:390px;margin:24px 0 0;color:var(--ink-soft);font-size:1.08rem;line-height:1.62}
+    .work-meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:.84rem}
+    .work-link{display:inline-flex;align-items:center;gap:14px;width:max-content;margin-top:36px;font-weight:700}
+    .work-link span{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;color:var(--white);background:var(--blue);transition:transform .45s var(--ease)}
+    .work-link:hover span{transform:translate(3px,-2px)}
 
-  .automation{position:relative;height:520px;animation-delay:1.4s}
-  @media (max-width:960px){ .automation{height:auto;display:flex;flex-direction:column;gap:14px} }
-  .automation svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-  @media (max-width:960px){ .automation svg{display:none} }
-  .automation path{fill:none;stroke:#3973FF;stroke-width:1.1;stroke-dasharray:1.5 5;stroke-linecap:round;
-    animation-name:pathFlow,pathActive;animation-duration:2.2s,7.8s;animation-timing-function:linear,ease;animation-iteration-count:infinite,infinite;animation-fill-mode:none,backwards}
-  @keyframes pathFlow{to{stroke-dashoffset:-40}}
-  @keyframes pathActive{0%,10%{stroke-opacity:.15}18%{stroke-opacity:.75}82%{stroke-opacity:.75}90%,100%{stroke-opacity:.15}}
+    .capabilities{padding-bottom:72px}
+    .cap-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(410px,.72fr);gap:20px}
+    .cap-shell{display:flex;padding:7px;border-radius:var(--radius-lg);background:rgba(7,21,47,.065)}
+    .cap-card{position:relative;width:100%;min-height:650px;padding:54px;border-radius:27px;background:var(--white);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+    .cap-card.dark{display:flex;flex-direction:column;color:var(--white);background:var(--ink)}
+    .cap-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+    .cap-name{font-size:clamp(2.4rem,4vw,4.8rem);line-height:.94;letter-spacing:-.055em;font-weight:700}
+    .cap-mark{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;color:var(--blue);background:var(--blue-soft);font-size:1.25rem;font-weight:700}
+    .dark .cap-mark{color:white;background:rgba(255,255,255,.1)}
+    .cap-card>p{max-width:570px;margin:26px 0 0;color:var(--ink-soft);font-size:1.12rem;line-height:1.62}
+    .cap-card.dark>p{color:rgba(255,255,255,.68)}
+    .website-canvas{position:absolute;left:54px;right:54px;bottom:52px;height:245px;padding:8px;border-radius:26px;background:#e8ecf4;transform:rotate(-1.5deg)}
+    .website-mini{height:100%;padding:22px 25px;border-radius:19px;color:white;background:var(--blue);overflow:hidden}
+    .mini-nav{display:flex;justify-content:space-between;font-size:.72rem;font-weight:700}
+    .mini-heading{max-width:410px;margin-top:54px;font-size:clamp(2rem,3vw,3.6rem);line-height:.9;letter-spacing:-.055em;font-weight:700}
+    .mini-row{width:72%;height:8px;margin-top:25px;border-radius:8px;background:rgba(255,255,255,.45)}
+    .mini-row.short{width:43%;margin-top:10px}
+    .flow{display:grid;gap:12px;margin-top:auto;padding-top:40px}
+    .flow-item{display:grid;grid-template-columns:110px minmax(0,1fr) 10px;align-items:center;gap:14px;min-height:82px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.075);transition:transform .5s var(--ease),background .5s var(--ease)}
+    .flow-item:hover{transform:translateX(5px);background:rgba(255,255,255,.11)}
+    .flow-item span:first-child{color:rgba(255,255,255,.62);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase}
+    .flow-item strong{font-size:.98rem;line-height:1.22}
+    .flow-item i{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 6px rgba(40,100,255,.13)}
 
-  .node{position:absolute;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;width:168px;
-    animation-name:nodeActivate;animation-duration:7.8s;animation-iteration-count:infinite;animation-timing-function:ease;animation-fill-mode:backwards;
-    transition:transform .2s ease,border-color .2s ease}
-  .node:hover{transform:translateY(-3px);border-color:rgba(57,115,255,.45)}
-  .node-title{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#F7F8FA}
-  .node-title .dot{width:6px;height:6px;border-radius:50%;background:#3973FF;flex-shrink:0}
-  .node.success .node-title .dot{background:#2AC769}
-  .node-sub{margin-top:4px;font-size:11.5px;color:#8890A0}
-  .node-detail{display:grid;grid-template-rows:0fr;opacity:0;overflow:hidden;transition:grid-template-rows .25s ease,opacity .25s ease;font-size:11px;color:#5488FF;margin-top:4px;min-height:0}
-  .node:hover .node-detail{grid-template-rows:1fr;opacity:1}
-  @media (max-width:960px){ .node{position:static;width:100%} }
+    .method{padding-top:72px}
+    .method-grid{display:grid;grid-template-columns:minmax(320px,.7fr) minmax(0,1.3fr);gap:100px;align-items:start}
+    .method-copy{position:sticky;top:130px}
+    .method-copy h2{margin:0;font-size:clamp(3.3rem,5.3vw,6rem);line-height:.92;letter-spacing:-.065em}
+    .method-copy p{max-width:430px;margin:28px 0 0;color:var(--ink-soft);font-size:1.16rem;line-height:1.62}
+    .method-list{display:grid;gap:12px}
+    .method-item{min-height:230px;padding:42px;border-radius:30px;background:var(--white);box-shadow:inset 0 0 0 1px rgba(7,21,47,.055);transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+    .method-item:hover{transform:translateY(-4px);box-shadow:0 22px 60px rgba(27,50,95,.09)}
+    .method-item small{color:var(--blue-deep);font-size:.76rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .method-item h3{margin:22px 0 0;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1;letter-spacing:-.045em}
+    .method-item p{max-width:630px;margin:18px 0 0;color:var(--ink-soft);font-size:1.04rem;line-height:1.6}
 
-  .node-crm{left:56%;top:4%}
-  .node-offerte{left:56%;top:28%}
-  .node-email{left:56%;top:52%}
-  .node-opvolging{left:56%;top:76%}
-  @media (max-width:960px){ .node-crm,.node-offerte,.node-email,.node-opvolging{left:auto;top:auto} }
+    .about-grid{display:grid;grid-template-columns:minmax(300px,.62fr) minmax(0,1.38fr);gap:96px;align-items:center}
+    .portrait-shell{width:min(100%,400px);justify-self:start;padding:8px;border-radius:38px;background:rgba(7,21,47,.07);transform:rotate(-1deg)}
+    .portrait-shell img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 38%;border-radius:30px;filter:saturate(.82) contrast(.98)}
+    .about-copy h2{max-width:800px;margin:0;font-size:clamp(3.2rem,5.4vw,6.2rem);line-height:.92;letter-spacing:-.065em}
+    .about-copy>p{max-width:690px;margin:30px 0 0;color:var(--ink-soft);font-size:1.17rem;line-height:1.68}
+    .about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+    .about-facts strong{display:block;font-size:1.05rem}.about-facts span{display:block;margin-top:6px;color:var(--muted);font-size:.88rem;line-height:1.4}
 
-  .lead-card{position:absolute;left:0;top:4%;width:186px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 16px;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 2.1s backwards}
-  @media (max-width:960px){ .lead-card{position:static;width:100%} }
-  .lead-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;color:#5488FF;background:rgba(57,115,255,.14);padding:3px 8px;border-radius:6px;margin-bottom:8px}
-  .lead-card .node-title{font-size:13.5px}
-  .lead-card .node-sub{margin-top:6px;line-height:1.5}
+    .faq-wrap{display:grid;grid-template-columns:minmax(300px,.58fr) minmax(0,1.42fr);gap:110px;align-items:start}
+    .faq-head{position:sticky;top:130px}
+    .faq-head h2{margin:0;font-size:clamp(3.2rem,5vw,5.8rem);line-height:.94;letter-spacing:-.065em}
+    .faq-head p{max-width:390px;margin:25px 0 0;color:var(--ink-soft);font-size:1.08rem;line-height:1.6}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-item summary{position:relative;list-style:none;padding:30px 58px 30px 0;font-size:clamp(1.15rem,1.8vw,1.42rem);font-weight:600;cursor:pointer}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:after{content:"+";position:absolute;right:8px;top:25px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:var(--ink);background:var(--white);transition:transform .45s var(--ease),background .45s var(--ease)}
+    .faq-item[open] summary:after{transform:rotate(45deg);background:var(--blue-soft)}
+    .faq-answer{max-width:720px;padding:0 58px 30px 0;color:var(--ink-soft);font-size:1rem;line-height:1.68}
 
-  .core{position:absolute;left:10%;top:50%;transform:translate(-50%,-50%);width:130px;height:130px;border-radius:50%;
-    background:#10141C;border:1px solid rgba(57,115,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-    animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 1.6s backwards;z-index:2}
-  .core::before{content:"";position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(57,115,255,.22),transparent 70%);animation:coreBreathe 4s ease-in-out infinite;z-index:-1}
-  @keyframes coreBreathe{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:.9;transform:scale(1.04)}}
-  .core-mark{font-family:var(--font-display);font-weight:800;font-size:12px;color:#F7F8FA;letter-spacing:.02em}
-  .core-sub{font-size:8px;color:#5488FF;font-weight:600;letter-spacing:.03em}
-  @media (max-width:960px){ .core{position:static;transform:none;margin:0 auto} }
+    .contact{padding-bottom:54px}
+    .contact-shell{padding:8px;border-radius:44px;background:rgba(7,21,47,.075)}
+    .contact-card{position:relative;min-height:620px;padding:72px;border-radius:36px;color:var(--white);background:var(--blue);overflow:hidden}
+    .contact-card:before{content:"";position:absolute;width:600px;height:600px;right:-160px;bottom:-300px;border:120px solid rgba(255,255,255,.09);border-radius:50%}
+    .contact-card h2{position:relative;max-width:950px;margin:0;font-size:clamp(3.6rem,6.7vw,7.6rem);line-height:.88;letter-spacing:-.075em}
+    .contact-bottom{position:absolute;left:72px;right:72px;bottom:66px;display:flex;align-items:end;justify-content:space-between;gap:40px}
+    .contact-message{max-width:560px}
+    .contact-message p{margin:0;color:rgba(255,255,255,.78);font-size:1.13rem;line-height:1.55}
+    .contact-phone{display:inline-flex;margin-top:17px;color:var(--white);font-size:.94rem;font-weight:700}
+    .contact-card .button{color:var(--ink);background:white;box-shadow:0 18px 48px rgba(7,21,47,.14)}
 
-  .stat-card{position:absolute;left:2%;bottom:2%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 16px;animation:fadeUp .7s cubic-bezier(.16,1,.3,1) 2.4s backwards}
-  @media (max-width:960px){ .stat-card{position:static} }
-  .stat-num{font-family:var(--font-display);font-size:20px;font-weight:700;color:#F7F8FA}
-  .stat-label{font-size:11px;color:#8890A0;margin-top:2px}
+    .footer{padding:50px 0 24px}
+    .footer-top{display:grid;grid-template-columns:1.2fr .55fr .55fr;gap:70px;padding:48px 0 60px;border-bottom:1px solid var(--line)}
+    .footer-intro p{max-width:440px;margin:20px 0 0;color:var(--ink-soft);line-height:1.62}
+    .footer-column strong{display:block;margin-bottom:18px;font-size:.85rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+    .footer-column a{display:block;width:max-content;margin:11px 0;color:var(--ink-soft);transition:color .35s var(--ease),transform .35s var(--ease)}
+    .footer-column a:hover{color:var(--blue);transform:translateX(3px)}
+    .footer-word{padding:50px 0 32px;font-size:clamp(6rem,18.8vw,18rem);line-height:.68;letter-spacing:-.09em;font-weight:800;color:var(--ink)}
+    .footer-word .brand-a{color:var(--blue)}
+    .footer-legal{display:flex;justify-content:space-between;gap:24px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
 
-  @keyframes nodeActivate{
-    0%,9%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
-    16%{opacity:1;transform:translateY(0);border-color:rgba(57,115,255,.42)}
-    86%{opacity:1;border-color:rgba(57,115,255,.42)}
-    94%,100%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
-  }
-  @keyframes nodeActivateSuccess{
-    0%,9%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
-    16%{opacity:1;transform:translateY(0);border-color:rgba(42,199,105,.5)}
-    86%{opacity:1;border-color:rgba(42,199,105,.5)}
-    94%,100%{opacity:.32;transform:translateY(4px);border-color:rgba(255,255,255,.08)}
-  }
-  .node.success{animation-name:nodeActivateSuccess}
+    .reveal-ready .hero .reveal{opacity:0;transform:translateY(42px)}
+    .reveal-ready .reveal.in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+    .reveal-ready .delay-1.in{transition-delay:.1s}.reveal-ready .delay-2.in{transition-delay:.2s}
 
-  @media (prefers-reduced-motion:reduce){
-    .hero-fade,.lead-card,.core,.stat-card{animation:none !important;opacity:1 !important;transform:none !important}
-    .hero h1 span:last-child{color:#99A6C4}
-    .node{animation:none !important;opacity:1 !important;transform:none !important;border-color:rgba(57,115,255,.42) !important}
-    .node.success{border-color:rgba(42,199,105,.5) !important}
-    .automation path{animation:none !important;stroke-opacity:.55}
-    .core::before{animation:none}
-    .hero-status .pulse-dot::after{animation:none}
-  }
+    @media (max-width:1100px){
+      .nav-links{gap:20px}.showcase-wrap{min-height:590px;width:min(920px,100%);margin:auto}.device-shell{width:96%;margin:auto;transform:rotateY(-2deg)}
+      .cap-grid{grid-template-columns:1fr}.cap-card{min-height:590px}.method-grid,.faq-wrap{gap:55px}.about-grid{gap:50px}
+    }
 
-  .head{max-width:620px;margin-bottom:48px}
-  .head h2{font-size:clamp(26px,3.2vw,34px);line-height:1.15}
-  .head p{margin-top:12px;font-size:15.5px}
+    @media (max-width:820px){
+      .container{width:min(100% - 32px,680px)}.section{padding:76px 0}.section-intro{margin-bottom:36px}.section-title{font-size:clamp(3rem,13vw,5rem)}
+      .nav-shell{width:calc(100% - 24px)}.site-header.compact .nav-shell{width:calc(100% - 24px)}.nav-core{height:58px;padding-left:14px}.nav-links,.nav-cta{display:none}.menu-button{display:grid}.mobile-nav{display:block}
+      .showcase-wrap{min-height:430px}.device-shell{width:100%;padding:6px;border-radius:23px;transform:none}.device-core{border-radius:17px}.browser-bar{height:28px}.mobile-shell{right:-5px;bottom:-5px;width:128px;border-radius:22px}.mobile-shell img{border-radius:16px}
+      .work{padding-top:64px}.project-proof{grid-template-columns:1fr;gap:32px}.project-case{max-width:520px}
+      .capabilities{padding-bottom:40px}.method{padding-top:40px}.cap-grid{grid-template-columns:1fr}.cap-card{min-height:590px;padding:34px}.cap-card:not(.dark),.cap-card.dark{min-height:0}.website-canvas{position:static;height:220px;margin-top:32px}.mini-heading{margin-top:42px}.flow{margin-top:32px;padding-top:0}.flow-item{grid-template-columns:minmax(0,1fr) 10px;grid-template-areas:"label dot" "value dot";gap:5px 12px}.flow-item span:first-child{grid-area:label}.flow-item strong{grid-area:value}.flow-item i{grid-area:dot;align-self:center}.method-grid,.about-grid,.faq-wrap{grid-template-columns:1fr;gap:34px}.method-copy,.faq-head{position:static}.method-list{gap:10px}.method-item{min-height:190px;padding:32px}.portrait-shell{width:min(100%,560px);margin:auto}.about-facts{grid-template-columns:1fr;gap:18px}.about-facts div{padding-bottom:16px;border-bottom:1px solid var(--line)}
+      .contact-card{min-height:0;padding:40px}.contact-bottom{position:static;margin-top:64px;align-items:flex-start;flex-direction:column}.footer-top{grid-template-columns:1fr 1fr;gap:42px}.footer-intro{grid-column:1/-1}.footer-word{font-size:clamp(5.4rem,25vw,9rem)}
+    }
 
-  /* ---------- Pillars (was: 3-equal-card row) ---------- */
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border-radius:var(--radius-card);overflow:hidden}
-  @media (max-width:820px){ .pillars{grid-template-columns:1fr} }
-  .pillar{background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px}
-  .pillar-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center}
-  .pillar h3{font-size:21px}
-  .pillar p{font-size:15px}
-  .pillar-points{margin-top:4px;display:flex;flex-direction:column;gap:9px}
-  .pillar-points li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
-  .pillar-points .icon{width:15px;height:15px;color:var(--accent);flex-shrink:0}
+    @media (max-width:520px){
+      .section{padding:64px 0}.capabilities{padding-bottom:40px}.method{padding-top:40px}.button{width:100%;justify-content:space-between}.showcase-wrap{min-height:310px}.mobile-shell{width:92px}.work-meta{gap:12px 20px}.cap-card{padding:28px}.website-canvas{height:190px;padding:5px}.website-mini{padding:18px}.mini-heading{margin-top:32px}.flow-item{padding:14px 16px}.contact-card{padding:28px}.contact-bottom{margin-top:56px}.footer-top{grid-template-columns:1fr}.footer-intro{grid-column:auto}.footer-legal{flex-direction:column}.footer-word{padding-top:32px}
+    }
 
-  /* ---------- Voorbeeldwerk ---------- */
-  .work-card{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm)}
-  @media (max-width:768px){ .work-card{grid-template-columns:1fr} }
-  .work-visual{background:var(--accent-soft);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:14px}
-  .work-visual .tag{align-self:flex-start;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:var(--radius-pill)}
-  .live-preview{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--accent-line);box-shadow:var(--shadow-sm);background:#fff}
-  .live-preview iframe{position:absolute;top:0;left:0;width:1400px;height:1050px;border:0;transform-origin:0 0;pointer-events:none}
-  .work-body{padding:40px}
-  .work-body h3{font-size:21px}
-  .work-body p{margin-top:12px;font-size:15px}
-  .work-body .btn{margin-top:22px}
-
-  /* ---------- Over mij ---------- */
-  .about-grid{display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:center}
-  @media (max-width:640px){ .about-grid{grid-template-columns:1fr;gap:24px} }
-  .about-visual{width:200px;height:200px;flex-shrink:0}
-  @media (max-width:640px){ .about-visual{width:140px;height:140px} }
-  .about-grid p{margin-top:14px;font-size:15.5px;max-width:60ch}
-  .about-grid p:first-of-type{margin-top:0}
-
-  /* ---------- Contact ---------- */
-  .contact-card{background:var(--accent-dark);border-radius:24px;padding:52px 48px;color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-  @media (max-width:768px){ .contact-card{padding:36px 26px;grid-template-columns:1fr} }
-  .contact-card h2{color:#fff;font-size:clamp(24px,3vw,30px)}
-  .contact-card p{color:rgba(255,255,255,.72);margin-top:10px;max-width:52ch}
-  .contact-lines{display:flex;flex-direction:column;gap:12px}
-  .contact-line{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#fff}
-  .contact-line .icon{color:#9FC0E0;flex-shrink:0}
-  .contact-card .btn-primary{margin-top:22px;background:#fff;color:var(--accent-dark);align-self:start}
-  .copy-inline-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:2px;border-radius:10px;color:#9FC0E0;flex-shrink:0}
-  .copy-inline-btn .icon{width:14px;height:14px}
-  .copy-inline-btn:hover{color:#fff;background:rgba(255,255,255,.08)}
-  .copy-inline-btn.copied{color:#2AC769}
-
-  footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0 26px}
-  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
-  .footer-row a{font-size:13.5px;color:rgba(255,255,255,.6)}
-  .footer-row a:hover{color:#fff}
-  .footer-links{display:flex;gap:22px;flex-wrap:wrap}
-  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.6)}
-
-  /* ---------- Veelgestelde vragen ---------- */
-  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px}
-  .faq-item{background:var(--surface);border:1px solid var(--border);border-left:3px solid transparent;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
-  .faq-item[open]{border-left-color:var(--accent)}
-  .faq-item summary{list-style:none;cursor:pointer;padding:21px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:600;font-size:15.5px;color:var(--ink)}
-  .faq-item summary::-webkit-details-marker{display:none}
-  .faq-toggle{width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;font-weight:700;line-height:1}
-  .faq-item[open] summary{border-bottom:1px solid var(--border)}
-  .faq-item[open] .faq-toggle::before{content:"\2212"}
-  .faq-toggle::before{content:"+"}
-  .faq-answer{padding:2px 24px 22px;font-size:15px;line-height:1.65}
-  .faq-answer a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
-
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
-</style>
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.reveal-ready .reveal{opacity:1;transform:none}.reveal-ready .reveal.in{transition:none}.device-shell,.mobile-shell,.nav-shell,.button,.button-icon{transition:none}
+    }
+  </style>
+  <link rel="stylesheet" href="css/hero-atelier.css">
 </head>
 <body>
-<a href="#main" class="skip-link">Naar inhoud</a>
+  <a class="skip-link" href="#main">Naar de inhoud</a>
+  <div class="nav-sentinel" aria-hidden="true"></div>
 
-<svg class="visually-hidden" aria-hidden="true">
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2z"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 9.5V19.5"/></symbol>
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L11 21l8-10.5h-6z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6"/></symbol>
-  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9.5a2 2 0 0 0 2 2h2.5"/></symbol>
-</svg>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-shell">
+      <div class="nav-core">
+        <a class="brand" href="#main" aria-label="Boumax home">BOUM<span class="brand-a">A</span>X</a>
+        <nav class="nav-links" aria-label="Hoofdnavigatie">
+          <a href="#werk">Werk</a>
+          <a href="#wat-ik-doe">Wat ik doe</a>
+          <a href="#over-mij">Over mij</a>
+          <a href="#vragen">Vragen</a>
+        </nav>
+          <a class="nav-cta" href="#contact">Plan kennismaking <span class="button-icon" aria-hidden="true">↗</span></a>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileNav"><span class="menu-lines" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </header>
 
-<header>
-  <div class="container nav">
-    <a href="#main" class="brand"><span class="wordmark">BOUM<span class="accent">A</span>X</span></a>
-    <nav class="nav-links" aria-label="Hoofdmenu">
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <nav aria-label="Mobiele navigatie">
+      <a href="#werk">Werk</a>
       <a href="#wat-ik-doe">Wat ik doe</a>
-      <a href="#voorbeeldwerk">Voorbeeldwerk</a>
       <a href="#over-mij">Over mij</a>
-      <a href="#veelgestelde-vragen">Vragen</a>
+      <a href="#vragen">Vragen</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div style="display:flex;align-items:center;gap:14px">
-      <a href="#contact" class="btn btn-primary">Neem contact op</a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
-        <svg class="icon" style="width:24px;height:24px" id="navToggleIcon"><use href="#i-menu"/></svg>
-      </button>
-    </div>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#wat-ik-doe">Wat ik doe</a>
-    <a href="#voorbeeldwerk">Voorbeeldwerk</a>
-    <a href="#over-mij">Over mij</a>
-    <a href="#veelgestelde-vragen">Vragen</a>
-    <a href="#contact">Contact</a>
-  </div>
-</header>
 
-<main id="main">
-
-  <section class="hero">
-    <div class="hero-fade-bottom"></div>
-    <div class="container hero-grid">
-      <div>
-        <span class="hero-eyebrow hero-fade" style="animation-delay:.4s">Bouw minder handmatig. Laat meer automatisch gaan.</span>
-        <h1><span class="hero-fade" style="animation-delay:.55s">Je bedrijf kan slimmer werken.</span><span class="hero-fade" style="animation-delay:.8s">Ik bouw het systeem erachter.</span></h1>
-        <p class="hero-fade" style="animation-delay:1s">Boumax bouwt websites en automatiseert processen, zodat minder handmatig hoeft en meer vanzelf gebeurt.</p>
-        <div class="hero-ctas hero-fade" style="animation-delay:1.15s">
-          <a href="#wat-ik-doe" class="btn btn-cobalt">Ontdek wat er mogelijk is<svg class="icon" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
-          <a href="#voorbeeldwerk" class="btn btn-ghost-dark">Bekijk het in actie</a>
-        </div>
-        <p class="hero-trust hero-fade" style="animation-delay:1.25s">Websites · Automatisering · Maatwerk</p>
-      </div>
-
-      <div class="automation hero-fade" id="automation" aria-hidden="true">
-        <span class="hero-status hero-fade" style="animation-delay:1.8s"><span class="pulse-dot"></span>Voorbeeld van een automatische opvolging</span>
-
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M15,30 L12,38" style="animation-delay:0s,0s"/>
-          <path d="M21,50 L50,12" style="animation-delay:0s,1.3s"/>
-          <path d="M21,50 L50,36" style="animation-delay:0s,2.6s"/>
-          <path d="M21,50 L50,60" style="animation-delay:0s,3.9s"/>
-          <path d="M21,50 L50,84" style="animation-delay:0s,5.2s"/>
-        </svg>
-
-        <div class="lead-card">
-          <span class="lead-badge">NIEUWE AANVRAAG</span>
-          <div class="node-title">Thomas de Jong</div>
-          <div class="node-sub">Nieuwe website · 14:32<br>Status: Ontvangen</div>
-        </div>
-
-        <div class="core">
-          <span class="core-mark">BOUMAX</span>
-          <span class="core-sub">Automatisering actief</span>
-        </div>
-
-        <div class="node node-crm" style="animation-delay:1.3s">
-          <div class="node-title"><span class="dot"></span>CRM</div>
-          <div class="node-sub">Klant toegevoegd</div>
-          <div class="node-detail">Automatisch bijgewerkt · 14:32</div>
-        </div>
-        <div class="node node-offerte" style="animation-delay:2.6s">
-          <div class="node-title"><span class="dot"></span>Offerte</div>
-          <div class="node-sub">Concept aangemaakt</div>
-          <div class="node-detail">Op basis van eerder werk</div>
-        </div>
-        <div class="node node-email" style="animation-delay:3.9s">
-          <div class="node-title"><span class="dot"></span>E-mail</div>
-          <div class="node-sub">Verstuurd</div>
-          <div class="node-detail">Bevestiging naar de klant</div>
-        </div>
-        <div class="node node-opvolging success" style="animation-delay:5.2s">
-          <div class="node-title"><span class="dot"></span>Opvolging</div>
-          <div class="node-sub">Ingepland voor vrijdag</div>
-          <div class="node-detail">5 acties automatisch uitgevoerd</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-num">12,4 uur</div>
-          <div class="stat-label">bespaard in dit voorbeeld</div>
+  <main id="main">
+    <section class="hero atelier-story" id="atelierStory" data-story="living-system" data-active-phase="result">
+      <div class="atelier-stage" id="atelierStage">
+        <canvas class="atelier-canvas" id="atelierCanvas" aria-label="Een voltooide website die tijdens het scrollen opent en het digitale systeem erachter onthult"></canvas>
+        <picture class="atelier-fallback" aria-hidden="true">
+          <img src="assets/hero-atelier/premium-website-v2.webp" alt="" width="1536" height="1024">
+        </picture>
+        <div class="atelier-shade" aria-hidden="true"></div>
+        <div class="container atelier-copy">
+          <span class="hero-kicker">Websites en automatisering voor lokale bedrijven</span>
+          <h1>Sterk zichtbaar.<br><strong>Slim geregeld.</strong></h1>
+          <p>Boumax bouwt websites die vertrouwen winnen en verbindt aanvragen, offertes en opvolging waar dat tijd bespaart.</p>
+          <a class="button button-primary" href="#werk">Bekijk het werk <span class="button-icon" aria-hidden="true">↓</span></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="wat-ik-doe">
-    <div class="container">
-      <div class="head reveal">
-        <h2>Wat ik doe</h2>
-        <p>Twee dingen die vaak samen horen: een website die aanvragen oplevert, en minder rompslomp in het werk erachter.</p>
-      </div>
-      <div class="pillars reveal">
-        <div class="pillar">
-          <div class="pillar-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-layout"/></svg></div>
-          <h3>Website</h3>
-          <p>Geen sjabloon. Een site die past bij uw bedrijf en uw klanten overtuigt, gebouwd om te laten bellen of een offerte aan te vragen.</p>
-          <ul class="pillar-points">
-            <li><svg class="icon"><use href="#i-check"/></svg>Op maat ontworpen, geen bouwpakket</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Werkt goed op elk scherm</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Eén duidelijke actie per pagina</li>
-          </ul>
+    <section class="section work" id="werk">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title reveal delay-1">Zo kan maatwerk eruitzien.</h2>
+          </div>
+          <p class="section-copy reveal delay-2">Dit zelf geïnitieerde concept laat zien hoe een lokaal bedrijf herkenbaar en professioneel kan overkomen, zonder zijn nuchtere karakter te verliezen.</p>
         </div>
-        <div class="pillar">
-          <div class="pillar-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-bolt"/></svg></div>
-          <h3>Automatisering</h3>
-          <p>Zodra de website als basis staat, help ik met het terugkerende werk erachter, zodat er minder blijft liggen voor 's avonds.</p>
-          <ul class="pillar-points">
-            <li><svg class="icon"><use href="#i-check"/></svg>Offertes sneller de deur uit</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Planning die zichzelf bijhoudt</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Opvolging die niet vergeten wordt</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--surface-alt)" id="voorbeeldwerk">
-    <div class="container">
-      <div class="head reveal">
-        <h2>Voorbeeldwerk</h2>
-        <p>Een uitgewerkte demo, gemaakt om te laten zien hoe dit er in de praktijk uitziet.</p>
-      </div>
-      <div class="work-card reveal">
-        <div class="work-visual">
-          <span class="tag">DEMO-PROJECT</span>
-          <div class="live-preview" id="livePreview">
-            <iframe src="demo/" title="Live voorbeeld: Schildersbedrijf Bosma" loading="lazy" id="previewFrame"></iframe>
+        <div class="project-proof reveal">
+          <div class="project-case">
+            <h3>Bosma<br>Schilderwerken</h3>
+            <p>Een uitgesproken websiteconcept waarin fotografie, duidelijke keuzes en interactie het vakmanschap zichtbaar maken.</p>
+            <div class="work-meta"><span>Zelf geïnitieerd concept</span><span>Webdesign</span><span>Interactief ontwerp</span></div>
+            <a class="work-link" href="demo/">Open de Bosma-site <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="showcase-wrap" id="heroShowcase" aria-label="Voorbeeld van de Bosma website op desktop en mobiel">
+            <div class="showcase-halo" aria-hidden="true"></div>
+            <div class="device-shell">
+              <div class="device-core">
+                <div class="browser-bar" aria-hidden="true"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-url"></span></div>
+                <img src="assets/bosma-desktop.png" alt="Homepageconcept voor Schildersbedrijf Bosma op desktop" width="1440" height="900" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="mobile-shell"><img src="assets/bosma-mobile.png" alt="Homepageconcept voor Schildersbedrijf Bosma op mobiel" width="390" height="844" loading="lazy" decoding="async"></div>
           </div>
         </div>
-        <div class="work-body">
-          <h3>Website-redesign voor een lokaal bedrijf</h3>
-          <p>Een volledig uitgewerkte demo (in dit geval voor een schildersbedrijf) die laat zien hoe een moderne, conversiegerichte website voor een lokaal bedrijf eruit kan zien: heldere diensten, een duidelijke offerteaanvraag en een opzet die vertrouwen wekt.</p>
-          <a href="demo/" class="btn btn-primary">Bekijk de demo<svg class="icon" style="width:15px;height:15px"><use href="#i-arrow"/></svg></a>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="over-mij">
-    <div class="container about-grid reveal">
-      <div class="geo-panel about-visual">
-        <img src="branding/johan-bouma.jpg" alt="Johan Bouma" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
-      <div>
-        <h2 style="margin-bottom:6px">Over mij</h2>
-        <p>Ik ben Johan Bouma, gevestigd in Groningen. Ik run zelf een webshop en werk dagelijks met conversie, klantgedrag en automatisering.</p>
-        <p>Boumax is ontstaan vanuit een simpele observatie: veel lokale bedrijven lopen achter op wat er digitaal mogelijk is. Ik help daarbij op twee manieren: met een website met een duidelijke route naar bellen of een offerte aanvragen, en met het automatiseren van het terugkerende werk erachter, zoals offertes, planning en opvolging.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--surface-alt);padding-bottom:48px" id="veelgestelde-vragen">
-    <div class="container">
-      <div class="head reveal">
-        <h2>Veelgestelde vragen</h2>
-        <p>Dit wilt u waarschijnlijk weten voordat we beginnen.</p>
-      </div>
-      <div class="faq-list reveal">
-        <details class="faq-item">
-          <summary>Wat kost een website bij Boumax?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Dat hangt af van wat u nodig heeft. Een eenvoudige website zit rond de €500 tot €1000. Met extra&#39;s zoals een fotogalerij of aanvraagformulier zit u op €1000 tot €2000. Wilt u iets volledig op maat, met bijvoorbeeld een koppeling naar automatisering, dan begint dat vanaf €2500. Daarna betaalt u alleen nog €49 per maand voor onderhoud, verder geen verborgen kosten. Neem gerust contact op voor een concrete prijs voor uw situatie.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Betaal ik na oplevering nog iets door?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Ja, €49 per maand voor onderhoud. Daarvoor blijft de website technisch in de lucht en up-to-date, en verwerk ik tot twee kleine wijzigingen per maand voor u, bijvoorbeeld nieuwe openingstijden, prijzen of foto&#39;s. Grotere aanpassingen, zoals een nieuwe pagina, bespreken we apart.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Hoe lang duurt het voordat mijn website live staat?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Voor een standaard website reken ik op een paar dagen tot een week, afhankelijk van uw wensen. U blijft steeds op de hoogte van de voortgang.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Moet ik overstappen van mijn huidige hosting of domeinnaam?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Nee, dat hoeft niet. Uw bestaande domeinnaam kan gewoon blijven wijzen naar de nieuwe website: de techniek daarachter regel ik.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Kan ik niet gewoon zelf iets in elkaar zetten?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Dat kan zeker, en voor sommige bedrijven is dat prima. Het verschil zit erin dat ik niet alleen een website bouw, maar ook meedenk over wat daarna gebeurt: hoe een aanvraag bij u binnenkomt en hoe u die opvolgt.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Wat houdt automatiseren precies in, en wat is er mogelijk?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Het gaat om het terugkerende werk rond een aanvraag, zodat er minder blijft liggen. Denk aan een offerte die grotendeels vanzelf klaarstaat zodra iemand een aanvraag doet, een planning die zichzelf bijhoudt, of een herinnering die automatisch verstuurd wordt als een klant nog niet gereageerd heeft. Dit bouw ik naast wat u al gebruikt, u hoeft niet over te stappen naar nieuwe software. We beginnen altijd klein, bij het knelpunt dat u nu het meest merkt, en breiden pas uit als dat goed werkt.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Wat gebeurt er met mijn gegevens?<span class="faq-toggle" aria-hidden="true"></span></summary>
-          <div class="faq-answer">Alleen wat nodig is om de website (en eventueel de e-mailfunctie) te laten werken. Meer daarover leest u in de <a href="privacy.html">privacyverklaring</a>.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:48px" id="contact">
-    <div class="container">
-      <div class="contact-card reveal">
-        <div>
-          <h2>Benieuwd wat een nieuwe website voor uw bedrijf kan doen?</h2>
-          <p>Stuur een bericht of bel even. Vrijblijvend, geen verplichtingen.</p>
-          <a href="mailto:info@boumax.nl" class="btn btn-primary">Stuur een e-mail</a>
-        </div>
-        <div class="contact-lines">
-          <div class="contact-line"><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+31627435394">06 27 43 53 94</a></div>
-          <div class="contact-line">
-            <svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@boumax.nl">info@boumax.nl</a>
-            <button type="button" class="copy-inline-btn" id="copyEmailBtn" data-email="info@boumax.nl" aria-label="E-mailadres kopiëren" title="E-mailadres kopiëren">
-              <svg class="icon" id="copyEmailIcon"><use href="#i-copy"/></svg>
-            </button>
-            <span class="visually-hidden" role="status" aria-live="polite" id="copyEmailStatus"></span>
+    <section class="section capabilities" id="wat-ik-doe">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <h2 class="section-title reveal delay-1">Een sterke website. Minder werk eromheen.</h2>
           </div>
-          <div class="contact-line"><svg class="icon"><use href="#i-pin"/></svg>Groningen, Drenthe en Friesland</div>
+          <p class="section-copy reveal delay-2">U krijgt een herkenbare website én, waar het nuttig is, slimme koppelingen die terugkerend werk uit handen nemen.</p>
+        </div>
+
+        <div class="cap-grid">
+          <div class="cap-shell reveal">
+            <article class="cap-card">
+              <div class="cap-top"><div class="cap-name">Een website die<br>uw niveau laat zien.</div><span class="cap-mark" aria-hidden="true">W</span></div>
+              <p>Boodschap, structuur, vormgeving en techniek komen samen in één herkenbare website die op ieder scherm klopt.</p>
+              <div class="website-canvas" aria-hidden="true">
+                <div class="website-mini">
+                  <div class="mini-nav"><span>UW BEDRIJF</span><span>Contact ↗</span></div>
+                  <div class="mini-heading">Een eerste indruk die blijft hangen.</div>
+                  <div class="mini-row"></div><div class="mini-row short"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="cap-shell reveal delay-1">
+            <article class="cap-card dark">
+              <div class="cap-top"><div class="cap-name">Aanvragen die<br>niet blijven liggen.</div><span class="cap-mark" aria-hidden="true">A</span></div>
+              <p>Formulieren, e-mail en opvolging sluiten op elkaar aan, zodat u minder hoeft over te typen en minder snel iets vergeet.</p>
+              <div class="flow" aria-label="Voorbeeld van een automatische opvolging">
+                <div class="flow-item"><span>Binnenkomst</span><strong>Nieuwe aanvraag</strong><i aria-hidden="true"></i></div>
+                <div class="flow-item"><span>Voorbereiding</span><strong>Offerte klaarzetten</strong><i aria-hidden="true"></i></div>
+                <div class="flow-item"><span>Opvolging</span><strong>Herinnering plannen</strong><i aria-hidden="true"></i></div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-row">
-      <a href="#main" class="brand"><span class="wordmark on-dark">BOUM<span class="accent">A</span>X</span></a>
-      <div class="footer-links">
-        <a href="#wat-ik-doe">Wat ik doe</a>
-        <a href="#voorbeeldwerk">Voorbeeldwerk</a>
-        <a href="#over-mij">Over mij</a>
-        <a href="#veelgestelde-vragen">Vragen</a>
-        <a href="#contact">Contact</a>
+    <section class="section method" aria-labelledby="method-title">
+      <div class="container method-grid">
+        <div class="method-copy reveal">
+          <h2 id="method-title">Van richting naar oplevering.</h2>
+          <p>Drie duidelijke stappen houden het traject overzichtelijk. U weet steeds wat er wordt besloten, gemaakt en opgeleverd.</p>
+        </div>
+        <div class="method-list">
+          <article class="method-item reveal">
+            <small>Richting</small>
+            <h3>Eerst de juiste boodschap.</h3>
+            <p>We bepalen wie u wilt bereiken, wat die klant moet begrijpen en welke actie de website moet opleveren.</p>
+          </article>
+          <article class="method-item reveal">
+            <small>Ontwerp</small>
+            <h3>Dan krijgt het een eigen vorm.</h3>
+            <p>Typografie, fotografie, kleur en beweging worden samengebracht tot een herkenbare ervaring voor desktop en mobiel.</p>
+          </article>
+          <article class="method-item reveal">
+            <small>Bouw en koppeling</small>
+            <h3>Tot slot moet alles werken.</h3>
+            <p>De website wordt zorgvuldig gebouwd en nuttige koppelingen worden ingericht, getest en helder opgeleverd.</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section class="section about" id="over-mij">
+      <div class="container about-grid">
+        <div class="portrait-shell reveal"><img src="assets/johan-bouma-portret-2026.png" alt="Johan Bouma van Boumax" width="1120" height="1400" loading="lazy" decoding="async"></div>
+        <div class="about-copy">
+          <h2 class="reveal delay-1">U werkt rechtstreeks met Johan.</h2>
+          <p class="reveal delay-2">Ik ben Johan Bouma. U bespreekt uw wensen met degene die de keuzes maakt én het werk bouwt. Daarbij kijk ik naar uitstraling, klantgedrag en de praktische processen achter uw website.</p>
+          <div class="about-facts reveal delay-2">
+            <div><strong>Groningen</strong><span>Werkzaam in Noord-Nederland</span></div>
+            <div><strong>Persoonlijk</strong><span>Direct contact met de maker</span></div>
+            <div><strong>Praktisch</strong><span>Gebouwd rond uw dagelijkse werk</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="vragen">
+      <div class="container faq-wrap">
+        <div class="faq-head reveal">
+          <h2>Duidelijk voordat we beginnen.</h2>
+          <p>U weet vooraf wat er wordt gemaakt, wat het kost en welke keuzes onderweg van u worden gevraagd.</p>
+        </div>
+        <div class="faq-list reveal delay-1">
+          <details class="faq-item">
+            <summary>Wat kost een website bij Boumax?</summary>
+            <div class="faq-answer">Een volledig maatwerktraject begint vanaf €2.500. De uiteindelijke prijs hangt af van het aantal pagina’s, de interacties en eventuele koppelingen. Vooraf ontvangt u een helder voorstel, zodat u precies weet wat binnen de opdracht valt.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Hoe lang duurt het voordat mijn website klaar is?</summary>
+            <div class="faq-answer">De planning hangt af van de omvang en van het beschikbare materiaal. Bij de start spreken we een duidelijke route af, inclusief de momenten waarop u meekijkt en reageert.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Moet ik overstappen van hosting of domeinnaam?</summary>
+            <div class="faq-answer">Nee. Uw bestaande domeinnaam kan gewoon blijven. Ik regel de technische aansluiting en bespreek vooraf wat het handigst is voor uw situatie.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Wat houdt automatiseren precies in?</summary>
+            <div class="faq-answer">Denk aan een aanvraag die automatisch op de juiste plek terechtkomt, een offerte die sneller klaarstaat of een herinnering die op het goede moment wordt verzonden. We beginnen bij het knelpunt dat u nu het meeste tijd kost.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Wat betaal ik na oplevering?</summary>
+            <div class="faq-answer">Voor €49 per maand blijft de website technisch onderhouden en kunt u iedere maand twee kleine wijzigingen laten uitvoeren. Grotere uitbreidingen bespreken we altijd vooraf.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div class="contact-card">
+            <h2>Wat moet uw website opleveren?</h2>
+            <div class="contact-bottom">
+              <div class="contact-message">
+                <p>U hoeft nog geen uitgewerkt plan te hebben. Tijdens een korte, vrijblijvende kennismaking bepalen we wat uw website moet opleveren en wat daarvoor nodig is.</p>
+                <a class="contact-phone" href="tel:+31627435394">Liever bellen? 06 27 43 53 94</a>
+              </div>
+              <a class="button" href="mailto:info@boumax.nl?subject=Kennismaking%20Boumax">Plan een kennismaking <span class="button-icon" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-intro">
+          <a class="brand" href="#main">BOUM<span class="brand-a">A</span>X</a>
+          <p>Persoonlijk ontworpen en gebouwd door Johan Bouma in Groningen.</p>
+        </div>
+        <div class="footer-column"><strong>Navigatie</strong><a href="#werk">Werk</a><a href="#wat-ik-doe">Wat ik doe</a><a href="#over-mij">Over mij</a><a href="#vragen">Vragen</a></div>
+        <div class="footer-column"><strong>Contact</strong><a href="mailto:info@boumax.nl">info@boumax.nl</a><a href="tel:+31627435394">06 27 43 53 94</a><a href="privacy.html">Privacy</a></div>
+      </div>
+      <div class="footer-word" aria-hidden="true">BOUM<span class="brand-a">A</span>X</div>
+      <div class="footer-legal"><span>© 2026 Boumax. Alle rechten voorbehouden.</span><span>Oldekerk, Groningen</span></div>
     </div>
-    <div class="footer-bottom">
-      Boumax, Kolonelsdiep 5, 9821 TR Oldekerk · KvK 65540344 · BTW NL001448254B65 · <a href="privacy.html" style="color:inherit">Privacyverklaring</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-(function(){
-  "use strict";
-  function scalePreview(){
-    var wrap = document.getElementById("livePreview");
-    var frame = document.getElementById("previewFrame");
-    if(!wrap || !frame) return;
-    var scale = wrap.clientWidth / 1400;
-    frame.style.transform = "scale(" + scale + ")";
-  }
-  scalePreview();
-  window.addEventListener("resize", scalePreview);
-  window.addEventListener("load", scalePreview);
+  <script type="module" src="js/hero-atelier.js"></script>
+  <script>
+    document.documentElement.classList.add('reveal-ready');
 
-  // Subtle cursor tilt on the hero automation network (desktop, fine pointer only)
-  var automation = document.getElementById("automation");
-  var reduceMotionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var fineHoverMQ = window.matchMedia("(hover: hover) and (pointer: fine)");
-  if(automation && fineHoverMQ.matches && !reduceMotionMQ.matches){
-    var tiltTicking = false;
-    var tiltX = 0, tiltY = 0;
-    automation.addEventListener("mousemove", function(e){
-      var rect = automation.getBoundingClientRect();
-      var nx = (e.clientX - rect.left) / rect.width - 0.5;
-      var ny = (e.clientY - rect.top) / rect.height - 0.5;
-      tiltX = ny * -1.4;
-      tiltY = nx * 1.4;
-      if(!tiltTicking){
-        tiltTicking = true;
-        requestAnimationFrame(function(){
-          automation.style.transform = "perspective(1000px) rotateX(" + tiltX.toFixed(2) + "deg) rotateY(" + tiltY.toFixed(2) + "deg)";
-          tiltTicking = false;
-        });
-      }
-    });
-    automation.addEventListener("mouseleave", function(){
-      automation.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-    });
-  }
-
-  // Count-up animation for the "uren bespaard" stat
-  var statNum = document.querySelector(".stat-num");
-  if(statNum){
-    var statTarget = parseFloat(statNum.textContent.replace(",", "."));
-    if(reduceMotionMQ.matches){
-      statNum.textContent = statTarget.toFixed(1).replace(".", ",") + " uur";
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveals = document.querySelectorAll('.reveal');
+    const heroReveals = document.querySelectorAll('.hero .reveal');
+    if (reduceMotion) {
+      reveals.forEach((item) => item.classList.add('in'));
     } else {
-      statNum.textContent = "0 uur";
-      setTimeout(function(){
-        var duration = 1100;
-        var t0 = null;
-        function tick(ts){
-          if(!t0) t0 = ts;
-          var p = Math.min((ts - t0) / duration, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          statNum.textContent = (statTarget * eased).toFixed(1).replace(".", ",") + " uur";
-          if(p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      }, 2400);
+      heroReveals.forEach((item) => item.classList.add('in'));
     }
-  }
 
-  var copyEmailBtn = document.getElementById("copyEmailBtn");
-  if(copyEmailBtn){
-    var copyEmailIcon = document.getElementById("copyEmailIcon");
-    var copyEmailStatus = document.getElementById("copyEmailStatus");
-    var copyResetTimer = null;
-    copyEmailBtn.addEventListener("click", function(){
-      var email = copyEmailBtn.getAttribute("data-email");
-      function showCopied(){
-        copyEmailBtn.classList.add("copied");
-        copyEmailIcon.innerHTML = '<use href="#i-check"/>';
-        copyEmailBtn.setAttribute("title", "Gekopieerd!");
-        if(copyEmailStatus){ copyEmailStatus.textContent = "E-mailadres gekopieerd naar klembord."; }
-        clearTimeout(copyResetTimer);
-        copyResetTimer = setTimeout(function(){
-          copyEmailBtn.classList.remove("copied");
-          copyEmailIcon.innerHTML = '<use href="#i-copy"/>';
-          copyEmailBtn.setAttribute("title", "E-mailadres kopiëren");
-          if(copyEmailStatus){ copyEmailStatus.textContent = ""; }
-        }, 2200);
-      }
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(email).then(showCopied, function(){
-          window.prompt("Kopieer het e-mailadres:", email);
+    const header = document.getElementById('siteHeader');
+    const sentinel = document.querySelector('.nav-sentinel');
+    const headerObserver = new IntersectionObserver(([entry]) => {
+      header.classList.toggle('compact', !entry.isIntersecting);
+    }, { threshold: 0 });
+    headerObserver.observe(sentinel);
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeMenu = () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Menu openen');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    };
+    const openMenu = () => {
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Menu sluiten');
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+    };
+    menuButton.addEventListener('click', () => {
+      menuButton.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu();
+    });
+    mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    const showcase = document.getElementById('heroShowcase');
+    const device = showcase.querySelector('.device-shell');
+    if (!reduceMotion && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      let frame = 0;
+      showcase.addEventListener('pointermove', (event) => {
+        const rect = showcase.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          device.style.transform = `rotateY(${-4 + x * 2.4}deg) rotateX(${1.5 - y * 2}deg) translate3d(${x * 7}px,${y * 7}px,0)`;
         });
-      } else {
-        window.prompt("Kopieer het e-mailadres:", email);
-      }
-    });
-  }
-
-  var navToggle = document.getElementById("navToggle");
-  var mobileMenu = document.getElementById("mobileMenu");
-  var navToggleIcon = document.getElementById("navToggleIcon");
-  navToggle.addEventListener("click", function(){
-    var isOpen = mobileMenu.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    navToggleIcon.innerHTML = isOpen ? '<use href="#i-close"/>' : '<use href="#i-menu"/>';
-    if(isOpen){
-      var firstLink = mobileMenu.querySelector("a");
-      if(firstLink) firstLink.focus();
-    }
-  });
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape" && mobileMenu.classList.contains("open")){
-      mobileMenu.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggleIcon.innerHTML = '<use href="#i-menu"/>';
-      navToggle.focus();
-    }
-  });
-  mobileMenu.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click", function(){
-      mobileMenu.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggleIcon.innerHTML = '<use href="#i-menu"/>';
-    });
-  });
-
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if("IntersectionObserver" in window && !reduceMotion){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ entry.target.classList.add("in"); io.unobserve(entry.target); }
       });
-    }, {threshold:0.15});
-    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
-  }
-})();
-</script>
+      showcase.addEventListener('pointerleave', () => {
+        device.style.transform = '';
+      });
+    }
+  </script>
 </body>
 </html>
