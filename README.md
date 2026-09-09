@@ -4,6 +4,8 @@ Bron-repo voor de dagelijkse Boumax-acquisitie cloud-routine "Boumax - dagelijks
 
 **Hoofdsite-release 9 september 2026:** de premium Boumax-homepage gebruikt een scrollgestuurde, lokaal gehoste Three.js-hero. Verwijder of overschrijf `deploy/css/`, `deploy/js/`, `deploy/assets/` of `deploy/vendor/` nooit met een oudere snapshot; zonder deze mappen breekt de hero. De Bosma-presentatie op de homepage is een zelf geïnitieerd voorbeeldproject en geen echte klantcase.
 
+**Actuele prijsregel:** een maatwerkwebsite begint vanaf €2.500. Communiceer geen lagere aanschafprijs en geen vaste maandprijs. Hosting, onderhoud en ondersteuning worden later afgestemd op de omvang en techniek van de site.
+
 **Bevat:**
 - `deploy/` — exacte huidige staat van de live site boumax.nl (index.html, privacy.html, branding, en per-prospect demo-mappen zoals `demo-sikkens/`). Dit is precies wat elke keer als geheel naar Netlify gaat — nooit alleen de nieuwe demo apart deployen, anders verdwijnt de rest van de live site.
 - `website-demo-schilders/` — het generieke, nog niet gepersonaliseerde demo-sjabloon (demo.html + images/) voor prospects met Branche="Schilder".
