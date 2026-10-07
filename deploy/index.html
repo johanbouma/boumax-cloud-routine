@@ -202,18 +202,26 @@
 
     .contact{padding-bottom:54px}
     .contact-shell{padding:8px;border-radius:44px;background:rgba(7,21,47,.075)}
-    .contact-card{position:relative;min-height:620px;padding:72px;border-radius:36px;color:var(--white);background:var(--blue);overflow:hidden}
+    .contact-card{position:relative;display:flex;flex-direction:column;min-height:620px;padding:72px;border-radius:36px;color:var(--white);background:var(--blue);overflow:hidden}
     .contact-card:before{content:"";position:absolute;width:600px;height:600px;right:-160px;bottom:-300px;border:120px solid rgba(255,255,255,.09);border-radius:50%}
     .contact-card h2{position:relative;max-width:950px;margin:0;font-size:clamp(3.6rem,6.7vw,7.6rem);line-height:.88;letter-spacing:-.075em}
-    .contact-bottom{position:absolute;left:72px;right:72px;bottom:66px;display:flex;align-items:end;justify-content:space-between;gap:40px}
+    .contact-bottom{position:relative;display:flex;align-items:end;justify-content:space-between;gap:40px;margin-top:auto;padding-top:72px}
     .contact-message{max-width:560px}
     .contact-message p{margin:0;color:rgba(255,255,255,.78);font-size:1.13rem;line-height:1.55}
     .contact-phone{display:inline-flex;margin-top:17px;color:var(--white);font-size:.94rem;font-weight:700}
     .contact-card .button{color:var(--ink);background:white;box-shadow:0 18px 48px rgba(7,21,47,.14)}
+    .contact-methods{position:relative;z-index:1;width:min(100%,350px)}
+    .contact-methods summary{list-style:none}
+    .contact-methods summary::-webkit-details-marker{display:none}
+    .contact-methods .button{width:100%;justify-content:space-between}
+    .contact-method-panel{display:grid;gap:12px;margin-top:14px;padding:20px;border-radius:22px;color:var(--ink);background:var(--white);box-shadow:0 18px 48px rgba(7,21,47,.14)}
+    .contact-method-panel p{margin:0 0 4px;color:var(--ink-soft);font-size:.94rem;line-height:1.45}
+    .contact-method-panel a,.contact-method-panel button{display:block;width:100%;padding:13px 16px;border:1px solid rgba(7,21,47,.12);border-radius:13px;color:var(--ink);background:var(--paper);font:inherit;font-weight:700;text-align:left;cursor:pointer}
+    .contact-method-panel a:hover,.contact-method-panel button:hover{background:var(--blue-soft)}
+    .contact-copy-status{min-height:1.2em;font-size:.82rem;color:var(--ink-soft)}
 
     .footer{padding:50px 0 24px}
     .footer-top{display:grid;grid-template-columns:1.2fr .55fr .55fr;gap:70px;padding:48px 0 60px;border-bottom:1px solid var(--line)}
-    .footer-intro p{max-width:440px;margin:20px 0 0;color:var(--ink-soft);line-height:1.62}
     .footer-column strong{display:block;margin-bottom:18px;font-size:.85rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
     .footer-column a{display:block;width:max-content;margin:11px 0;color:var(--ink-soft);transition:color .35s var(--ease),transform .35s var(--ease)}
     .footer-column a:hover{color:var(--blue);transform:translateX(3px)}
@@ -236,7 +244,7 @@
       .showcase-wrap{min-height:430px}.device-shell{width:100%;padding:6px;border-radius:23px;transform:none}.device-core{border-radius:17px}.browser-bar{height:28px}.mobile-shell{right:-5px;bottom:-5px;width:128px;border-radius:22px}.mobile-shell img{border-radius:16px}
       .work{padding-top:64px}.project-proof{grid-template-columns:1fr;gap:32px}.project-case{max-width:520px}
       .capabilities{padding-bottom:40px}.method{padding-top:40px}.cap-grid{grid-template-columns:1fr}.cap-card{min-height:590px;padding:34px}.cap-card:not(.dark),.cap-card.dark{min-height:0}.website-canvas{position:static;height:220px;margin-top:32px}.mini-heading{margin-top:42px}.flow{margin-top:32px;padding-top:0}.flow-item{grid-template-columns:minmax(0,1fr) 10px;grid-template-areas:"label dot" "value dot";gap:5px 12px}.flow-item span:first-child{grid-area:label}.flow-item strong{grid-area:value}.flow-item i{grid-area:dot;align-self:center}.method-grid,.about-grid,.faq-wrap{grid-template-columns:1fr;gap:34px}.method-copy,.faq-head{position:static}.method-list{gap:10px}.method-item{min-height:190px;padding:32px}.portrait-shell{width:min(100%,560px);margin:auto}.about-facts{grid-template-columns:1fr;gap:18px}.about-facts div{padding-bottom:16px;border-bottom:1px solid var(--line)}
-      .contact-card{min-height:0;padding:40px}.contact-bottom{position:static;margin-top:64px;align-items:flex-start;flex-direction:column}.footer-top{grid-template-columns:1fr 1fr;gap:42px}.footer-intro{grid-column:1/-1}.footer-word{font-size:clamp(5.4rem,25vw,9rem)}
+      .contact-card{min-height:0;padding:40px}.contact-bottom{margin-top:64px;padding-top:0;align-items:flex-start;flex-direction:column}.footer-top{grid-template-columns:1fr 1fr;gap:42px}.footer-intro{grid-column:1/-1}.footer-word{font-size:clamp(5.4rem,25vw,9rem)}
     }
 
     @media (max-width:520px){
@@ -442,7 +450,16 @@
                 <p>U hoeft nog geen uitgewerkt plan te hebben. Tijdens een korte, vrijblijvende kennismaking bepalen we wat uw website moet opleveren en wat daarvoor nodig is.</p>
                 <a class="contact-phone" href="tel:+31627435394">Liever bellen? 06 27 43 53 94</a>
               </div>
-              <a class="button" href="mailto:info@boumax.nl?subject=Kennismaking%20Boumax">Plan een kennismaking <span class="button-icon" aria-hidden="true">↗</span></a>
+              <details class="contact-methods">
+                <summary class="button">Plan een kennismaking <span class="button-icon" aria-hidden="true">↗</span></summary>
+                <div class="contact-method-panel">
+                  <p>Kies hoe u een moment met Johan afspreekt.</p>
+                  <a href="tel:+31627435394">Bel Johan: 06 27 43 53 94</a>
+                  <a href="mailto:info@boumax.nl?subject=Kennismaking%20Boumax">Open e-mailprogramma ↗</a>
+                  <button type="button" id="copyContactEmail">Kopieer info@boumax.nl</button>
+                  <span class="contact-copy-status" id="contactCopyStatus" role="status" aria-live="polite"></span>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -455,7 +472,6 @@
       <div class="footer-top">
         <div class="footer-intro">
           <a class="brand" href="#main">BOUM<span class="brand-a">A</span>X</a>
-          <p>Persoonlijk ontworpen en gebouwd door Johan Bouma in Groningen.</p>
         </div>
         <div class="footer-column"><strong>Navigatie</strong><a href="#werk">Werk</a><a href="#wat-ik-doe">Wat ik doe</a><a href="#over-mij">Over mij</a><a href="#vragen">Vragen</a></div>
         <div class="footer-column"><strong>Contact</strong><a href="mailto:info@boumax.nl">info@boumax.nl</a><a href="tel:+31627435394">06 27 43 53 94</a><a href="privacy.html">Privacy</a></div>
@@ -507,6 +523,17 @@
     mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeMenu();
+    });
+
+    const copyContactEmail = document.getElementById('copyContactEmail');
+    copyContactEmail.addEventListener('click', async () => {
+      const status = document.getElementById('contactCopyStatus');
+      try {
+        await navigator.clipboard.writeText('info@boumax.nl');
+        status.textContent = 'E-mailadres gekopieerd.';
+      } catch {
+        status.textContent = 'Kopiëren lukte niet. Gebruik info@boumax.nl.';
+      }
     });
 
     const showcase = document.getElementById('heroShowcase');
