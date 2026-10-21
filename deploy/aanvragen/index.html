@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050b18">
+  <title>Aanvragen per stuk voor uw bedrijf | Boumax</title>
+  <meta name="description" content="Nieuwe offerteaanvragen voor uw bedrijf. Boumax zet advertenties op, controleert elke aanvraag en stuurt alleen de goede door. U betaalt alleen voor goede aanvragen.">
+  <link rel="canonical" href="https://boumax.nl/aanvragen/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../branding/boumax-favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../branding/boumax-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nieuwe aanvragen voor uw bedrijf. U betaalt alleen de goede.">
+  <meta property="og:description" content="Advertenties op uw eigen pagina, elke aanvraag gecontroleerd, binnen 3 minuten in uw WhatsApp. Geen opstartkosten, geen maandbedrag.">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:url" content="https://boumax.nl/aanvragen/">
+  <meta property="og:image" content="https://boumax.nl/assets/aanvragen/hero-handdruk.jpg">
+  <style>
+@font-face{font-family:Outfit;src:url('../branding/fonts/outfit-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Outfit;src:url('../branding/fonts/outfit-600.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Outfit;src:url('../branding/fonts/outfit-700.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:Outfit;src:url('../branding/fonts/outfit-800.woff2') format('woff2');font-weight:800;font-display:swap}
+
+/* Layout: voorbeeld van de aanvragenpagina in vijf hoofdstukken met elk een eigen vlak (donker filmisch, licht, donker, licht), plus een tab die laat zien wat er op de homepage verandert. Huisstijl van boumax.nl, bewust één look. */
+:root{
+  --night:#050b18; --ink:#07152f; --ink-soft:#34415a; --muted:#6f7a8e; --paper:#f3f5f8; --paper-deep:#e9edf3; --white:#ffffff;
+  --blue:#2864ff; --blue-deep:#123fbd; --blue-soft:#dce6ff; --frost:#b7c5e2; --lime:#d2ff61; --kicker:rgba(223,231,248,.68);
+  --line:rgba(7,21,47,.09); --line-dark:rgba(255,255,255,.12);
+  --ok:#123fbd; --ok-soft:#dce6ff;
+  --font:Outfit,"Segoe UI",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-weight:500;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.5;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{width:min(1280px,100%);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+
+/* ---------- gedeeld ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:6px 7px 6px 22px;border-radius:999px;font-weight:700;white-space:nowrap;border:0;cursor:pointer;transition:transform .45s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn span{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.18)}
+.btn.blue{background:var(--blue);color:var(--white);box-shadow:0 14px 36px rgba(40,100,255,.3)}
+.btn.ghost{background:rgba(255,255,255,.08);color:var(--white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.btn.dark{background:var(--ink);color:var(--white)}
+.chap{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep)}
+.chap b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue-soft);font-size:.78rem;letter-spacing:0}
+.dark-plane .chap{color:var(--frost)} .dark-plane .chap b{background:rgba(255,255,255,.1);color:var(--white)}
+.h2{margin:0;max-width:900px;font-size:clamp(2.6rem,5.4vw,5.8rem);line-height:.92;letter-spacing:-.06em;font-weight:700;text-wrap:balance}
+.lead{max-width:620px;margin:24px 0 0;color:var(--ink-soft);font-size:clamp(1.05rem,1.35vw,1.22rem);line-height:1.6}
+.dark-plane .lead{color:rgba(255,255,255,.7)}
+.plane{padding-block:clamp(84px,10vw,140px)}
+.dark-plane{background:var(--night);color:var(--white)}
+
+/* ---------- 01 opening ---------- */
+.hero{position:relative;min-height:min(900px,100svh);display:flex;flex-direction:column;background:var(--night);color:var(--white);overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:74% center;filter:saturate(.95)}
+.hero-img::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(5,11,24,.97) 0%,rgba(5,11,24,.86) 34%,rgba(5,11,24,.35) 62%,rgba(5,11,24,.15) 100%),
+  linear-gradient(0deg,rgba(5,11,24,.95) 0%,rgba(5,11,24,0) 32%),
+  linear-gradient(180deg,rgba(5,11,24,.6) 0%,rgba(5,11,24,0) 22%)}
+.hero-fallback{position:absolute;inset:0;z-index:-3;background:radial-gradient(60% 70% at 78% 45%,rgba(242,183,102,.35),transparent 70%),var(--night)}
+.nav{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:7px 7px 7px 20px;border-radius:26px;background:rgba(243,245,248,.94);color:var(--ink);box-shadow:0 16px 50px rgba(0,0,0,.25)}
+.brand{font-weight:800;font-size:1.36rem;letter-spacing:-.045em}
+.brand b{color:var(--blue);font-weight:800}
+.nav-links{display:flex;gap:30px;margin-left:auto;color:#354056;font-size:.94rem;font-weight:600}
+.nav-links .cur{color:var(--blue-deep)}
+@media (max-width:900px){.nav-links{display:none}}
+.hero-body{flex:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:end;padding-block:clamp(70px,10vw,130px) 48px}
+.hero-body>*{min-width:0}
+.kick{display:block;margin-bottom:22px;color:var(--kicker);font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(3rem,6.4vw,6.6rem);line-height:.9;letter-spacing:-.065em;font-weight:700;text-wrap:balance}
+.hero h1 em{display:block;font-style:normal;color:var(--frost)}
+.hero p{max-width:540px;margin:26px 0 0;color:rgba(255,255,255,.76);font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.6}
+.trust{display:flex;align-items:center;gap:14px;margin-top:26px;max-width:520px}
+.trust img{flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 30%;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.trust p{margin:0!important;font-size:.95rem!important;line-height:1.45!important;color:rgba(255,255,255,.72)!important}
+.trust b{color:var(--white)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+@media (max-width:900px){.hero-body{grid-template-columns:1fr}}
+
+@media (max-width:640px){
+  .hero-img{position:relative;inset:auto;z-index:0;order:1;height:320px;margin-top:10px}
+  .hero-img img{object-position:77% 45%}
+  .hero-img::after{background:linear-gradient(0deg,rgba(5,11,24,1) 0%,rgba(5,11,24,0) 45%),linear-gradient(180deg,rgba(5,11,24,.5) 0%,rgba(5,11,24,0) 25%)}
+  .hero-body{order:2;padding-top:18px}
+  .hero > .wrap:last-child{order:3}
+  .hero-fallback{background:var(--night)}
+}
+/* telefoon met scherpe melding: coördinaten in procenten van de foto (1916 x 821) */
+.hero-img .ph{position:absolute;top:0;left:77%;transform:translateX(-73.2%);height:100%;aspect-ratio:1916/821;container-type:size}
+.hero .hero-img::after{content:none}
+.ph-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,11,24,.97) 0%,rgba(5,11,24,.92) 34%,rgba(5,11,24,.55) 50%,rgba(5,11,24,.12) 63%,rgba(5,11,24,.05) 100%),linear-gradient(0deg,rgba(5,11,24,.95) 0%,rgba(5,11,24,0) 30%),linear-gradient(180deg,rgba(5,11,24,.6) 0%,rgba(5,11,24,0) 20%)}
+.hero-img .ph .ph-photo{display:block;width:100%;height:100%;object-fit:fill;filter:saturate(.95)}
+.ph-screen{position:absolute;left:68.68%;top:18.64%;width:9.03%;height:45.31%;border-radius:2.7cqh;background:linear-gradient(180deg,#1b2a55,#0a1430);color:#fff;text-align:center;padding-top:7.5cqh}
+.ph-screen span{display:block;font-size:7cqh;font-weight:500;line-height:1;letter-spacing:-.02em}
+.ph-screen small{display:block;margin-top:.8cqh;font-size:1.8cqh;color:rgba(255,255,255,.72)}
+.ph-notif{position:absolute;left:73.2%;top:39%;transform:translateX(-50%) rotate(-2deg);width:52cqh;display:flex;align-items:center;gap:1.8cqh;padding:1.7cqh 2.1cqh;border-radius:3cqh;background:rgba(255,255,255,.97);color:var(--ink);box-shadow:0 3cqh 7cqh rgba(0,0,0,.5)}
+.hero-img .ph-notif img{flex:none;width:8.4cqh;height:8.4cqh;border-radius:2.1cqh;object-fit:cover;filter:none}
+.pn-body{min-width:0;flex:1}
+.pn-top{display:flex;justify-content:space-between;font-size:1.9cqh;color:var(--muted);line-height:1.2}
+.pn-top b{color:var(--ink)}
+.pn-t{display:flex;align-items:center;gap:1cqh;margin-top:.3cqh;font-size:3cqh;line-height:1.15;letter-spacing:-.01em}
+.pn-t i{display:inline-grid;place-items:center;width:2.8cqh;height:2.8cqh;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-size:1.7cqh}
+.pn-x{display:block;margin-top:.3cqh;font-size:2cqh;color:#34415a;white-space:nowrap}
+/* binnenkomende aanvraag */
+.req{background:var(--white);color:var(--ink);border-radius:22px;padding:18px 20px;box-shadow:0 30px 80px rgba(0,0,0,.4);min-width:0}
+.hero .req{justify-self:end;width:min(360px,100%);animation:arrive 1s var(--ease) .5s both}
+@keyframes arrive{from{transform:translateY(28px) rotate(1.5deg)}to{transform:translateY(0) rotate(0)}}
+@media (prefers-reduced-motion:reduce){.hero .req{animation:none}}
+.req-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.req-src{display:flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.req-src i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(40,100,255,.16)}
+.ok{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:var(--ok-soft);color:var(--ok);font-size:.8rem;font-weight:700;white-space:nowrap}
+.req h4{margin:12px 0 2px;font-size:1.28rem;line-height:1.15;letter-spacing:-.02em}
+.req-sub{color:var(--muted);font-size:.9rem}
+.req-body{transition:opacity .35s ease}
+.req-body.fade{opacity:0}
+.req-dots{display:flex;gap:6px;margin-top:12px}
+.req-dots i{width:6px;height:6px;border-radius:50%;background:var(--paper-deep)}
+.req-dots i.on{background:var(--blue)}
+.req-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.req-grid div{padding:9px 11px;border-radius:12px;background:var(--paper)}
+.req-grid small{display:block;color:var(--muted);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.req-grid b{display:block;font-size:1rem;font-variant-numeric:tabular-nums}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-dark)}
+.strip div{padding:22px 24px 30px 0;min-width:0}
+.strip div+div{padding-left:24px;border-left:1px solid var(--line-dark)}
+.strip b{display:block;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.strip span{color:rgba(255,255,255,.62);font-size:.95rem}
+@media (max-width:700px){.strip{grid-template-columns:1fr}.strip div+div{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}.strip div{padding:16px 0}}
+
+/* ---------- 02 in een oogopslag ---------- */
+.glance{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+@media (max-width:860px){.glance{grid-template-columns:1fr}}
+.gl{border-radius:28px;padding:clamp(26px,3.6vw,44px);min-width:0}
+.gl.we{background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
+.gl.you{background:var(--blue);color:var(--white)}
+.gl small{display:block;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep)}
+.gl.you small{color:rgba(255,255,255,.75)}
+.gl h3{margin:12px 0 22px;font-size:clamp(1.7rem,2.8vw,2.6rem);line-height:1;letter-spacing:-.045em}
+.gl ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.gl li b{font-weight:700}
+.gl li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:12px;align-items:start;font-size:1.06rem;line-height:1.45}
+.gl li::before{content:"✓";width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--blue-soft);color:var(--blue-deep);font-weight:800;font-size:.8rem}
+.gl.you li::before{background:var(--lime);color:var(--ink)}
+.you-do{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:18px 24px;border-radius:20px;background:var(--ink);color:var(--white)}
+.you-do span{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.you-do b{font-size:clamp(1.05rem,1.6vw,1.25rem)}
+.mcta{display:none}
+@media (max-width:640px){
+  .hero .req{display:none}
+  .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(5,11,24,.94)}
+  .mcta .btn{flex:1;justify-content:space-between}
+  #v-cateraars{padding-bottom:80px}
+}
+
+/* ---------- 03 hoe het werkt ---------- */
+.journey{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:34px}
+@media (max-width:1000px){.journey{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.journey{grid-template-columns:1fr}}
+.speed{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--white);font-weight:700}
+.speed i{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(210,255,97,.18)}
+.rail{position:absolute;left:0;right:0;top:15px;height:2px;background:linear-gradient(90deg,var(--blue-soft),var(--blue))}
+@media (max-width:1000px){.rail{display:none}}
+.stop{position:relative;display:flex;flex-direction:column;gap:16px;min-width:0}
+.time{position:relative;z-index:1;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding-right:14px;background:var(--paper);font-weight:700;font-variant-numeric:tabular-nums;color:var(--blue-deep)}
+.time i{width:32px;height:32px;border-radius:50%;background:var(--white);box-shadow:inset 0 0 0 2px var(--blue);display:grid;place-items:center;font-style:normal;font-size:.8rem;color:var(--blue)}
+.scene{height:280px;border-radius:24px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);padding:16px;overflow:hidden;position:relative}
+.stop h3{margin:4px 0 0;font-size:clamp(1.35rem,1.8vw,1.65rem);line-height:1.08;letter-spacing:-.035em}
+.stop p{margin:0;color:var(--ink-soft);line-height:1.55}
+/* mini scènes */
+.ad{height:100%;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:var(--paper)}
+.ad-h{display:flex;align-items:center;gap:8px;padding:9px 11px;font-size:.78rem}
+.ad-h i{width:22px;height:22px;border-radius:50%;background:var(--blue)}
+.ad-h small{display:block;color:var(--muted);font-size:.68rem}
+.ad-img{flex:1;background-size:cover;background-position:60% center;background-color:#2a1c10}
+.ad-f{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 11px;font-size:.78rem;font-weight:600}
+.ad-f span{padding:6px 10px;border-radius:8px;background:var(--blue);color:var(--white);white-space:nowrap}
+.form{display:grid;gap:7px}
+.form div{display:flex;justify-content:space-between;gap:10px;padding:9px 11px;border-radius:10px;background:var(--paper);font-size:.86rem}
+.form small{color:var(--muted)}
+.form b{font-variant-numeric:tabular-nums}
+.form .send{justify-content:center;background:var(--ink);color:var(--white);font-weight:700}
+.checklist{display:grid;gap:8px}
+.checklist div{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;background:var(--paper);font-size:.9rem}
+.checklist div::before{content:"✓";flex:none;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:var(--ok-soft);color:var(--ok);font-weight:800;font-size:.75rem}
+.phone{height:100%;border-radius:16px;background:var(--ink);color:var(--white);padding:14px;display:flex;flex-direction:column;gap:10px}
+.phone small{color:rgba(255,255,255,.55);font-size:.74rem}
+.bubble{padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.08);font-size:.86rem;line-height:1.4}
+.bubble b{display:block}
+.call{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:12px;background:var(--lime);color:var(--ink);font-weight:700;font-size:.9rem}
+.before{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:18px 22px;border-radius:18px;background:var(--white);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-soft)}
+.before b{color:var(--ink)}
+.note{margin-top:14px;color:var(--muted);font-size:.88rem}
+
+/* ---------- 03 afspraken ---------- */
+.deal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:56px}
+@media (max-width:900px){.deal{grid-template-columns:1fr}}
+.panel{border-radius:28px;padding:clamp(26px,3.6vw,42px);min-width:0}
+.panel.glass{background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px var(--line-dark)}
+.panel.light{background:var(--white);color:var(--ink)}
+.panel h3{margin:0 0 18px;font-size:clamp(1.5rem,2.2vw,2rem);letter-spacing:-.04em;line-height:1.05}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.list li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:start;line-height:1.45}
+.list li::before{content:"✓";width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:rgba(210,255,97,.14);color:var(--lime);font-weight:800;font-size:.78rem}
+.list.no li::before{content:"×";background:rgba(255,255,255,.08);color:rgba(255,255,255,.7)}
+.list.no li{color:rgba(255,255,255,.7)}
+.sub{margin:26px 0 12px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--frost)}
+.doubt{margin-top:24px;padding:16px 18px;border-radius:16px;background:rgba(40,100,255,.16);color:rgba(255,255,255,.86);line-height:1.5}
+.field{display:grid;gap:8px}
+.field label{display:flex;justify-content:space-between;gap:10px;font-weight:600}
+.field output{color:var(--blue-deep);font-weight:700;font-variant-numeric:tabular-nums}
+.field input{width:100%;accent-color:var(--blue)}
+.calc{display:grid;gap:18px}
+.res{margin-top:6px;padding:20px;border-radius:20px;background:var(--paper);display:grid;gap:10px}
+.res div{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.res span{color:var(--ink-soft)}
+.res .tot{padding-top:10px;border-top:1px solid var(--line);font-weight:700}
+.rev{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+.rev small{color:var(--muted)}
+.rev b{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums}
+.fine{margin:0;color:var(--muted);font-size:.86rem}
+.fit{margin-top:20px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.75);line-height:1.55}
+.fit b{color:var(--white)}
+
+/* ---------- 04 gesprek ---------- */
+.talk{display:grid;grid-template-columns:minmax(240px,.5fr) minmax(0,1fr) minmax(0,.9fr);gap:clamp(30px,5vw,64px);align-items:start}
+.talk>*{min-width:0}
+@media (max-width:1050px){.talk{grid-template-columns:minmax(200px,.6fr) minmax(0,1fr)}.faq{grid-column:1/-1}}
+@media (max-width:640px){.talk{grid-template-columns:1fr}}
+.portrait{padding:8px;border-radius:32px;background:rgba(7,21,47,.07);transform:rotate(-1deg)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:25px;filter:saturate(.85)}
+.talk .h2{font-size:clamp(2.4rem,4.4vw,4.6rem)}
+.talk .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center}
+.talk .phone-nr{color:var(--muted)}
+.talk .phone-nr a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+details{border-bottom:1px solid var(--line)}
+.faq{border-top:1px solid var(--line)}
+summary{position:relative;list-style:none;padding:22px 50px 22px 0;font-size:1.12rem;font-weight:600;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--white);transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(45deg);background:var(--blue-soft)}
+details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
+.foot{padding-block:36px 56px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--muted);font-size:.9rem}
+
+
+  </style>
+</head>
+<body>
+<div id="v-cateraars">
+
+  <!-- 01 opening -->
+  <header class="hero">
+    <div class="hero-fallback"></div>
+    <div class="hero-img"><div class="ph"><img class="ph-photo" src="../assets/aanvragen/hero-vakman-telefoon.jpg" alt=""><div class="ph-shade"></div><div class="ph-screen" aria-hidden="true"><span>10:45</span><small>dinsdag 21 oktober</small></div><div class="ph-notif" aria-hidden="true"><img src="../assets/aanvragen/boumax-logo.png" alt=""><div class="pn-body"><div class="pn-top"><b>Boumax</b><span>nu</span></div><b class="pn-t">Nieuwe aanvraag <i>✓</i></b><span class="pn-x">Badkamer renoveren · Zwolle · ± €12.000</span></div></div></div></div>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="/">BOUM<b>A</b>X</a>
+        <nav class="nav-links" aria-label="Menu"><a href="/#werk">Werk</a><a href="/#wat-ik-doe">Wat ik doe</a><a href="/#over-mij">Over mij</a><a href="/#vragen">Vragen</a><a href="/aanvragen/" class="cur" aria-current="page">Aanvragen</a></nav>
+        <a class="btn dark" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener" style="min-height:48px">Plan een gesprek <span>↗</span></a>
+      </div>
+    </div>
+    <div class="wrap hero-body">
+      <div>
+        <span class="kick">Voor bedrijven die werken met offertes</span>
+        <h1>Nieuwe aanvragen voor uw bedrijf. <em>U betaalt alleen de goede.</em></h1>
+        <p>Meer opdrachten in uw agenda, zonder zelf te zoeken. Wij brengen de aanvragen binnen, controleren ze en sturen alleen de goede door. U belt en maakt de offerte.</p>
+        <div class="actions"><a class="btn blue" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener">Plan 15 minuten met Johan <span>↗</span></a><a class="btn ghost" href="#werkt">Zo werkt het <span>↓</span></a></div>
+        <div class="trust"><img src="../assets/aanvragen/johan.jpg" alt=""><p><b>U spreekt direct met Johan.</b> In 15 minuten bespreken we uw werk, de opdrachten die u wilt en wanneer een aanvraag telt.</p></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="strip">
+        <div><b>Alleen de goede</b><span>€100 per geldige aanvraag, de rest betaalt u niet</span></div>
+        <div><b>Geen vaste kosten</b><span>geen opstartkosten en geen maandbedrag</span></div>
+        <div><b>Binnen 3 minuten</b><span>bij u in WhatsApp en mail</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 02 in een oogopslag -->
+  <section class="plane" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="chap"><b>02</b>In één oogopslag</div>
+      <h2 class="h2">Wat wij doen. Wat u eraan heeft.</h2>
+      <div class="glance">
+        <div class="gl we">
+          <small>Wij doen</small>
+          <h3>Wij zorgen voor de klant aan de lijn.</h3>
+          <ul>
+            <li><span><b>Vinden:</b> advertenties die mensen in uw regio bereiken die nu een offerte zoeken</span></li>
+            <li><span><b>Filteren:</b> alleen aanvragen die passen bij uw werk en uw planning</span></li>
+            <li><span><b>Leveren:</b> de aanvraag compleet, met wie, wat, wanneer en voor hoeveel</span></li>
+            <li><span><b>Rapporteren:</b> elke maand wat er binnenkwam en wat het u opleverde</span></li>
+          </ul>
+        </div>
+        <div class="gl you">
+          <small>U krijgt</small>
+          <h3>Meer opdrachten in uw agenda.</h3>
+          <ul>
+            <li><span><b>De juiste opdrachten:</b> klussen die passen bij uw vak en uw prijs, geen kleine klusjes</span></li>
+            <li><span><b>Klanten die terugkomen:</b> een tevreden klant komt terug en beveelt u aan</span></li>
+            <li><span><b>Tijd terug:</b> geen uren meer kwijt aan zoeken, posten of koude acquisitie</span></li>
+            <li><span><b>Grip:</b> u ziet precies wat elke aanvraag u kost en oplevert</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="you-do"><span>U doet alleen dit</span><b>Bellen, uw offerte maken en de opdracht binnenhalen.</b></div>
+    </div>
+  </section>
+
+  <!-- 03 hoe het werkt -->
+  <section class="plane" id="werkt">
+    <div class="wrap">
+      <div class="chap"><b>03</b>Hoe het werkt</div>
+      <h2 class="h2">Zo komt een aanvraag bij u binnen.</h2>
+      <p class="lead">Volg één aanvraag van advertentie tot telefoontje.</p>
+
+      <div class="speed"><i></i>Van klik tot uw WhatsApp: binnen 3 minuten</div>
+      <div class="journey">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="stop">
+          <span class="time"><i>1</i>Advertentie</span>
+          <div class="scene" aria-hidden="true"><div class="ad"><div class="ad-h"><i></i><div><b>Uw bedrijf</b><small>Gesponsord</small></div></div><div class="ad-img" style="background-image:url(../assets/aanvragen/hero-handdruk.jpg)"></div><div class="ad-f">Klaar voor uw volgende project?<span>Offerte</span></div></div></div>
+          <h3>Een klant ziet uw advertentie.</h3>
+          <p>Op uw eigen Facebook- en Instagram-pagina. Wij maken en beheren de advertentie, u betaalt het budget rechtstreeks aan Meta.</p>
+        </div>
+        <div class="stop">
+          <span class="time"><i>2</i>Aanvraag</span>
+          <div class="scene" aria-hidden="true"><div class="form"><div><small>Wat</small><b>Badkamer renoveren</b></div><div><small>Wanneer</small><b>Voor de zomer</b></div><div><small>Plaats</small><b>Zwolle</b></div><div><small>Budget</small><b>± €12.000</b></div><div><small>Telefoon</small><b>06 •• •• •• 78</b></div><div class="send">Offerte aanvragen</div></div></div>
+          <h3>Hij vraagt een offerte aan.</h3>
+          <p>Het formulier vraagt meteen wat u wilt weten: wat er moet gebeuren, wanneer, waar en voor welk budget.</p>
+        </div>
+        <div class="stop">
+          <span class="time"><i>3</i>Controle</span>
+          <div class="scene" aria-hidden="true"><div class="checklist"><div>Telefoonnummer klopt</div><div>Naam en contactgegevens</div><div>Klus en budget passen bij u</div><div>In uw werkgebied en planning</div></div></div>
+          <h3>Wij controleren de aanvraag.</h3>
+          <p>Klopt alles wat we samen hebben afgesproken? Alleen dan gaat hij door. Anders hoort u er niets van en betaalt u niets.</p>
+        </div>
+        <div class="stop">
+          <span class="time"><i>4</i>Bij u</span>
+          <div class="scene" aria-hidden="true"><div class="phone"><small>WhatsApp · Boumax</small><div class="bubble"><b>Nieuwe aanvraag ✓</b>Badkamer renoveren in Zwolle, budget ± €12.000. Wil voor de zomer starten.</div><div class="call">Bel de klant</div></div></div>
+          <h3>U belt en maakt de offerte.</h3>
+          <p>De aanvraag staat binnen 3 minuten in uw WhatsApp en mail. U belt binnen één werkdag.</p>
+        </div>
+      </div>
+
+      <div class="before"><b>Vooraf:</b> we spreken samen uw werkgebied en het soort opdrachten af, en wat voor u een goede aanvraag is. Zwart op wit.</div>
+      <p class="note">Voorbeeld ter uitleg. De klant is verzonnen; het werkt net zo voor elk bedrijf dat met offertes werkt.</p>
+    </div>
+  </section>
+
+  <!-- 03 afspraken -->
+  <section class="plane dark-plane">
+    <div class="wrap">
+      <div class="chap"><b>04</b>De afspraken</div>
+      <h2 class="h2">Duidelijk vooraf. Geen discussie achteraf.</h2>
+      <div class="deal">
+        <div class="panel glass">
+          <h3>Wanneer telt een aanvraag?</h3>
+          <ul class="list">
+            <li>Een echte klant vraagt een offerte aan, met naam en contactgegevens</li>
+            <li>Het telefoonnummer klopt en is bereikbaar</li>
+            <li>Soort werk, budget en planning passen bij wat we samen afspraken</li>
+            <li>De klus ligt binnen uw werkgebied</li>
+          </ul>
+          <div class="sub">Telt niet, dus gratis</div>
+          <ul class="list no">
+            <li>Dubbele aanvragen, tests of nepnummers</li>
+            <li>Iemand die al met u in gesprek is</li>
+          </ul>
+          <div class="doubt">Twijfelt u over een aanvraag? Meld het binnen 5 werkdagen. Dan kijken we samen en factureren we niets tot het duidelijk is.</div>
+        </div>
+        <div class="panel light">
+          <h3>Reken het zelf uit.</h3>
+          <form class="calc" id="calc" onsubmit="return false">
+            <div class="field"><label for="c-req">Geldige aanvragen per maand <output id="o-req">10</output></label><input id="c-req" type="range" min="2" max="30" value="10"></div>
+            <div class="field"><label for="c-ads">Advertentiebudget per maand <output id="o-ads">€900</output></label><input id="c-ads" type="range" min="300" max="3000" step="100" value="900"></div>
+            <div class="field"><label for="c-win">Deel dat u wint <output id="o-win">20%</output></label><input id="c-win" type="range" min="5" max="50" step="5" value="20"></div>
+            <div class="field"><label for="c-val">Gemiddelde opdracht <output id="o-val">€6.000</output></label><input id="c-val" type="range" min="1000" max="50000" step="500" value="6000"></div>
+            <div class="field"><label for="c-mar">Uw marge op een opdracht <output id="o-mar">30%</output></label><input id="c-mar" type="range" min="10" max="60" step="5" value="30"></div>
+          </form>
+          <div class="res" aria-live="polite">
+            <div><span>Omzet uit gewonnen opdrachten <small id="r-txt">(ongeveer 2)</small></span><b id="r-rev">€12.000</b></div>
+            <div><span>Uw marge daarop</span><b id="r-mar">€3.600</b></div>
+            <div><span>Min advertenties, naar Meta</span><b id="r-ads">−€900</b></div>
+            <div><span>Min kosten geldige aanvragen</span><b id="r-fee">−€1.000</b></div>
+            <div class="tot"><span>Uw kosten per geldige aanvraag, alles samen</span><b id="r-per">€190</b></div>
+          </div>
+          <div class="rev" style="margin-top:18px"><div><small>Wat u per maand overhoudt</small><br><small>na advertenties en aanvragen</small></div><b id="r-win">€1.700</b></div>
+          <p class="fine" style="margin-top:12px">Rekenvoorbeeld met uw eigen cijfers, geen belofte.</p>
+        </div>
+      </div>
+      <div class="fit"><b>Voor wie:</b> bedrijven die werken met offertes, ruimte hebben voor extra opdrachten en binnen één werkdag terugbellen. Bijvoorbeeld vakbedrijven, installateurs, cateraars en zakelijke dienstverleners.</div>
+    </div>
+  </section>
+
+  <!-- 04 gesprek -->
+  <section class="plane" id="gesprek">
+    <div class="wrap">
+      <div class="chap"><b>05</b>Het gesprek</div>
+      <div class="talk">
+        <div class="portrait"><img src="../assets/aanvragen/johan.jpg" alt="Johan Bouma"></div>
+        <div>
+          <h2 class="h2">Past dit bij uw bedrijf?</h2>
+          <p class="lead">In een gesprek van 15 minuten weet u het. We bespreken uw werkgebied, het soort opdrachten en wat een goede aanvraag voor u is. U spreekt direct met mij, Johan Bouma.</p>
+          <div class="actions"><a class="btn blue" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener">Plan 15 minuten met Johan <span>↗</span></a><span class="phone-nr">of bel <a href="tel:+31627435394">06 27 43 53 94</a> · mail <a href="mailto:info@boumax.nl?subject=Aanvragen%20per%20stuk">info@boumax.nl</a></span></div>
+        </div>
+        <div class="faq">
+          <details open><summary>Werkt dit ook voor mijn branche?</summary><p>Als u met offertes werkt en opdrachten van een paar duizend euro doet, meestal wel. In het gesprek zoeken we het samen uit.</p></details>
+          <details><summary>Krijgt een ander bedrijf dezelfde aanvraag?</summary><p>Nee. Elke aanvraag gaat naar één bedrijf, en dat bent u. We verkopen een aanvraag nooit twee keer.</p></details>
+          <details><summary>Waarom per aanvraag en niet per maand?</summary><p>Dan betaalt u alleen voor wat u echt binnenkrijgt. Komen er geen goede aanvragen, dan betaalt u niets.</p></details>
+          <details><summary>Wat moet ik zelf doen?</summary><p>Een paar foto's van uw werk aanleveren, de afspraken bevestigen en nieuwe aanvragen binnen één werkdag opvolgen.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="mcta"><a class="btn blue" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener">Plan 15 minuten met Johan <span>↗</span></a></div>
+  <div class="wrap"><footer class="foot"><span>© 2026 Boumax · Oldekerk, Groningen</span><span><a href="/">boumax.nl</a> · <a href="mailto:info@boumax.nl">info@boumax.nl</a> · <a href="/privacy">Privacy</a></span></footer></div>
+</div>
+
+
+<script>
+
+(() => {
+  const eur = v => '€' + Math.round(v).toLocaleString('nl-NL');
+  const $ = id => document.getElementById(id);
+  function calc() {
+    const req = +$('c-req').value, ads = +$('c-ads').value, win = +$('c-win').value, val = +$('c-val').value, mar = +$('c-mar').value;
+    $('o-req').textContent = req; $('o-ads').textContent = eur(ads); $('o-win').textContent = win + '%'; $('o-val').textContent = eur(val); $('o-mar').textContent = mar + '%';
+    const fee = req * 100, wins = req * win / 100, rev = wins * val, margin = rev * mar / 100, left = margin - ads - fee;
+    $('r-rev').textContent = eur(rev); $('r-mar').textContent = eur(margin);
+    $('r-ads').textContent = '−' + eur(ads); $('r-fee').textContent = '−' + eur(fee); $('r-per').textContent = eur((ads + fee) / req);
+    $('r-win').textContent = (left < 0 ? '−' : '') + eur(Math.abs(left));
+    $('r-win').style.color = left < 0 ? '#b4481f' : '';
+    const w = Math.round(wins * 10) / 10;
+    $('r-txt').textContent = '(ongeveer ' + String(w).replace('.', ',') + ')';
+  }
+  /* wisselende voorbeelden in de openingskaart */
+  const EX = [
+    { t: 'Badkamer renoveren', s: 'Huiseigenaar · Zwolle', w: 'Voor de zomer', b: '± €12.000', p: 'Zwolle' },
+    { t: 'Personeelsfeest, 150 gasten', s: 'HR-manager · installatiebedrijf', w: 'Vr 12 maart', b: '± €8.000', p: 'Deventer' },
+    { t: 'Dakkapel plaatsen', s: 'Gezin met twee kinderen', w: 'Binnen 3 maanden', b: '± €9.500', p: 'Apeldoorn' }
+  ];
+  const card = document.getElementById('heroReq');
+  if (card && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const body = card.querySelector('.req-body'), dots = [...card.querySelectorAll('.req-dots i')];
+    let k = 0;
+    setInterval(() => {
+      body.classList.add('fade');
+      setTimeout(() => {
+        k = (k + 1) % EX.length;
+        for (const key of ['t', 's', 'w', 'b', 'p']) body.querySelector('[data-f="' + key + '"]').textContent = EX[k][key];
+        dots.forEach((d, i) => d.classList.toggle('on', i === k));
+        body.classList.remove('fade');
+      }, 350);
+    }, 4200);
+  }
+  $('calc').addEventListener('input', calc);
+  calc();
+})();
+
+</script>
+</body>
+</html>
