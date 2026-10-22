@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../branding/boumax-favicon-180.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nieuwe aanvragen voor uw bedrijf. U betaalt alleen de goede.">
-  <meta property="og:description" content="Advertenties op uw eigen pagina, elke aanvraag gecontroleerd, binnen 3 minuten in uw WhatsApp. Geen opstartkosten, geen maandbedrag.">
+  <meta property="og:description" content="Advertenties op uw eigen pagina, elke aanvraag automatisch gecontroleerd, binnen 3 minuten in uw WhatsApp. Geen opstartkosten, geen maandbedrag.">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:url" content="https://boumax.nl/aanvragen/">
   <meta property="og:image" content="https://boumax.nl/assets/aanvragen/hero-handdruk.jpg">
@@ -220,6 +220,7 @@ img{display:block;max-width:100%}
 .res{margin-top:6px;padding:20px;border-radius:20px;background:var(--paper);display:grid;gap:10px}
 .res div{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
 .res span{color:var(--ink-soft)}
+.res b{white-space:nowrap}
 .res .tot{padding-top:10px;border-top:1px solid var(--line);font-weight:700}
 .rev{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
 .rev small{color:var(--muted)}
@@ -278,7 +279,7 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
       <div class="strip">
         <div><b>Alleen de goede</b><span>€100 per geldige aanvraag, de rest betaalt u niet</span></div>
         <div><b>Geen vaste kosten</b><span>geen opstartkosten en geen maandbedrag</span></div>
-        <div><b>Binnen 3 minuten</b><span>bij u in WhatsApp en mail</span></div>
+        <div><b>Binnen 3 minuten</b><span>automatisch gecontroleerd, in uw WhatsApp en mail</span></div>
       </div>
     </div>
   </header>
@@ -321,7 +322,7 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
       <h2 class="h2">Zo komt een aanvraag bij u binnen.</h2>
       <p class="lead">Volg één aanvraag van advertentie tot telefoontje.</p>
 
-      <div class="speed"><i></i>Van klik tot uw WhatsApp: binnen 3 minuten</div>
+      <div class="speed"><i></i>Van klik tot uw WhatsApp: binnen 3 minuten, automatisch gecontroleerd</div>
       <div class="journey">
         <div class="rail" aria-hidden="true"></div>
         <div class="stop">
@@ -338,15 +339,15 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
         </div>
         <div class="stop">
           <span class="time"><i>3</i>Controle</span>
-          <div class="scene" aria-hidden="true"><div class="checklist"><div>Telefoonnummer klopt</div><div>Naam en contactgegevens</div><div>Klus en budget passen bij u</div><div>In uw werkgebied en planning</div></div></div>
-          <h3>Wij controleren de aanvraag.</h3>
-          <p>Klopt alles wat we samen hebben afgesproken? Alleen dan gaat hij door. Anders hoort u er niets van en betaalt u niets.</p>
+          <div class="scene" aria-hidden="true"><div class="checklist"><div>Nummer bevestigd per sms</div><div>Naam en contactgegevens</div><div>Klus en budget passen bij u</div><div>In uw werkgebied en planning</div></div></div>
+          <h3>De aanvraag wordt gecontroleerd.</h3>
+          <p>Automatisch, al tijdens het invullen. De klant bevestigt zijn nummer met een sms-code en zijn antwoorden moeten passen bij wat we afspraken. Past het niet, dan gaat hij niet door en betaalt u niets.</p>
         </div>
         <div class="stop">
           <span class="time"><i>4</i>Bij u</span>
           <div class="scene" aria-hidden="true"><div class="phone"><small>WhatsApp · Boumax</small><div class="bubble"><b>Nieuwe aanvraag ✓</b>Badkamer renoveren in Zwolle, budget ± €12.000. Wil voor de zomer starten.</div><div class="call">Bel de klant</div></div></div>
           <h3>U belt en maakt de offerte.</h3>
-          <p>De aanvraag staat binnen 3 minuten in uw WhatsApp en mail. U belt binnen één werkdag.</p>
+          <p>De aanvraag staat binnen 3 minuten in uw WhatsApp en mail. U belt binnen één werkdag. Johan kijkt daarna zelf nog of hij meetelt.</p>
         </div>
       </div>
 
@@ -359,13 +360,13 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
   <section class="plane dark-plane">
     <div class="wrap">
       <div class="chap"><b>04</b>De afspraken</div>
-      <h2 class="h2">Duidelijk vooraf. Geen discussie achteraf.</h2>
+      <h2 class="h2">Duidelijk vooraf. Geen verrassingen.</h2>
       <div class="deal">
         <div class="panel glass">
           <h3>Wanneer telt een aanvraag?</h3>
           <ul class="list">
             <li>Een echte klant vraagt een offerte aan, met naam en contactgegevens</li>
-            <li>Het telefoonnummer klopt en is bereikbaar</li>
+            <li>Het telefoonnummer is bevestigd met een sms-code</li>
             <li>Soort werk, budget en planning passen bij wat we samen afspraken</li>
             <li>De klus ligt binnen uw werkgebied</li>
           </ul>
@@ -373,8 +374,10 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
           <ul class="list no">
             <li>Dubbele aanvragen, tests of nepnummers</li>
             <li>Iemand die al met u in gesprek is</li>
+            <li>Een klant die na 3 belpogingen binnen 5 werkdagen niet opneemt</li>
           </ul>
           <div class="doubt">Twijfelt u over een aanvraag? Meld het binnen 5 werkdagen. Dan kijken we samen en factureren we niets tot het duidelijk is.</div>
+          <div class="doubt" style="margin-top:12px"><b>U kiest zelf een maximum.</b> Bijvoorbeeld 10 aanvragen per maand. Is dat bereikt, dan pauzeren we de advertenties tot de volgende maand. Zo weet u vooraf wat het u hooguit kost.</div>
         </div>
         <div class="panel light">
           <h3>Reken het zelf uit.</h3>
@@ -393,7 +396,7 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
             <div class="tot"><span>Uw kosten per geldige aanvraag, alles samen</span><b id="r-per">€190</b></div>
           </div>
           <div class="rev" style="margin-top:18px"><div><small>Wat u per maand overhoudt</small><br><small>na advertenties en aanvragen</small></div><b id="r-win">€1.700</b></div>
-          <p class="fine" style="margin-top:12px">Rekenvoorbeeld met uw eigen cijfers, geen belofte.</p>
+          <p class="fine" style="margin-top:12px">Rekenvoorbeeld, geen belofte. Vul uw eigen cijfers in. Wat u overhoudt is vóór overige bedrijfskosten en belasting.</p>
         </div>
       </div>
       <div class="fit"><b>Voor wie:</b> bedrijven die werken met offertes, ruimte hebben voor extra opdrachten en binnen één werkdag terugbellen. Bijvoorbeeld vakbedrijven, installateurs, cateraars en zakelijke dienstverleners.</div>
@@ -415,6 +418,7 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
           <details open><summary>Werkt dit ook voor mijn branche?</summary><p>Als u met offertes werkt en opdrachten van een paar duizend euro doet, meestal wel. In het gesprek zoeken we het samen uit.</p></details>
           <details><summary>Krijgt een ander bedrijf dezelfde aanvraag?</summary><p>Nee. Elke aanvraag gaat naar één bedrijf, en dat bent u. We verkopen een aanvraag nooit twee keer.</p></details>
           <details><summary>Waarom per aanvraag en niet per maand?</summary><p>Dan betaalt u alleen voor wat u echt binnenkrijgt. Komen er geen goede aanvragen, dan betaalt u niets.</p></details>
+          <details><summary>Wat als er te veel aanvragen komen?</summary><p>Dat kan niet ongemerkt. U kiest vooraf een maximum per maand. Is dat bereikt, dan pauzeren we de advertenties. U krijgt nooit een factuur die u niet zag aankomen.</p></details>
           <details><summary>Wat moet ik zelf doen?</summary><p>Een paar foto's van uw werk aanleveren, de afspraken bevestigen en nieuwe aanvragen binnen één werkdag opvolgen.</p></details>
         </div>
       </div>
