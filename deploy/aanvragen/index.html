@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#050b18">
   <title>Aanvragen per stuk voor uw bedrijf | Boumax</title>
-  <meta name="description" content="Nieuwe offerteaanvragen voor uw bedrijf. Boumax zet advertenties op, controleert elke aanvraag en stuurt alleen de goede door. U betaalt alleen voor goede aanvragen.">
+  <meta name="description" content="Nieuwe offerteaanvragen voor uw bedrijf. Boumax controleert de aanvragen en stuurt de passende door. U betaalt alleen voor gekwalificeerde aanvragen.">
   <link rel="canonical" href="https://boumax.nl/aanvragen/">
   <link rel="icon" type="image/png" sizes="32x32" href="../branding/boumax-favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../branding/boumax-favicon-180.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Nieuwe aanvragen voor uw bedrijf. U betaalt alleen de goede.">
+  <meta property="og:title" content="Nieuwe aanvragen voor uw bedrijf. Alleen als ze bij u passen, tellen ze mee.">
   <meta property="og:description" content="Advertenties op uw eigen pagina, elke aanvraag automatisch gecontroleerd, binnen 3 minuten in uw WhatsApp. Geen opstartkosten, geen maandbedrag.">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:url" content="https://boumax.nl/aanvragen/">
@@ -212,20 +212,9 @@ img{display:block;max-width:100%}
 .list.no li{color:rgba(255,255,255,.7)}
 .sub{margin:26px 0 12px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--frost)}
 .doubt{margin-top:24px;padding:16px 18px;border-radius:16px;background:rgba(40,100,255,.16);color:rgba(255,255,255,.86);line-height:1.5}
-.field{display:grid;gap:8px}
-.field label{display:flex;justify-content:space-between;gap:10px;font-weight:600}
-.field output{color:var(--blue-deep);font-weight:700;font-variant-numeric:tabular-nums}
-.field input{width:100%;accent-color:var(--blue)}
-.calc{display:grid;gap:18px}
-.res{margin-top:6px;padding:20px;border-radius:20px;background:var(--paper);display:grid;gap:10px}
-.res div{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
-.res span{color:var(--ink-soft)}
-.res b{white-space:nowrap}
-.res .tot{padding-top:10px;border-top:1px solid var(--line);font-weight:700}
-.rev{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
-.rev small{color:var(--muted)}
-.rev b{font-size:clamp(2.2rem,4vw,3.4rem);line-height:1;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums}
-.fine{margin:0;color:var(--muted);font-size:.86rem}
+.call-panel{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.call-panel p{margin:0;color:var(--ink-soft);font-size:clamp(1.05rem,1.35vw,1.22rem);line-height:1.6}
+.call-panel .btn{margin-top:30px}
 .fit{margin-top:20px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.75);line-height:1.55}
 .fit b{color:var(--white)}
 
@@ -269,15 +258,15 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
     <div class="wrap hero-body">
       <div>
         <span class="kick">Voor bedrijven die werken met offertes</span>
-        <h1>Nieuwe aanvragen voor uw bedrijf. <em>U betaalt alleen de goede.</em></h1>
-        <p>Meer opdrachten in uw agenda, zonder zelf te zoeken. Wij brengen de aanvragen binnen, controleren ze en sturen alleen de goede door. U belt en maakt de offerte.</p>
+        <h1>Nieuwe aanvragen voor uw bedrijf. <em>Alleen als ze bij u passen, tellen ze mee.</em></h1>
+        <p>Meer opdrachten in uw agenda, zonder zelf te zoeken. Wij brengen aanvragen binnen, controleren ze en sturen de passende aanvragen naar u door. U belt de klant en maakt de offerte.</p>
         <div class="actions"><a class="btn blue" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener">Plan 15 minuten met Johan <span>↗</span></a><a class="btn ghost" href="#werkt">Zo werkt het <span>↓</span></a></div>
         <div class="trust"><img src="../assets/aanvragen/johan.jpg" alt=""><p><b>U spreekt direct met Johan.</b> In 15 minuten bespreken we uw werk, de opdrachten die u wilt en wanneer een aanvraag telt.</p></div>
       </div>
     </div>
     <div class="wrap">
       <div class="strip">
-        <div><b>Alleen de goede</b><span>€100 per geldige aanvraag, de rest betaalt u niet</span></div>
+        <div><b>Vooraf gecontroleerd</b><span>U betaalt alleen voor gekwalificeerde aanvragen</span></div>
         <div><b>Geen vaste kosten</b><span>geen opstartkosten en geen maandbedrag</span></div>
         <div><b>Binnen 3 minuten</b><span>automatisch gecontroleerd, in uw WhatsApp en mail</span></div>
       </div>
@@ -379,24 +368,10 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
           <div class="doubt">Twijfelt u over een aanvraag? Meld het binnen 5 werkdagen. Dan kijken we samen en factureren we niets tot het duidelijk is.</div>
           <div class="doubt" style="margin-top:12px"><b>U kiest zelf een maximum.</b> Bijvoorbeeld 10 aanvragen per maand. Is dat bereikt, dan pauzeren we de advertenties tot de volgende maand. Zo weet u vooraf wat het u hooguit kost.</div>
         </div>
-        <div class="panel light">
-          <h3>Reken het zelf uit.</h3>
-          <form class="calc" id="calc" onsubmit="return false">
-            <div class="field"><label for="c-req">Geldige aanvragen per maand <output id="o-req">10</output></label><input id="c-req" type="range" min="2" max="30" value="10"></div>
-            <div class="field"><label for="c-ads">Advertentiebudget per maand <output id="o-ads">€900</output></label><input id="c-ads" type="range" min="300" max="3000" step="100" value="900"></div>
-            <div class="field"><label for="c-win">Deel dat u wint <output id="o-win">20%</output></label><input id="c-win" type="range" min="5" max="50" step="5" value="20"></div>
-            <div class="field"><label for="c-val">Gemiddelde opdracht <output id="o-val">€6.000</output></label><input id="c-val" type="range" min="1000" max="50000" step="500" value="6000"></div>
-            <div class="field"><label for="c-mar">Uw marge op een opdracht <output id="o-mar">30%</output></label><input id="c-mar" type="range" min="10" max="60" step="5" value="30"></div>
-          </form>
-          <div class="res" aria-live="polite">
-            <div><span>Omzet uit gewonnen opdrachten <small id="r-txt">(ongeveer 2)</small></span><b id="r-rev">€12.000</b></div>
-            <div><span>Uw marge daarop</span><b id="r-mar">€3.600</b></div>
-            <div><span>Min advertenties, naar Meta</span><b id="r-ads">−€900</b></div>
-            <div><span>Min kosten geldige aanvragen</span><b id="r-fee">−€1.000</b></div>
-            <div class="tot"><span>Uw kosten per geldige aanvraag, alles samen</span><b id="r-per">€190</b></div>
-          </div>
-          <div class="rev" style="margin-top:18px"><div><small>Wat u per maand overhoudt</small><br><small>na advertenties en aanvragen</small></div><b id="r-win">€1.700</b></div>
-          <p class="fine" style="margin-top:12px">Rekenvoorbeeld, geen belofte. Vul uw eigen cijfers in. Wat u overhoudt is vóór overige bedrijfskosten en belasting.</p>
+        <div class="panel light call-panel">
+          <h3>Wat kunnen extra aanvragen voor uw bedrijf betekenen?</h3>
+          <p>Dat hangt af van uw werk, uw regio en de opdrachten die u zoekt. In 15 minuten bespreken we wat voor u een passende aanvraag is en hoe de kosten eruitzien.</p>
+          <a class="btn blue" href="https://api.leadconnectorhq.com/widget/bookings/kennismaking-met-johan" target="_blank" rel="noopener">Plan 15 minuten met Johan <span>↗</span></a>
         </div>
       </div>
       <div class="fit"><b>Voor wie:</b> bedrijven die werken met offertes, ruimte hebben voor extra opdrachten en binnen één werkdag terugbellen. Bijvoorbeeld vakbedrijven, installateurs, cateraars en zakelijke dienstverleners.</div>
@@ -432,19 +407,6 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
 <script>
 
 (() => {
-  const eur = v => '€' + Math.round(v).toLocaleString('nl-NL');
-  const $ = id => document.getElementById(id);
-  function calc() {
-    const req = +$('c-req').value, ads = +$('c-ads').value, win = +$('c-win').value, val = +$('c-val').value, mar = +$('c-mar').value;
-    $('o-req').textContent = req; $('o-ads').textContent = eur(ads); $('o-win').textContent = win + '%'; $('o-val').textContent = eur(val); $('o-mar').textContent = mar + '%';
-    const fee = req * 100, wins = req * win / 100, rev = wins * val, margin = rev * mar / 100, left = margin - ads - fee;
-    $('r-rev').textContent = eur(rev); $('r-mar').textContent = eur(margin);
-    $('r-ads').textContent = '−' + eur(ads); $('r-fee').textContent = '−' + eur(fee); $('r-per').textContent = eur((ads + fee) / req);
-    $('r-win').textContent = (left < 0 ? '−' : '') + eur(Math.abs(left));
-    $('r-win').style.color = left < 0 ? '#b4481f' : '';
-    const w = Math.round(wins * 10) / 10;
-    $('r-txt').textContent = '(ongeveer ' + String(w).replace('.', ',') + ')';
-  }
   /* wisselende voorbeelden in de openingskaart */
   const EX = [
     { t: 'Badkamer renoveren', s: 'Huiseigenaar · Zwolle', w: 'Voor de zomer', b: '± €12.000', p: 'Zwolle' },
@@ -465,8 +427,6 @@ details p{margin:0 0 22px;color:var(--ink-soft);line-height:1.6}
       }, 350);
     }, 4200);
   }
-  $('calc').addEventListener('input', calc);
-  calc();
 })();
 
 </script>
