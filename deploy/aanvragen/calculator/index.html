@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="Bereken samen wat nieuwe aanvragen per klant kunnen opleveren.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aanvragen calculator | Boumax</title>
+  <link rel="icon" type="image/png" href="../../branding/boumax-favicon-32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="reken.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="https://boumax.nl/" aria-label="Boumax, naar de website">BOUMAX<span class="brand-dot">.</span></a>
+      <span class="topbar-label">GESPREKSTOOL <span aria-hidden="true">/</span> AANVRAGEN</span>
+    </header>
+
+    <main>
+      <div class="intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> REKEN HET SAMEN UIT</p>
+        <h1>Wat levert een<br><em>nieuwe klant</em> op?</h1>
+        <p class="intro-text">Vul je eigen cijfers in. Je ziet direct wat er na de kosten van de aanvragen overblijft.</p>
+      </div>
+
+      <div class="workspace">
+        <section class="inputs" aria-labelledby="input-title">
+          <div class="section-heading">
+            <span class="section-number">01 / INVOER</span>
+            <button id="reset" class="reset" type="button">Wis cijfers <span aria-hidden="true">↗</span></button>
+          </div>
+          <h2 id="input-title">De cijfers van jouw bedrijf</h2>
+
+          <div class="field">
+            <div class="field-top"><span class="field-index">01</span><label for="aantal">Hoeveel aanvragen zijn gemiddeld nodig voor één klant?</label></div>
+            <div class="input-wrap"><input id="aantal" type="number" min="0.1" step="any" inputmode="decimal" placeholder="Vul een aantal in"><span class="unit">aanvragen</span></div>
+            <p class="hint">Ook een gemiddelde zoals 2,5 mag.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-top"><span class="field-index">02</span><label for="prijs">Wat kost één aanvraag?</label></div>
+            <div class="input-wrap currency"><span class="prefix">€</span><input id="prijs" type="number" min="0" step="any" inputmode="decimal" placeholder="Vul een bedrag in"></div>
+          </div>
+
+          <div class="field last">
+            <div class="field-top"><span class="field-index">03</span><label for="winst">Wat is de gemiddelde winst op één nieuwe klant?</label></div>
+            <div class="input-wrap currency"><span class="prefix">€</span><input id="winst" type="number" min="0" step="any" inputmode="decimal" placeholder="Vul een bedrag in"></div>
+            <p class="hint">Na de kosten van het werk, vóór de kosten van aanvragen.</p>
+          </div>
+          <p id="input-error" class="input-error" role="status" hidden>Vul bij alle drie de vragen een geldig getal in.</p>
+        </section>
+
+        <section class="result" aria-labelledby="result-title">
+          <div class="result-top"><span class="result-kicker">02 / UITKOMST</span><span class="live-dot"><i></i> LIVE BEREKEND</span></div>
+          <div class="result-main">
+            <p class="result-label" id="result-title">Verwachte winst na aanvraagkosten</p>
+            <output id="resterend" class="result-number" aria-live="polite">€ —</output>
+            <p id="result-context" class="result-context">Vul de drie cijfers in om je uitkomst te zien.</p>
+          </div>
+          <div class="result-rule"></div>
+          <div class="result-details">
+            <div><span>Winst per nieuwe klant</span><strong id="winst-bedrag">€ —</strong></div>
+            <div><span>Kosten van de aanvragen</span><strong id="kosten-bedrag">€ —</strong></div>
+            <div class="total"><span>Blijft naar verwachting over</span><strong id="totaal-bedrag">€ —</strong></div>
+          </div>
+          <p class="result-note">Een inschatting op basis van jouw cijfers. Eventueel advertentiebudget en andere extra kosten zijn niet meegerekend.</p>
+        </section>
+      </div>
+
+      <div class="footnote"><span class="footnote-mark">↗</span><span>Zo rekenen we: <strong>gemiddelde winst per klant</strong> min <strong>aantal aanvragen × prijs per aanvraag</strong>.</span></div>
+    </main>
+    <footer><span>BOUMAX <span class="brand-dot">.</span></span><span>MAAK MEER VAN ELKE AANVRAAG</span></footer>
+  </div>
+</body>
+</html>
